@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#f3f8fd" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="16dip"
+                android:textColor="#FF192028"
+                android:text="@string/msg_my_shopping_cart_total_product_price"/>
+
+            <TextView
+                android:id="@+id/textViewTotalProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="16dip"
+                android:lineSpacingExtra="6sp"
+                android:textColor="#FF192028"
+                tools:text="25,900원"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="16dip"
+                android:textColor="#FF192028"
+                android:text="배송비"/>
+
+            <TextView
+                android:id="@+id/textViewTotalDeliveryPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="16dip"
+                android:lineSpacingExtra="6sp"
+                android:textColor="#FF192028"
+                tools:text="25,900원"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="#d9e1eb"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="18sp"
+                android:textColor="#192028"
+                android:lineSpacingExtra="4sp"
+                android:text="결제 예정 금액"/>
+
+            <TextView
+                android:id="@+id/textViewTotalOrderPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="18sp"
+                android:textColor="#9f56f2"
+                android:lineSpacingExtra="4sp"
+                android:gravity="end"
+                tools:text="32,500원"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/buttonChoiceBuy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginRight="6dp"
+            android:textSize="16sp"
+            android:textColor="#9f56f2"
+            android:text="선택상품 구매"
+            android:background="@drawable/purple_line_bg"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/buttonAllBuy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="@string/msg_my_shopping_cart_purchase"
+            android:background="@drawable/purple_btn"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f3f8fd"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="22dp"
+        android:paddingRight="15dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dip"
+            android:textColor="#FF546170"
+            android:lineSpacingExtra="4sp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:text="@string/msg_my_shopping_cart_guide"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textSize="12dip"
+            android:textColor="#FF546170"
+            android:lineSpacingExtra="4sp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:text="@string/msg_my_shopping_cart_guide1"/>
+    </LinearLayout>
+</LinearLayout>

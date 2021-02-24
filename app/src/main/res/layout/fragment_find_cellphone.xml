@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_form"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="12dp"
+        android:textSize="16dip"
+        android:textColor="#546170"
+        android:textColorHint="#bcc6d2"
+        android:fontFamily="@font/notosanskr_medium"
+        android:singleLine="true"
+        android:maxLength="20"
+        android:lines="1"
+        android:maxLines="1"
+        android:imeOptions="actionDone"
+        android:textCursorDrawable="@null"
+        android:hint="@string/msg_find_account_id_name_hint"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAccount"/>
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextAccount"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_form"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="12dp"
+        android:textSize="16dip"
+        android:textColor="#546170"
+        android:textColorHint="#bcc6d2"
+        android:fontFamily="@font/notosanskr_medium"
+        android:singleLine="true"
+        android:maxLength="20"
+        android:lines="1"
+        android:maxLines="1"
+        android:imeOptions="actionDone"
+        android:textCursorDrawable="@null"
+        android:hint="@string/msg_find_account_id_account_hint"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layoutCellPhone" />
+
+    <!-- 인증번호 요청 (휴대전화번호 입력) -->
+    <LinearLayout
+        android:id="@+id/layoutCellPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAccount"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layoutAuthConfirm">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextCellPhone"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="0.65"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/input_form"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="12dp"
+            android:maxLength="15"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            android:inputType="numberSigned"
+            android:textSize="16dip"
+            android:textColor="#546170"
+            android:textColorHint="#bcc6d2"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textCursorDrawable="@null"
+            android:hint="@string/msg_find_account_id_cellphone_hint" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonSend"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="0.35"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:textSize="16dip"
+            android:enabled="false"
+            android:textColor="@color/send_auth_text"
+            android:background="@drawable/btn_auth_send"
+            android:text="@string/msg_find_account_send_auth_number"/>
+
+    </LinearLayout>
+
+
+    <!-- 인증번호 확인 (수신인증번호 입력) -->
+    <LinearLayout
+        android:id="@+id/layoutAuthConfirm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/layoutCellPhone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <!-- 수신된 인증번호 입력 -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextAuthNumber"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="0.65"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/input_form"
+            android:gravity="left|center_vertical"
+            android:maxLength="10"
+            android:inputType="numberSigned"
+            android:paddingLeft="12dp"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            android:textSize="16dip"
+            android:textColor="#546170"
+            android:textColorHint="#bcc6d2"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textCursorDrawable="@null"
+            android:enabled="false"
+            android:hint="@string/msg_find_account_id_auth_number_hint" />
+
+        <!-- 수신된 인증번호 확인 요청 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCountDown"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="0.35"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="4dp"
+            android:textSize="16dip"
+            android:textColor="#546170"
+            android:background="#00000000"
+            tools:text="2:32" />
+
+    </LinearLayout>
+
+    <!-- 찾기 실패 안내 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewAnnotation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp"
+        android:textSize="12dip"
+        android:textColor="#8192a5"
+        android:fontFamily="@font/notosanskr_medium"
+        android:text="@string/msg_find_account_id_fail_annotation"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonConfirm"/>
+
+    <!-- 확인(양식제출) -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonConfirm"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:background="@drawable/btn_find_account_confirm"
+        android:textColor="@color/find_account_confirm_text"
+        android:text="@android:string/ok"
+        android:textSize="20dip"
+        android:fontFamily="@font/notosanskr_medium"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Loading Progress -->
+    <com.enliple.pudding.widget.ProgressLoading
+        android:id="@+id/progressLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"/>
+
+    <View
+        android:id="@+id/emptyTouch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

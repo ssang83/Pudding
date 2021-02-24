@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="14dp"
+    android:paddingRight="15dp"
+    android:paddingLeft="15dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:text="총"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTotalCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            tools:text="130"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            android:text="개"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPopularityOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="14sp"
+            android:textColor="@color/caster_profile_order"
+            android:gravity="center_horizontal"
+            android:text="인기순"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="9dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:background="#d9e1eb"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewRecentlyOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="14sp"
+            android:textColor="@color/caster_profile_order"
+            android:gravity="center_horizontal"
+            android:text="최신순"/>
+    </LinearLayout>
+</RelativeLayout>

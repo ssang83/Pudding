@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/popup_bg"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <!-- 종료 타이틀 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:background="@drawable/bg_popup_title"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/dialog_finish_title"
+            android:textColor="#222222"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d9e1eb"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="제목"
+            android:textColor="#192028"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/editTextTitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/editTextTitle" />
+
+        <!-- 제목 입력란 -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextTitle"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/bg_caster_finish"
+            android:fontFamily="@font/notosanskr_medium"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textSize="13sp"
+            app:layout_constraintLeft_toRightOf="@id/title"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:text="제목" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:text="@string/dialog_finish_tag_header"
+            android:textColor="#464646"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/editTag"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/editTag" />
+
+        <!-- 해시테그 -->
+        <RelativeLayout
+            android:id="@+id/editTag"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/bg_caster_finish"
+            android:paddingLeft="10dp"
+            android:paddingTop="9dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="9dp"
+            app:layout_constraintLeft_toRightOf="@id/tag"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextTitle">
+
+            <com.enliple.pudding.shoppingcaster.widget.EditTag
+                android:id="@+id/editTagView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:input_layout="@layout/view_finish_input_tag_dialog"
+                app:tag_layout="@layout/view_finish_tag" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="#d9e1eb"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTag" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textOpen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
+            android:drawableLeft="@drawable/post_vod_ico"
+            android:drawablePadding="17dp"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="내 영상 공개"
+            android:textColor="#192028"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/openSwitch"
+            android:layout_width="53dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_caster_notice"
+            android:button="@null"
+            android:checked="true"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="49dp"
+            android:layout_marginTop="14dp"
+            android:background="#d9e1eb"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textOpen" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
+            android:drawableLeft="@drawable/post_share_ico"
+            android:drawablePadding="17dp"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="내 영상 공유 허용"
+            android:textColor="#192028"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/shareSwitch"
+            android:layout_width="53dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_caster_notice"
+            android:button="@null"
+            android:checked="true"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="49dp"
+            android:layout_marginTop="14dp"
+            android:background="#d9e1eb"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textShare" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
+            android:drawableLeft="@drawable/post_review_ico"
+            android:drawablePadding="17dp"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="댓글 허용"
+            android:textColor="#192028"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider4" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/commentSwitch"
+            android:layout_width="53dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/btn_caster_notice"
+            android:button="@null"
+            android:checked="true"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider4" />
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="49dp"
+            android:layout_marginTop="14dp"
+            android:background="#d9e1eb"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textComment" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="영상 등록은 크기에 따라\n최대 10분정도 소요될 수 있습니다."
+            android:textColor="#8192a5"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textDesc">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonNo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_caster_finish_no"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:text="@string/msg_no"
+                android:textColor="#bcc6d2"
+                android:textSize="18dip" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonYes"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_caster_finish_yes"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:text="@string/msg_yes"
+                android:textColor="#FFFFFF"
+                android:textSize="16dip" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

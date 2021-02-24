@@ -1,0 +1,576 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.enliple.pudding">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.READ_PHONE_SINTERNETWIFI_STATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name=".PuddingApplication"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup, theme, icon, label">
+
+        <!--  9.0 이상에서 라이브 방송 시작 후 1분 후에 앱이 죽는 문제 수정 -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="false" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="Pudding_Channel_ID" />
+
+        <!-- 앱이 실행 중이지 않을경우 Notification Icon 처리
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_ic_notification" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+         <-->
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.enliple.pudding"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+
+        <!--Adbrix-->
+        <receiver
+            android:name="com.igaworks.v2.core.AbxReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="AdBrixRmAppKey"
+            android:value="@string/adbrix_remastered_app_key" />
+        <meta-data
+            android:name="AdBrixRmSecretKey"
+            android:value="string/adbrix_remastered_secret_key" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+
+        <activity
+            android:name=".activity.SplashActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="@string/kakaolink_host"
+                    android:scheme="@string/kakao_scheme" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="todaylive" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/LoginTheme" />
+
+        <activity
+            android:name=".activity.ShoppingPlayerActivity"
+            android:clearTaskOnLaunch="true"
+            android:hardwareAccelerated="true"
+            android:theme="@style/Cast.Transparent"
+            android:windowSoftInputMode="adjustNothing">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="shopping"
+                    android:scheme="vcommerce" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.BroadcastReportActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.LiveBroadcastActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.FindAccountActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.SearchActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ScheduleListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ScheduleAlarmListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.AgreementActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.WithDrawalActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PGAuthActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.NoticeListActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.NoticeDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ProfileEditActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.VersionInfoActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ProductDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing" />
+
+        <activity
+            android:name=".activity.PurchaseActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PaymentActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PurchaseCompleteCardActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ProductCartActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PurchaseHistoryActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PurchaseHistoryDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PointHistoryActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.DeliveryStatusActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.DeliveryStatusDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CRERequestDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CREActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CREDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MyAlarmSettingActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CategoryActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PromotionActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MessageActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MyChatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing" />
+
+        <activity
+            android:name=".activity.FollowerActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ShareContentActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.StatisticsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ScrapVODActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.RecentProductsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CenterAskingActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CustomerCenterMainActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CustomerCenterAllActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MyProductQnaActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MyVODActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.LatestViewVODActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CookieManagementActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.BlockActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ReportActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.RestrictionActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PasswdChangeActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.MyInquiryActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CustomerCenterSearchActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.TempVODActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PhotoReviewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PhotoReviewMoreActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CasterProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeFullScreen" />
+
+        <activity
+            android:name=".activity.LinkWebViewActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnimTheme" />
+
+        <activity
+            android:name=".activity.MobonWebActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/noAnimTheme" />
+
+        <activity
+            android:name=".activity.HashTagMoreActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.DeliveryCheckActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.WriteReviewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.WriteDetailReviewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustNothing" />
+
+        <activity
+            android:name=".activity.CoverMultiSelectActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize|stateAlwaysHidden" />
+
+        <activity
+            android:name=".activity.MyReviewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PointSaveActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.PointExpireActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.EventDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.DefaultSettingActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.VideoSettingActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.StoreProductActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.SharingVODActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ShareVODActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.EventDetailTabActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.enliple.pudding.activity.ReservationFinishActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.enliple.pudding.activity.BroadcastSettingActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.enliple.pudding.activity.MyAlarmActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.enliple.pudding.activity.ProductZzimActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".shoppingcaster.activity.CategorySelectActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.CalculateRequestActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing" />
+
+        <!--Facebook 연동-->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter><action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+
+        <!-- 카카오톡 연동-->
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
+        <service
+            android:name=".fcm.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".shoppingcaster.activity.VODSelectActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".shoppingcaster.activity.ShoppingCastActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Cast.Transparent"
+            android:windowSoftInputMode="adjustNothing" />
+
+        <activity
+            android:name=".shoppingcaster.activity.CoverSelectActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".shoppingcaster.activity.LiveProductActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".shoppingcaster.activity.LinkProductActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".shoppingcaster.activity.ShopOutlinkActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".shoppingcaster.activity.LiveStoreActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".shoppingcaster.activity.VODPostActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".shoppingcaster.activity.VODPreviewActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="sensor" />
+
+        <activity
+            android:name=".shoppingcaster.screen.ScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".shoppingcaster.screen.ScreenCapture$ScreenCaptureAssistantActivity"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <activity
+            android:name=".shoppingcaster.stream.PipActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.RiseAnimation" />
+    </application>
+</manifest>

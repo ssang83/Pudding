@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/popup_bg">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#222222"
+        android:letterSpacing="-0.01"
+        android:padding="10dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:text="@string/product_check"
+        android:background="@drawable/bg_popup_title"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e3e3e3"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerVeiwProduct"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        app:layoutManager="com.enliple.pudding.commons.widget.recyclerview.WrappedLinearLayoutManager"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pushDesc">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/buttonCancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_point_history_more"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:text="@string/msg_cre_cancel"
+            android:textColor="#bcc6d2"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/buttonConfirm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/purple_btn"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:text="@string/msg_confirm"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

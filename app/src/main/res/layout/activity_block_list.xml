@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff">
+
+    <!-- 타이틀 바 -->
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonClose"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_ico"/>
+
+        </RelativeLayout>
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/msg_my_setting_block_list"
+            android:textColor="#192028"
+            android:textSize="20dip" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layoutTitle"
+        android:background="#1e000000"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divider">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerVeiwBlock"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            app:layoutManager="com.enliple.pudding.commons.widget.recyclerview.WrappedLinearLayoutManager"/>
+
+        <LinearLayout
+            android:id="@+id/layoutEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/set_img"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="31dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="18sp"
+                android:textColor="#546170"
+                android:text="@string/msg_my_setting_block_list_empty" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/popupLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/popup"
+            android:layout_width="140dp"
+            android:layout_height="146dp"
+            android:paddingTop="5dp"
+            android:background="@drawable/bg_shadow">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cancelBlock"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:paddingLeft="13dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:textSize="14sp"
+                android:textColor="#192028"
+                android:letterSpacing="-0.01"
+                android:text="@string/msg_my_message_blcok_cancel"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

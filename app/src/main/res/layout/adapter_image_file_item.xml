@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_image_file_name"
+    android:layout_marginTop="6dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewFileName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="12dp"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:textColor="#bcc6d2"
+        tools:text="방송신고 캡쳐화면.jpg"/>
+
+    <RelativeLayout
+        android:id="@+id/buttonDel"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:paddingRight="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/report_delete_ico"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

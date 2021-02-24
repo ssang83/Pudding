@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- 타이틀 바 -->
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonClose"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_ico"/>
+
+        </RelativeLayout>
+        <!--<ImageButton-->
+            <!--android:id="@+id/buttonClose"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:background="#00000000"-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:src="@drawable/back_black_ico" />-->
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/msg_my_setting_passwd_change"
+            android:textColor="#192028"
+            android:textSize="20dip" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layoutTitle"
+        android:background="#1e000000"/>
+
+    <LinearLayout
+        android:id="@+id/layoutPasswdInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider"
+        android:paddingTop="13dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="16sp"
+            android:textColor="#192028"
+            android:text="@string/msg_my_setting_passwd_change"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="14dp"
+            android:textColor="#8192a5"
+            android:text="@string/msg_my_setting_passwd_input_guide"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextPasswd"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_passwd_change"
+            android:hint="@string/msg_my_setting_passwd_input_hint"
+            android:lines="1"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            android:textColorHint="#bcc6d2"
+            android:textColor="#192028"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPasswdNotMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textColor="#ff6c6c"
+            android:text="@string/msg_my_setting_passwd_not_match"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutPasswdSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutPasswdInput"
+        android:layout_marginTop="9dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="16sp"
+            android:textColor="#192028"
+            android:text="@string/msg_my_setting_passwd_setting"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="14dp"
+            android:textColor="#8192a5"
+            android:text="@string/msg_my_setting_passwd_setting_guide"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextNewPasswd"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_passwd_change"
+            android:hint="@string/msg_my_setting_passwd_setting_hint"
+            android:lines="1"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            android:textColorHint="#bcc6d2"
+            android:textColor="#192028"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutPasswdSetting"
+        android:layout_marginTop="32dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="16sp"
+            android:textColor="#192028"
+            android:text="@string/msg_my_setting_passwd_confirm"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextPasswdConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_passwd_change"
+            android:paddingLeft="12dp"
+            android:hint="입력하신 비밀번호를 다시 입력해주세요"
+            android:lines="1"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:textColorHint="#bcc6d2"
+            android:textColor="#192028"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewNewPasswdNotMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="12dp"
+            android:textColor="#ff6c6c"
+            android:text="@string/msg_my_setting_passwd_not_match_new_passwd"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+    </LinearLayout>
+    
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/msg_cre_confirm"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:background="@color/main_color"/>
+
+</RelativeLayout>

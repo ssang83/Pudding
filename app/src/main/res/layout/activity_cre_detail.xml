@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#f3f8fd">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#ffffff">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_ico"/>
+
+        </RelativeLayout>
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="#192028"
+            android:text="@string/msg_my_shopping_order_detail"
+            android:textSize="20dip"
+            android:fontFamily="@font/notosanskr_medium" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layoutTitle"
+        android:background="#1e000000"/>
+
+
+    <LinearLayout
+        android:id="@+id/layoutForProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider"
+        android:orientation="vertical"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:textSize="14sp"
+                android:textColor="#192028"
+                tools:text="2019년 03월 23일(18:43)"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="14dp"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textSize="12sp"
+                    android:textColor="#8192a5"
+                    android:text="주문번호"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewOrderNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="12sp"
+                    android:textColor="#8192a5"
+                    android:text="15263458"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:background="@drawable/rect_gray_bg_1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:layout_centerVertical="true"
+                    android:textColor="#ff6c6c"
+                    android:textSize="12sp"
+                    tools:text="취소 완료" />
+
+                <RelativeLayout
+                    android:id="@+id/layoutForRequestDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewFlow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/textViewRequestDate"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="12dp"
+                        android:textColor="#8192a5"
+                        tools:text="취소요청일"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewRequestDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_alignParentRight="true"
+                        android:paddingRight="15dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="12sp"
+                        android:textColor="#8192a5"
+                        android:lineSpacingExtra="8sp"
+                        tools:text="2018.04.10(21:45)"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d9e1eb" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/clickLayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewThumbnail"
+                        android:layout_width="82dp"
+                        android:layout_height="82dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="6dp"
+                        tools:background="@drawable/product_img_1"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imageViewProductType"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/item_shop_ic"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textViewShopName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/notosanskr_regular"
+                                android:textSize="12sp"
+                                android:textColor="#8192a5"
+                                tools:text="CHANEL"/>
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="4dp"
+                            android:textSize="14sp"
+                            android:textColor="#192028"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            tools:text="나팔긴소매티제목이길면이렇게길어서나오게해주세요"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewOption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="#8192a5"
+                            android:includeFontPadding="false"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            tools:text="ivory/M"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="#1e000000" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutForProduct"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layoutForPriceInformation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:background="#ffffff">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="#f3f8fd" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:textSize="14sp"
+                android:textColor="#192028"
+                android:text="취소 금액 정보"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#e5eaf0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="12sp"
+                        android:textColor="#8192a5"
+                        android:text="취소 상품 총 금액"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewProductPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:textSize="12sp"
+                        android:lineSpacingExtra="8sp"
+                        android:textColor="#192028"
+                        tools:text="25,900원"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="12sp"
+                        android:textColor="#8192a5"
+                        android:text="@string/msg_cre_delivery_fee"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDeliveryPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:textSize="12sp"
+                        android:lineSpacingExtra="6sp"
+                        android:textColor="#192028"
+                        tools:text="25,900원"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="9dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="12sp"
+                        android:textColor="#8192a5"
+                        android:lineSpacingExtra="8sp"
+                        android:text="@string/msg_shop_tree_available_price"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewAvailablePrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:textSize="12sp"
+                        android:lineSpacingExtra="8sp"
+                        android:textColor="#192028"
+                        tools:text="0원"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d9e1eb" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="18sp"
+                        android:textColor="#ff6c6c"
+                        android:text="@string/msg_cre_total_price_pay_cancel"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewTotalPaymentPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:textSize="18sp"
+                        android:lineSpacingExtra="8sp"
+                        android:textColor="#ff6c6c"
+                        tools:text="25,900원"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:id="@+id/layoutForPriceInformation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="#f3f8fd" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:textSize="14sp"
+                android:textColor="#192028"
+                android:text="취소 금액 정보"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#e5eaf0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="12sp"
+                        android:textColor="#8192a5"
+                        android:text="취소 상품 총 금액"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewTotalCancelProductPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:textSize="12sp"
+                        android:lineSpacingExtra="8sp"
+                        android:textColor="#192028"
+                        tools:text="25,900원"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:drawableLeft="@drawable/discount_line_ico"
+                        android:drawablePadding="6dp"
+                        android:textSize="12sp"
+                        android:textColor="#8192a5"
+                        android:text="할인금액 차감"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDiscountMinus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:textSize="12sp"
+                        android:lineSpacingExtra="6sp"
+                        android:textColor="#192028"
+                        tools:text="-3,900원"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#e5eaf0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="12sp"
+                        android:textColor="#192028"
+                        android:lineSpacingExtra="8sp"
+                        android:text="결제 취소 총 금액"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewTotalCancelPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="8sp"
+                        android:textColor="#ff6c6c"
+                        tools:text="36,900원"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:drawableLeft="@drawable/discount_line_ico"
+                        android:drawablePadding="6dp"
+                        android:textSize="12sp"
+                        android:textColor="#8192a5"
+                        android:text="신용카드 취소"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewCreditCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:textSize="12sp"
+                        android:lineSpacingExtra="6sp"
+                        android:textColor="#192028"
+                        tools:text="-3,900원"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:drawableLeft="@drawable/discount_line_ico"
+                        android:drawablePadding="6dp"
+                        android:textSize="12sp"
+                        android:textColor="#8192a5"
+                        android:text="포인트 반환"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewPointRefund"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:textSize="12sp"
+                        android:lineSpacingExtra="6sp"
+                        android:textColor="#192028"
+                        tools:text="-3,900원"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#d9e1eb" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="18sp"
+                        android:textColor="#ff6c6c"
+                        android:text="@string/msg_cre_total_price_pay_cancel"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewTotalPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:textSize="18sp"
+                        android:lineSpacingExtra="8sp"
+                        android:textColor="#ff6c6c"
+                        tools:text="25,900원"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d9e1eb" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPayCancelGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="13dp"
+                android:tag="NotoSansKR_M"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#8192a5"
+                android:lineSpacingExtra="5sp"
+                android:text="@string/msg_cre_guide"/>
+        </LinearLayout>-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/textViewPayCancelGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutPrice"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d9e1eb" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="13dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#8192a5"
+            android:lineSpacingExtra="5sp"
+            android:text="@string/msg_cre_guide"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:theme="@style/ProgressTheme" />
+
+</RelativeLayout>

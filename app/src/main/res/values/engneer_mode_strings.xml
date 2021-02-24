@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="engineering_mode_title">엔지니어링</string>
+    <string name="engineering_mode_message">본 화면은 개발 버전으로 배포된 패키지에 한해서만 실행이 가능합니다.\n본 바이너리의 외부로의 유출을 엄격히 금지합니다.</string>
+
+    <!-- Common -->
+    <string name="engineering_mode_server_select">서버선택</string>
+    <string name="engineering_mode_ab_testing">사용자경험 (A-B Testing)</string>
+    <string name="engineering_mode_logout">사용자 로그아웃</string>
+    <string name="engineering_mode_remove_cache">캐시데이터 삭제</string>
+    <string name="engineering_mode_all_remove">앱 최초 설치상태(전체 데이터 삭제)</string>
+    <string name="engineering_mode_test_fcm">FireBase 푸시 기능 테스트(HTTP)</string>
+    <string name="engineering_mode_device_info">디바이스 정보</string>
+    <string name="engineering_server_release">상용서버</string>
+    <string name="engineering_server_test">테스트서버</string>
+    <string name="engineering_exp_normal">일반</string>
+    <string name="engineering_exp_a">플랜 A (Optional)</string>
+    <string name="engineering_exp_b">플랜 B (Optional)</string>
+    <string name="engineering_mode_exit">나가기</string>
+
+    <!-- AppToast Test -->
+
+    <!-- Video Test -->
+    <string name="engineering_mode_utoken_test">USER TOKEN 통신 테스트</string>
+    <string name="engineering_mode_ptoken_test">PUBLIC TOKEN 통신 테스트</string>
+    <string name="enginerring_mode_video_upload">MIDIBUS Video 업로드 테스트</string>
+
+
+    <!-- Feedback Message -->
+    <string name="engineering_msg_logout">로그아웃 처리되었습니다</string>
+    <string name="engineering_msg_cache_deleted">캐시데이터를 삭제하였습니다.</string>
+    <string name="engineering_msg_cache_delete_error">캐시데이터를 삭제를 실패하였습니다.</string>
+
+    <string name="engineering_msg_deleted_data">데이터를 모두 삭제하였습니다</string>
+
+    <string name="engineering_device_info_title">구동기기정보</string>
+</resources>

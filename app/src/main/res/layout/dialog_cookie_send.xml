@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="369dp"
+        android:layout_above="@+id/keybordGapView"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <LinearLayout
+            android:id="@+id/layoutStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:focusableInTouchMode="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/layoutCookie"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_my_cookie_count_title"
+                android:textColor="#192028"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cookieCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text="0"
+                android:textColor="#5774f4"
+                android:textSize="16sp"
+                tools:text="245" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_my_cookie_count_unit"
+                android:textColor="#192028"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonBuy"
+                android:layout_width="80dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="14dp"
+                android:background="@drawable/purple_lined_bg"
+                android:fontFamily="@font/notosanskr_bold"
+                android:gravity="center"
+                android:text="젤리 구매"
+                android:textColor="#9f56f2"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Cookie present layout -->
+        <LinearLayout
+            android:id="@+id/layoutCookie"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:paddingBottom="12dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/layoutDivider1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutStatus"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!-- 푸딩 10개 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewCookie10"
+                        android:layout_width="71dp"
+                        android:layout_height="74dp"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/jelly_10" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButtonCookie10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/btn_cookie_radio"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:paddingLeft="5dp"
+                        android:text="@string/msg_cookie_unit_10"
+                        android:textColor="#192028"
+                        android:textSize="14dip" />
+
+                </LinearLayout>
+
+                <!-- 푸딩 50개 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewCookie50"
+                        android:layout_width="70dp"
+                        android:layout_height="67dp"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/jelly_50" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButtonCookie50"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/btn_cookie_radio"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:paddingLeft="5dp"
+                        android:text="@string/msg_cookie_unit_50"
+                        android:textColor="#192028"
+                        android:textSize="14dip" />
+
+                </LinearLayout>
+
+                <!-- 푸딩 100개 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewCookie100"
+                        android:layout_width="69dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/jelly_100" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButtonCookie100"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/btn_cookie_radio"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:paddingLeft="5dp"
+                        android:text="@string/msg_cookie_unit_100"
+                        android:textColor="#192028"
+                        android:textSize="14dip" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+                <!-- 푸딩 300개 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewCookie300"
+                        android:layout_width="70dp"
+                        android:layout_height="69dp"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/jelly_300" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButtonCookie300"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/btn_cookie_radio"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:paddingLeft="5dp"
+                        android:text="@string/msg_cookie_unit_300"
+                        android:textColor="#192028"
+                        android:textSize="14dip" />
+
+                </LinearLayout>
+
+                <!-- 푸딩 500개 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewCookie500"
+                        android:layout_width="74dp"
+                        android:layout_height="67dp"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/jelly_500" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButtonCookie500"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/btn_cookie_radio"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:paddingLeft="5dp"
+                        android:text="@string/msg_cookie_unit_500"
+                        android:textColor="#192028"
+                        android:textSize="14dip" />
+
+                </LinearLayout>
+
+                <!-- 퓨당 500개 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewCookie1000"
+                        android:layout_width="69dp"
+                        android:layout_height="71dp"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/jelly_1000" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButtonCookie1000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/btn_cookie_radio"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:paddingLeft="5dp"
+                        android:text="@string/msg_cookie_unit_1000"
+                        android:textColor="#192028"
+                        android:textSize="14dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 구분선(푸딩 입력 상태) -->
+        <View
+            android:id="@+id/layoutDivider1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#d9e1eb"
+            app:layout_constraintBottom_toTopOf="@+id/layoutSending"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutCookie"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <!-- 전송할 푸딩 입력 -->
+        <LinearLayout
+            android:id="@+id/layoutSending"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingTop="11dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="9dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutDivider1"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_cookie_unit_manual_title"
+                android:textColor="#192028"
+                android:textSize="20sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="11dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_cookie_manual_input"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextCookieCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/textViewCookieUnit"
+                    android:background="#00000000"
+                    android:digits="01234567890,"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="right|center_vertical"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberSigned"
+                    android:lines="1"
+                    android:maxLength="8"
+                    android:paddingTop="0dp"
+                    android:paddingRight="3dp"
+                    android:paddingBottom="0dp"
+                    android:singleLine="true"
+                    android:textColor="#5774f4"
+                    android:textColorHint="#5774f4"
+                    android:textCursorDrawable="@null"
+                    android:textSize="24dip"
+                    tools:text="20" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewCookieUnit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_my_cookie_count_unit"
+                    android:textColor="#192028"
+                    android:textSize="24sp" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonSend"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/blue_btn_bg"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:text="@string/msg_cookie_send"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <!-- 푸딩 전송 중 상태-->
+        <LinearLayout
+            android:id="@+id/layoutTransfer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dip"
+                tools:text="@string/msg_cookie_transfer_waiting" />
+
+        </LinearLayout>
+
+        <!-- 푸딩 전송 요청 결과 -->
+        <LinearLayout
+            android:id="@+id/layoutTransferResult"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewResultTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dip"
+                tools:text="@string/msg_cookie_transfer_successfully" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewResultContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14dip"
+                tools:text="(잔여젤리 : 1,000)" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 키보드 활성화 될 경우 채팅 대화 내용을 위로 올리기 위한 layer -->
+    <View
+        android:id="@+id/keybordGapView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:background="#00000000" />
+</RelativeLayout>

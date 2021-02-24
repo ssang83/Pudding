@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutRoot"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_bg"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@drawable/report_bg_top"
+        android:text="신고"
+        android:textSize="20sp"
+        android:textColor="#222222"
+        android:fontFamily="@font/notosanskr_medium"
+        android:gravity="center"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d9e1eb" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:background="#00ffffff"
+            android:layout_marginRight="20dp"
+            android:hint="@string/msg_insert_message"
+            android:textColorHint="#bcc6d2"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:layout_below="@+id/top"/>
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="20dp"
+            android:background="#bcc6d2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:weightSum="2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="26dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/msg_cancel"
+                android:textSize="18sp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#bcc6d2"
+                android:gravity="center"
+                android:background="@drawable/bg_broadcast_report_round"
+                android:layout_marginRight="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReport"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="신고"
+                android:textSize="18sp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:background="@drawable/purple_btn"
+                android:layout_marginLeft="4dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

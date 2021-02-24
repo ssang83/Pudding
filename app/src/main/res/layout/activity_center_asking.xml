@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:onClick="hideKeyboard"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:id="@+id/root">
+
+    <!-- 타이틀바 -->
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#ffffff"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back"/>
+
+        </RelativeLayout>
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/msg_my_shopping_center_asking"
+            android:textColor="#192028"
+
+            android:textSize="20dip" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#1e000000" />
+
+        <!-- 내 메세지 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonMessage"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#00000000"
+            android:src="@drawable/my_message_ico"
+            android:scaleType="centerInside"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/buttonCart"/>
+
+        <!-- Message Badge-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMessageBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignRight="@+id/buttonMessage"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/oval_2"
+            android:gravity="center"
+            android:textColor="#FFFFFFFF"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="10dip"
+            android:text="1"/>
+
+        <!-- 장바구니 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonCart"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#00000000"
+            android:src="@drawable/cart_ico"
+            android:scaleType="centerInside"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+        <!-- Cart Badge-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCartBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignRight="@+id/buttonCart"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/oval_2"
+            android:gravity="center"
+            android:textColor="#FFFFFFFF"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="10dip"
+            android:text="1"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutTitle">
+
+        <LinearLayout
+            android:onClick="hideKeyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/asking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text="@string/msg_shop_tree_qna_do"
+                android:textColor="#192028"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutTitle" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="#d9e1eb"
+                app:layout_constraintTop_toBottomOf="@id/asking" />
+
+            <RelativeLayout
+                android:id="@+id/askingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_customer_center_search"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/askingType"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:text="@string/msg_shop_tree_qna_type"
+                    android:textColor="#bcc6d2"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="37dp"
+                    android:background="#bcc6d2" />
+
+                <Spinner
+                    android:id="@+id/askingSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:duplicateParentState="true" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/btn_drop_down_up" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/askingDetailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_customer_center_search"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/askingLayout">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/askingDetailType"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:text="@string/msg_shop_tree_qna_detail_type"
+                    android:textColor="#bcc6d2"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="37dp"
+                    android:background="#bcc6d2" />
+
+                <Spinner
+                    android:id="@+id/askingDetailSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:duplicateParentState="true" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/btn_drop_down_up" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutOrderNumber"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/askingDetailLayout"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewOrderNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="9dp"
+                    android:textSize="14dp"
+                    android:textColor="#bcc6d2"
+                    android:text="@string/msg_my_shopping_order_number"
+                    android:background="@drawable/bg_customer_center_search"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonProductCheck"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:layout_marginLeft="6dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textSize="14sp"
+                    android:textColor="#9f56f2"
+                    android:text="@string/product_check"
+                    android:background="@drawable/purple_line_bg"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/askingEditText"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_customer_center_search"
+                android:gravity="top"
+                android:hint="@string/msg_shop_tree_qna_input_hint"
+                android:maxLength="500"
+                android:padding="6dp"
+                android:textColorHint="#bcc6d2"
+                android:textColor="#192028"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutOrderNumber" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/askingEditTextResult"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginRight="15dp"
+                android:gravity="right|center"
+                android:text="0/500"
+                android:textColor="#8192a5"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/askingEditText" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="15dp"
+                android:background="#bcc6d2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/askingEditTextResult" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/askingResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text="@string/msg_my_shopping_center_asking_result"
+                android:textColor="#192028"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line2" />
+
+            <View
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="#d9e1eb"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/askingResult" />
+
+            <RadioGroup
+                android:id="@+id/alertRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line3">
+
+                <RadioButton
+                    android:id="@+id/rb_receive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:button="@drawable/radiobutton"
+                    android:checked="true"
+                    android:paddingLeft="6dp"
+                    android:text="@string/msg_my_shopping_center_asking_result_check_on"
+                    android:textColor="#222222"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/rb_not_receive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="46dp"
+                    android:button="@drawable/radiobutton"
+                    android:paddingLeft="6dp"
+                    android:text="@string/msg_my_shopping_center_asking_result_check_off"
+                    android:textColor="#222222"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pushDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_my_shopping_center_asking_result_push"
+                android:textColor="#8192a5"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/alertRadioGroup" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pushDesc">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/buttonCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_point_history_more"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:text="@string/msg_cre_cancel"
+                    android:textColor="#bcc6d2"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/buttonOk"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/purple_btn"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:text="@string/msg_shop_tree_qna_do"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

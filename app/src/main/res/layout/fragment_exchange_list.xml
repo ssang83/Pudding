@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF">
+
+    <LinearLayout
+        android:id="@+id/topView"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:orientation="horizontal"
+            android:background="#f3f8fd"
+            android:weightSum="4">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="신청일"
+                android:textSize="12sp"
+                android:textColor="#8192a5"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="#8192a5"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:id="@+id/titlePrice"
+                tools:text="환전 젤리 갯수"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="상태"
+                android:textSize="12sp"
+                android:textColor="#8192a5"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|right"
+                android:paddingRight="12dp"
+                android:text="환전 금액"
+                android:textSize="12sp"
+                android:textColor="#8192a5"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#80c9c9c9" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bot"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:background="#f3f8fd"
+        android:layout_alignParentBottom="true">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#80c9c9c9"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:textSize="12sp"
+            android:textColor="#8192a5"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/notosanskr_regular"
+            android:text="@string/exchange_list_bot_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bot"
+        android:layout_below="@+id/topView">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:id="@+id/emptyLayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="19dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/direct_operation_img"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#192028"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:includeFontPadding="false"
+                    android:text="환전 신청 내역이 없습니다."/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

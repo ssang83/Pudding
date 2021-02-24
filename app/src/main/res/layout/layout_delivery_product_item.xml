@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+
+    <RelativeLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:textColor="#9f56f2"
+            android:lines="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="12sp"
+            android:fontFamily="@font/notosanskr_medium"
+            tools:text="결재완료"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/searchDelivery"
+            android:layout_width="64dp"
+            android:layout_height="24dp"
+            android:background="@drawable/blue_line_bg"
+            android:includeFontPadding="false"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:textColor="#5774f4"
+            android:lines="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="12sp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="배송조회"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d9e1eb"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/dividerTop"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#d9e1eb"
+        android:layout_alignParentBottom="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewThumbnail"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_marginRight="6dp"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:scaleType="centerInside"
+            tools:src="@mipmap/ic_launcher"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/layoutForShopName"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:background="@drawable/item_shop_background"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:id="@+id/productGubun"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/item_shop_ic_1"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewShopName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/productGubun"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:textColor="#ffffff"
+                    android:textSize="10sp"
+                    tools:text="유찬몰" />
+
+            </RelativeLayout>
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/layoutForShopName"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:gravity="left|center_vertical">-->
+
+                <!--<androidx.appcompat.widget.AppCompatImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="#00000000"-->
+                    <!--android:src="@drawable/item_shop_ic"-->
+                    <!--android:scaleType="fitCenter"/>-->
+
+                <!--<androidx.appcompat.widget.AppCompatTextView-->
+                    <!--android:id="@+id/textViewShopName"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:lines="1"-->
+                    <!--android:maxLines="1"-->
+                    <!--android:ellipsize="end"-->
+                    <!--android:textSize="14dp"-->
+                    <!--android:textColor="#192028"-->
+                    <!--android:lineSpacingExtra="6sp"-->
+                    <!--android:layout_marginLeft="5dp"-->
+                    <!--android:fontFamily="@font/notosanskr_bold"-->
+                    <!--tools:text="모노바비"/>-->
+
+            <!--</LinearLayout>-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#192028"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:layout_marginBottom="3dp"
+                android:lines="1"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="나팔긴소매티제목이길면이렇게길어서나오게해주세요"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#8192a5"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="12sp"
+                android:fontFamily="@font/notosanskr_medium"
+                tools:text="ivory/M"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/btnLayer"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cancelPurchase"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/purple_lined_bg"
+            android:textColor="#9f56f2"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="12sp"
+            android:text="@string/msg_my_shopping_order_detail_order_cancel"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+
+    <!--
+    <LinearLayout
+        android:id="@+id/layoutForShopName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:gravity="left|center_vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="13dp"
+            android:layout_height="12dp"
+            android:background="#00000000"
+            android:src="@drawable/ic_mall"
+            android:scaleType="fitCenter"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewShopName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="14dp"
+            android:textColor="#192028"
+            android:lineSpacingExtra="6sp"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/notosanskr_bold"
+            tools:text="모노바비"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewThumbnail"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:scaleType="centerInside"
+            tools:src="@mipmap/ic_launcher"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imageViewThumbnail"
+            android:paddingRight="20dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:layout_centerVertical="true">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#192028"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="6sp"
+                android:lines="1"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="나팔긴소매티제목이길면이렇게길어서나오게해주세요"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#8192a5"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="13sp"
+                android:fontFamily="@font/notosanskr_medium"
+                tools:text="ivory/M"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="#ff6c6c"
+                android:lines="1"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="12sp"
+                android:fontFamily="@font/notosanskr_medium"
+                tools:text="결재완료"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#d9e1eb"/>
+        -->
+</LinearLayout>

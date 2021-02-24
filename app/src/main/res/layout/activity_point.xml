@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:src="@drawable/back_black_ico" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_ico"/>
+
+        </RelativeLayout>
+        <!--<android.support.v7.widget.AppCompatImageButton-->
+            <!--android:id="@+id/buttonBack"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@drawable/back_black_ico"-->
+            <!--android:background="#00000000"-->
+            <!--android:scaleType="centerInside" />-->
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="#192028"
+            android:text="@string/msg_my_shopping_menu_point"
+            android:textSize="20sp"
+            android:fontFamily="@font/notosanskr_medium" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layoutTitle"
+        android:background="#1e000000"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divider">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants">
+
+            <LinearLayout
+                android:id="@+id/layoutHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 사용가능금액 / 포인트 안내 -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="#ffffff">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:background="#FFFFFF">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="14sp"
+                            android:textColor="#546170"
+                            android:text="@string/msg_my_point_available_cookie"
+                            android:fontFamily="@font/notosanskr_medium" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewAvailablePoint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="30sp"
+                            android:textColor="#5774f4"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:text="0원"/>
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/buttonPointInfo"
+                        android:layout_width="20sp"
+                        android:layout_height="20sp"
+
+                        android:src="@drawable/icon_point_info"
+                        android:background="#00000000"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="12dp"
+                        android:scaleType="fitCenter"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d9e1eb"/>
+
+                <RelativeLayout
+                    android:id="@+id/layoutForAccumulatedAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="19dp"
+                    android:gravity="center"
+                    android:background="#f3f8fd">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#FF192028"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="@string/msg_my_shoppint_amount_to_be_accumulated"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewAccumulatedAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="@color/main_color"
+                            android:fontFamily="@font/notosanskr_medium"
+                            tools:text="0원"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="13dp"
+                            android:layout_height="13dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_forward"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d9e1eb"/>
+
+                <RelativeLayout
+                    android:id="@+id/layoutForExpireAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="19dp"
+                    android:gravity="center"
+                    android:background="#f3f8fd">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#FF192028"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="@string/msg_my_shopping_expected_amount"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewExpectedAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="#546170"
+                            android:fontFamily="@font/notosanskr_medium"
+                            tools:text="0원"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="13dp"
+                            android:layout_height="13dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/ic_forward"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d9e1eb"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="12dp"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:textSize="12dp"
+                        android:textColor="#546170"
+                        android:text="@string/msg_my_point_history_guide"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d9e1eb"/>
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/layoutList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/layoutHeader"
+                android:layout_weight="1">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewPointHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    app:layoutManager="com.enliple.pudding.commons.widget.recyclerview.WrappedLinearLayoutManager"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewEmpty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="#FF192028"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:text="@string/msg_my_shopping_point_history_empty"
+                    android:visibility="gone"/>
+            </FrameLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:layout_below="@+id/layoutList"
+                android:layout_alignParentBottom="true"
+                android:background="#f3f8fd"
+                android:gravity="center"
+                android:text="@string/msg_my_shopping_point_history_notification"
+                android:textSize="12sp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#FF8192A5"/>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/ProgressTheme"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

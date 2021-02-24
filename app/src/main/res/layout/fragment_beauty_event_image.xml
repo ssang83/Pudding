@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<androidx.appcompat.widget.AppCompatImageView-->
+    <!--android:id="@+id/imageViewBeautyEvent"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="304dp"-->
+    <!--android:layout_marginTop="15dp"-->
+    <!--android:scaleType="centerCrop"-->
+    <!--tools:background="@drawable/profile_default_bg_img"/>-->
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1"
+        app:cardCornerRadius="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBeautyEvent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewEventTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#192028"
+            android:textSize="18sp"
+            tools:text="요즘 되게 예쁘더라" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#ff6c6c"
+            android:textSize="18sp"
+            tools:text="~40%" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewEventSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/notosanskr_regular"
+        android:textColor="#546170"
+        android:textSize="12sp"
+        tools:text="단 3일간의 설레는 전상품 할인전을 놓치지 마세요!" />
+
+</LinearLayout>

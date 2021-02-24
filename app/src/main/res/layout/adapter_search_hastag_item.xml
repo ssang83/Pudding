@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="46dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/tag_ico"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewHastag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewTag"
+        android:layout_marginLeft="11dp"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textSize="14sp"
+        android:textColor="#546170"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textSize="12sp"
+        android:textColor="#546170"
+        tools:text="10.0m"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#d9e1eb"/>
+</RelativeLayout>

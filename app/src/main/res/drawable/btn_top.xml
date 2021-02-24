@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- selected -->
+    <item android:drawable="@drawable/btn_top_on" android:state_selected="true" />
+
+    <!-- pressed -->
+    <item android:drawable="@drawable/btn_top_on" android:state_pressed="true" />
+
+    <!-- focused -->
+    <item android:drawable="@drawable/btn_top_on" android:state_focused="true" />
+
+    <!-- default -->
+    <item android:drawable="@drawable/btn_top_off" />
+
+</selector>

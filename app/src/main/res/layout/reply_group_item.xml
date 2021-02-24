@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/contentLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewThumbNail"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/bg_reply_thumbnail"
+            android:src="@drawable/signature_img" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewNickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@+id/imageViewThumbNail"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
+            android:textColor="#192028"
+            android:textSize="12sp"
+            tools:text="요미요미" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewNickName"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/buttonMore"
+            android:layout_toRightOf="@+id/imageViewThumbNail"
+            android:fontFamily="@font/notosanskr_regular"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="4sp"
+            android:lineSpacingMultiplier="0.7"
+            android:maxLines="5"
+            android:textColor="#192028"
+            android:textSize="14sp"
+            tools:text="댓글 내용이에요~~ 저도 저 코트 사고싶네요.정말 예쁘세요~" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewReplyDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewContent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/imageViewThumbNail"
+            android:fontFamily="@font/notosanskr_regular"
+            android:includeFontPadding="false"
+            android:textColor="#8192a5"
+            android:textSize="12sp"
+            tools:text="2018.09.17" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/replyButton"
+            android:layout_width="46dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@+id/textViewReplyDate"
+            android:layout_toRightOf="@+id/imageViewThumbNail"
+            android:gravity="center"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="12sp"
+            android:textColor="#192028"
+            android:text="댓글"
+            android:background="@drawable/background_edit_bg"/>
+
+        <!-- 더보기 버튼 -->
+        <RelativeLayout
+            android:id="@+id/buttonMore"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="#00000000"
+                android:src="@drawable/message_more_ico" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/replyButton"
+            android:layout_marginLeft="61dp"
+            android:layout_marginTop="6dp"
+            android:background="#e8f0f6" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/deleteLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingLeft="34dp"
+        android:paddingBottom="20dp"
+        android:background="#ffffff"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="14sp"
+            android:textColor="#bcc6d2"
+            android:lineSpacingExtra="4sp"
+            android:text="삭제된 댓글 입니다."/>
+    </LinearLayout>
+</RelativeLayout>

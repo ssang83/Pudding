@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        app:controller_layout_id="@layout/layout_player_controller"
+        app:resize_mode="fill"
+        app:surface_type="texture_view"
+        app:use_controller="true" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewThumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fullLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:clickable="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:background="@drawable/bg_video_card_35"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/userInfoLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="23dp"
+                android:background="@drawable/bg_live_round_bar"
+                android:paddingRight="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewUserThumbnail"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/border_cookie_sender"
+                    android:padding="1dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/profile_default_img" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewNickName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_toRightOf="@+id/imageViewUserThumbnail"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="#ffffff"
+                    android:textSize="10sp"
+                    tools:text="슬" />
+
+                <!-- view Count Text -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/viewCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewNickName"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_toRightOf="@+id/imageViewUserThumbnail"
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/seller_viewer_ico"
+                    android:drawablePadding="2dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:text="0"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    tools:text="12820" />
+            </RelativeLayout>
+
+            <Chronometer
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/trip_onair_label_bg"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textColor="#FFFFFF"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/userInfoLayout"
+                app:layout_constraintLeft_toLeftOf="parent"  />
+
+            <View
+                android:id="@+id/guideLine"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:background="#ffffee"
+                app:layout_constraintBottom_toBottomOf="@id/userInfoLayout"
+                app:layout_constraintRight_toRightOf="@id/userInfoLayout"
+                app:layout_constraintTop_toTopOf="@id/userInfoLayout" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewFollow"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#00000000"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/guideLine"
+                app:layout_constraintLeft_toLeftOf="@id/guideLine"
+                app:layout_constraintRight_toLeftOf="@id/guideLine"
+                app:layout_constraintTop_toTopOf="@id/guideLine" />
+
+            <HorizontalScrollView
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="9dp"
+                android:fadingEdge="none"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layout_constraintLeft_toRightOf="@id/imageViewFollow"
+                app:layout_constraintRight_toLeftOf="@id/buttonMute"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/cookie_sender"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" />
+            </HorizontalScrollView>
+
+            <!-- 음소거버튼 -->
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/buttonMute"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/buttonExit"
+                android:background="#00000000"
+                android:padding="7dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sound_on_btn"
+                app:layout_constraintRight_toLeftOf="@id/buttonExit"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 종료버튼 -->
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/buttonExit"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="18dp"
+                android:background="#00000000"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/close_white_ico"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_live_round_bar"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingRight="19dp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/memberCount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableLeft="@drawable/seller_viewer_ico"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                tools:text="1000" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cookieCount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:drawableLeft="@drawable/seller_cookie_btn"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                tools:text="0" />
+        </LinearLayout>
+
+        <!-- 사용자 리스트 버튼 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonViewerList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/viewer_list_btn"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/dark_bg"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:background="@drawable/bg_video_card_72"
+            app:layout_constraintBottom_toTopOf="@id/chatGapView"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <!-- 좋아요 효과 -->
+        <FrameLayout
+            android:id="@+id/heartView"
+            android:layout_width="120dp"
+            android:layout_height="280dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toTopOf="@id/likeButtonLayer"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/likeButtonLayer"
+            android:layout_width="43dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="60dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/video_like_on_ico" />
+
+            <!-- 좋아요 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/buttonLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/notosanskr_bold"
+                android:gravity="center_horizontal"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                tools:text="17" />
+
+        </LinearLayout>
+
+        <!-- 좋아요 -->
+        <!--<androidx.appcompat.widget.AppCompatTextView-->
+        <!--android:id="@+id/buttonLike"-->
+        <!--android:layout_width="43dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginRight="7dp"-->
+        <!--android:layout_marginBottom="60dp"-->
+        <!--android:background="#00000000"-->
+        <!--android:drawableTop="@drawable/like_l_on_btn"-->
+        <!--android:drawablePadding="2dp"-->
+        <!--android:fontFamily="@font/notosanskr_bold"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:textColor="#FFFFFF"-->
+        <!--android:textSize="12sp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--tools:text="17" />-->
+
+        <!-- 공지 표시 -->
+        <RelativeLayout
+            android:id="@+id/castLayer"
+            android:layout_width="272dp"
+            android:layout_height="26dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/bg_cast_notification"
+            android:maxWidth="166dp"
+            app:layout_constraintBottom_toTopOf="@id/recyclerViewChat"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/noti_ico" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewNotification"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:maxWidth="220dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_toRightOf="@+id/imageViewNotification"
+                    android:ellipsize="marquee"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:freezesText="true"
+                    android:gravity="left|center_vertical"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="매일 저녁 8시 30분에 라이브"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="12sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Notification_close"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/close_white_ico"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- 시청자 액션 표시(입장/구매/장바구니/좋아요) -->
+        <RelativeLayout
+            android:id="@+id/userActionPopLayout"
+            android:layout_width="272dp"
+            android:layout_height="26dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:maxWidth="166dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/recyclerViewChat"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:background="@drawable/bg_cast_enter_room">
+
+            <RelativeLayout
+                android:id="@+id/profileLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/profile5"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginLeft="52dp"
+                    android:background="@drawable/profile_default_img" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/profile4"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginLeft="39dp"
+                    android:background="@drawable/profile_default_img" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/profile3"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginLeft="26dp"
+                    android:background="@drawable/profile_default_img" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/profile2"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginLeft="13dp"
+                    android:background="@drawable/profile_default_img" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/profile1"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/profile_default_img" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/action"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_toRightOf="@+id/profileLayer"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/notosanskr_medium"
+                android:freezesText="true"
+                android:gravity="left|center_vertical"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textColor="#FFFFFFFF"
+                android:textSize="12sp"
+                tools:text="sunny님이 입장했습니다." />
+        </RelativeLayout>
+
+        <!-- 채팅 대화내용 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewChat"
+            android:layout_width="match_parent"
+            android:layout_height="185dp"
+            android:layout_marginRight="55dp"
+            android:cacheColorHint="#00000000"
+            android:fitsSystemWindows="false"
+            android:overScrollMode="never"
+            android:paddingTop="13dp"
+            android:paddingBottom="4dp"
+            android:requiresFadingEdge="vertical"
+            app:layout_constraintBottom_toTopOf="@id/layoutChatInput"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <!-- 채팅 입력창 -->
+        <RelativeLayout
+            android:id="@+id/layoutChatInput"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/chatGapView"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/chatInputLayer"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="#ffffff"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentTop="true"
+                    android:background="#d9e1eb" />
+
+                <RelativeLayout
+                    android:id="@+id/imageLayer"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/reply_profile_border">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewProfile"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/profile_default_img"
+                        android:scaleType="centerCrop" />
+
+                </RelativeLayout>
+
+
+
+
+                <!-- 채팅 입력  -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextChat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="62dp"
+                    android:layout_toRightOf="@+id/imageLayer"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="left|center_vertical"
+                    android:hint="메시지를 입력해주세요."
+                    android:imeOptions="actionSend"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:textColor="#192028"
+                    android:textColorHint="#bcc6d2"
+                    android:textSize="16sp" />
+
+                <!-- 채팅 전송 -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/buttonSendMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/btn_reply_send"
+                    android:padding="10dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/chatLayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#1affffff" />
+
+                <!-- 별풍선 -->
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/buttonStar"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/cookie_btn" />
+
+                <!-- 채팅 배경 -->
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@id/chatRightMarginView"
+                    android:layout_toRightOf="@id/buttonStar"
+                    android:background="@drawable/bg_chat_input_1" />
+
+                <View
+                    android:id="@+id/chatRightMarginView"
+                    android:layout_width="153dp"
+                    android:layout_height="38dp"
+                    android:layout_alignParentRight="true" />
+
+                <!-- 채팅 입력  -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/chatInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@id/chatRightMarginView"
+                    android:layout_toRightOf="@id/buttonStar"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="left|center_vertical"
+                    android:hint="메시지 입력.."
+                    android:imeOptions="actionSend"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:maxLength="150"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:textColor="#ffffff"
+                    android:textColorHint="#8192a5"
+                    android:textSize="14sp" />
+
+                <!-- 채팅 전송 -->
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="14dp"
+                    android:background="#00000000"
+                    android:padding="10dp"
+                    android:src="@drawable/send_off_ico"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/layoutMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="10dp"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- 더보기 버튼 -->
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/buttonMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="5dp"
+                        android:background="#00000000"
+                        android:padding="10dp"
+                        android:src="@drawable/vod_more_ico" />
+
+                    <!-- 스크랩 -->
+                    <RelativeLayout
+                        android:layout_width="53dp"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/buttonScrap"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_centerVertical="true"
+                            android:background="#00000000"
+                            android:src="@drawable/btn_scrap" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/scrapCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/bg_badge_count"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:lines="1"
+                            android:maxWidth="40dp"
+                            android:maxLines="1"
+                            android:text="0"
+                            android:textColor="#ffffff"
+                            android:textSize="9sp"
+                            android:visibility="gone"
+                            tools:text="0" />
+                    </RelativeLayout>
+
+                    <!-- 공유 -->
+                    <RelativeLayout
+                        android:layout_width="53dp"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/buttonShare"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_centerVertical="true"
+                            android:background="#00000000"
+                            android:src="@drawable/share_btn" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/shareCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/bg_badge_count"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:lines="1"
+                            android:maxWidth="40dp"
+                            android:maxLines="1"
+                            android:text="0"
+                            android:textColor="#ffffff"
+                            android:visibility="gone"
+                            android:textSize="9sp"
+                            tools:text="0" />
+                    </RelativeLayout>
+
+                    <!-- 상품리스트 -->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/buttonProducts"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:background="@drawable/product_round_bg"
+                        android:padding="1dp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/productPopLayout"
+            android:layout_width="228dp"
+            android:layout_height="83dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="63dp"
+            android:background="@drawable/product_bg"
+            android:clickable="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <!-- 상품리스트 -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/productImage"
+                android:layout_width="63dp"
+                android:layout_height="63dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/product_round_bg"
+                android:clickable="false"
+                android:padding="1dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@id/productImage"
+                android:clickable="false"
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskr_regular"
+                android:gravity="left"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                tools:text="입생로랑 루쥬 쀠르 꾸뒤르 레더 에디션 efwf we fwewfwefwe" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productName"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/productImage"
+                android:clickable="false"
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                tools:text="10,3234,600~" />
+        </RelativeLayout>
+
+        <!-- 키보드 활성화 될 경우 채팅 대화 내용을 위로 올리기 위한 layer -->
+        <View
+            android:id="@+id/chatGapView"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="#00000000"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/cookieLayer"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/cookieImg"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cookieImg"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_cookie_toast_text_dark">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:includeFontPadding="false"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="fonta"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cookieStr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sender"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-2dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="젤리 1,000개 선물"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutMore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="126dp"
+            android:layout_height="146dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="57dp"
+            android:background="@drawable/bg_more"
+            android:elevation="5dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewBroadcastReport"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.01"
+                android:paddingLeft="13dp"
+                android:text="@string/msg_broadcast_report"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNickNameModify"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.01"
+                android:paddingLeft="13dp"
+                android:text="@string/msg_nick_name_modify"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewCustomerCenter"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.01"
+                android:paddingLeft="13dp"
+                android:text="@string/msg_customer_center"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/clickLiveLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:theme="@style/ProgressTheme" />
+</RelativeLayout>

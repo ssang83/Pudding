@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:id="@+id/voidLayer"/>
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/voidLayer"
+        android:orientation="vertical">
+
+        <!-- 서브 탭 -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayoutMy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFFFF"
+            android:overScrollMode="never"
+            app:tabBackground="@android:color/transparent"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/main_color"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="fixed"
+            app:tabPadding="0dp"
+            app:tabSelectedTextColor="#192028"
+            app:tabTextAppearance="@style/MyCalcTabLayoutTextStyle"
+            app:tabTextColor="#8192a5" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#80c9c9c9" />
+
+        <com.enliple.pudding.commons.widget.NonSwipeableViewPager
+            android:id="@+id/viewPagerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFFFF"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </LinearLayout>
+
+
+
+    <!-- 키보드가 올라갈때 갈 위 top 을 -500만큼 위로 올리는데 이때 layoutTitle이 윗쪽에 선언되어 있으면 top에 layoutTitle이 가림 그러므로 이 부분에 선언함
+    <!- 타이틀바 -->
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        android:layout_height="56dp">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_ico"/>
+
+        </RelativeLayout>
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="정산 신청"
+            android:textColor="#192028"
+            android:textSize="20dip" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_below="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1e000000" />
+
+</RelativeLayout>

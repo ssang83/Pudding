@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:background="@drawable/bg_following_gradient">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewFollowingUser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_margin="3.5dp"
+            android:scaleType="fitCenter" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/notosanskr_regular"
+        android:textColor="#192028"
+        android:textSize="10dp"
+        tools:text="Armstrong" />
+</LinearLayout>

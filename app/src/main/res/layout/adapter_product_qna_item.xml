@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff">
+
+    <com.joooonho.SelectableRoundedImageView
+        android:id="@+id/imageViewThumbnail"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="15dp"
+        app:sriv_left_top_corner_radius="5dp"
+        app:sriv_right_top_corner_radius="5dp"
+        app:sriv_left_bottom_corner_radius="5dp"
+        app:sriv_right_bottom_corner_radius="5dp"
+        tools:background="@mipmap/ic_launcher"/>
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/layoutSpread"-->
+        <!--android:layout_width="30dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--android:layout_marginRight="15dp"-->
+        <!--android:layout_marginLeft="23dp"-->
+        <!--android:layout_alignParentRight="true">-->
+
+        <!--<android.support.v7.widget.AppCompatImageButton-->
+            <!--android:id="@+id/buttonSpread"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:background="@drawable/btn_inquiry"/>-->
+    <!--</RelativeLayout>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/imageViewThumbnail">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="30dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="12dp"
+                android:textColor="#8192a5"
+                android:lineSpacingExtra="2sp"
+                tools:text="따뚜아쥬 꾸뛰르 메탈릭 완벽 커버 쿠션 "/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewInquiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_regular"
+                android:layout_marginTop="6dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="14dp"
+                android:textColor="#192028"
+                android:lineSpacingExtra="0sp"
+                tools:text="Q. 언제쯤 도착하는 건가요?? 발송 되는건가요??"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewReplyView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="12dp"
+                android:textColor="#9f56f2"
+                android:lineSpacingExtra="2sp"
+                android:text="답변보기"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutSpread"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/buttonSpread"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/btn_inquiry"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="18dp"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_toRightOf="@+id/imageViewThumbnail"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+            <!--android:id="@+id/textViewTitle"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:fontFamily="@font/notosanskr_medium"-->
+            <!--android:textSize="12dp"-->
+            <!--android:textColor="#8192a5"-->
+            <!--android:lineSpacingExtra="2sp"-->
+            <!--tools:text="따뚜아쥬 꾸뛰르 메탈릭 완벽 커버 쿠션 "/>-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+            <!--android:id="@+id/textViewInquiry"-->
+            <!--android:layout_width="219dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:fontFamily="@font/notosanskr_regular"-->
+            <!--android:layout_marginTop="6dp"-->
+            <!--android:maxLines="1"-->
+            <!--android:ellipsize="end"-->
+            <!--android:textSize="14dp"-->
+            <!--android:textColor="#192028"-->
+            <!--android:lineSpacingExtra="0sp"-->
+            <!--tools:text="Q. 언제쯤 도착하는 건가요?? 발송 되는건가요??"/>-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+            <!--android:id="@+id/textViewReplyView"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:fontFamily="@font/notosanskr_bold"-->
+            <!--android:textSize="12dp"-->
+            <!--android:textColor="#f80d3b"-->
+            <!--android:lineSpacingExtra="2sp"-->
+            <!--android:text="답변보기"/>-->
+    <!--</LinearLayout>-->
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d9e1eb"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/imageViewThumbnail"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_below="@+id/view"
+        android:background="#f3f8fd"/>
+
+    <LinearLayout
+        android:id="@+id/layoutReply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/imageViewThumbnail"
+        android:orientation="vertical"
+        android:background="#f3f8fd"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d9e1eb"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewInquiryDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:textSize="14dp"
+                android:textColor="#192028"
+                android:lineSpacingExtra="8sp"
+                tools:text="언제쯤 도착하는 건가요?? 발송 되었나요? 주말에 급하게 입어야 할 일이 생겨서 주문 하는 거라 주말 전에 배송이 힘들다고 하면 구매 취소 하려구요."/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="#d9e1eb"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutSeller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/reply_line_ico"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:background="@drawable/seller_label"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewSellerDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textSize="12dp"
+                    android:textColor="#8192a5"
+                    android:lineSpacingExtra="2sp"
+                    tools:text="2018. 04. 11 14:25"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSellerReply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:textSize="14dp"
+                android:textColor="#192028"
+                android:lineSpacingExtra="8sp"
+                tools:text="안녕하세요. 박남매입니다. 구매하신 상품은 내일 중으로 출고될 예정입니다. 택배사 사정에 따라 변동이 있을 수 있으나 4/14(금)까지는 상품 수령 가능하시리라 생각 됩니다. 감사합니다."/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="18dp"
+                android:background="#d9e1eb"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:layout_below="@+id/imageViewThumbnail"
+                android:background="#f3f8fd"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

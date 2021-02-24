@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_marginBottom="50dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="16sp"
+            android:textColor="#192028"
+            android:text="스토어 정보"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewCall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/call"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:includeFontPadding="false"
+                android:layout_toRightOf="@+id/imageViewCall"
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskr_bold"
+                android:gravity="left|center_vertical"
+                android:lines="1"
+                android:maxLines="1"
+                android:textColor="#5774f4"
+                android:textSize="12sp"
+                tools:text="070-4672-2341" />
+            
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonCall"
+                android:layout_width="57dp"
+                android:layout_height="26dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="12sp"
+                android:textColor="#192028"
+                android:text="전화하기"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bg_seller_call"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/map"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imageViewMap"
+                android:layout_marginLeft="5dp"
+                android:maxLines="2"
+                android:textSize="12sp"
+                android:textColor="#192028"
+                android:fontFamily="@font/notosanskr_medium"
+                tools:text="서울 구로구 디지털로 272(구로동, 한신아이티타워) 501호~504호"/>
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="16sp"
+            android:textColor="#192028"
+            android:text="배송정보"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="14sp"
+            android:textColor="#192028"
+            android:text="배송안내"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDeliveryGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="12sp"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#546170"
+            tools:text="@string/msg_shop_tree_default_guide"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="14sp"
+            android:textColor="#192028"
+            android:text="교환환불"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewExchangeGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:layout_marginTop="5dp"
+            android:textSize="12sp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#546170"
+            tools:text="@string/msg_shop_tree_default_guide"/>
+
+    </LinearLayout>
+
+</ScrollView>

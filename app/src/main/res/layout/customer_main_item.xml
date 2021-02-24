@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#d9e1eb" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textSize="14sp"
+        android:textColor="#546170"
+        android:text="결제 시 쿠폰이나 포인트 할인적용은 어떻게 받나요?"/>
+
+    <LinearLayout
+        android:id="@+id/answerLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="#f3f8fd"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d9e1eb" />
+
+        <com.enliple.pudding.widget.HTextView
+            android:id="@+id/answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="14sp"
+            android:textColor="#192028"
+            android:lineSpacingExtra="4dp"
+            android:text="결제 시 쿠폰이나 포인트 할인적용은 어떻게 받나요?결제 시 쿠폰이나 포인트 할인적용은 어떻게 받나요? 결제 시 쿠폰이나 포인트 할인적용은 어떻게 받나요?"/>
+
+    </LinearLayout>
+</LinearLayout>

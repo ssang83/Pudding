@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF000000">
+
+    <RelativeLayout
+        android:id="@+id/layoutTabCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Tabs -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayoutCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/tab_main_text"
+            app:tabIndicatorFullWidth="false"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="#FFFFFF"
+            app:tabTextAppearance="@style/TabLayoutTextStyle"
+            app:tabTextColor="#FF929292" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonFilter"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/bg_filter"
+            android:src="@drawable/filter_ico" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutSelectedCategory"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/layoutTabCategory"
+        android:layout_marginTop="23dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- 선택 카테고리 1 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCategory1"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#38a4e3"
+            android:textSize="12dip"
+            tools:text="#인기" />
+
+        <!-- 선택 카테고리 2 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCategory2"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#a834c3"
+            android:textSize="12dip"
+            tools:text="#패션의류" />
+
+        <!-- 선택 카테고리 3 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#26b791"
+            android:textSize="12dip"
+            tools:text="#잡화/뷰티" />
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/mainViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_layer"
+        android:layout_below="@+id/layoutSelectedCategory" />
+
+    <LinearLayout
+        android:id="@+id/button_layer"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonRanking"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/bottom_ranking_btn" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonSearch"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/bottom_search_btn" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonVideo"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/video_btn" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonPromotion"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/bottom_event_btn" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonMy"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/bottom_my_btn" />
+
+    </LinearLayout>
+
+</RelativeLayout>

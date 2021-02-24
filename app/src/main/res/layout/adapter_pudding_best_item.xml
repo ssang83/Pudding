@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/grid_item_bg">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewThumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="199dp"
+        android:layout_margin="1dp"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:layout_width="40dp"
+        android:layout_height="34dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/crown_yellow">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="14sp"
+            android:textColor="#ffffff"
+            android:gravity="center_horizontal"
+            tools:text="4"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/image_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignBottom="@id/imageViewThumbnail"
+        android:background="#d9e1eb" />
+    
+    <LinearLayout
+        android:id="@+id/content_bot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="6dp"
+        android:layout_below="@+id/image_line"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/bg_best_profile">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewProfile"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"/>
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewNickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="12sp"
+            android:textColor="#192028"
+            android:lineSpacingExtra="8sp"
+            android:gravity="center_horizontal"
+            tools:text="Barbara Brooks"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/content_bot"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/notosanskr_medium"
+        android:gravity="left|top"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="-3dp"
+        android:maxLines="2"
+        android:textAlignment="center"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:textColor="#192028"
+        android:textSize="14sp"
+        tools:text="스포츠카 키홀더 분석스포츠카 키홀더 분석스포츠카 키홀더 분석스포츠카 키홀더 분석스포츠카 키홀더 분석" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="7dp"
+        android:layout_below="@+id/textViewTitle"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewViewerCnt"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:drawableLeft="@drawable/viewer_g_ico"
+            android:drawablePadding="4dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:gravity="top"
+            android:includeFontPadding="false"
+            android:textColor="#8192a5"
+            android:textSize="12sp"
+            tools:text="12820" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewLikeCount"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="11dp"
+            android:drawableLeft="@drawable/like_g_ico"
+            android:drawablePadding="4dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:textColor="#8192a5"
+            android:textSize="12sp"
+            tools:text="1" />
+    </LinearLayout>
+</RelativeLayout>

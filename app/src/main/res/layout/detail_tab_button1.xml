@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d9e1eb"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/productInfoLayer1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewProductInfo1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_shop_tree_product_info"
+                android:textColor="#192028"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/product_line1"
+                android:layout_width="65dp"
+                android:layout_height="4dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:background="#9f56f2" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/productReviewLayer1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewProductReview1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_shop_tree_product_review"
+                android:textColor="#192028"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/review_line1"
+                android:layout_width="65dp"
+                android:layout_height="4dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:background="#9f56f2" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/qaLayer1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewQnA1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_shop_tree_qna"
+                android:textColor="#192028"
+                android:background="#ffffff"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/qa_line1"
+                android:layout_width="65dp"
+                android:layout_height="4dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:background="#9f56f2" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/salerInfoLayer1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSalerInfo1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_shop_tree_saler_info"
+                android:textColor="#192028"
+                android:background="#ffffff"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/salerInfo_line1"
+                android:layout_width="65dp"
+                android:layout_height="4dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:background="#9f56f2" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d9e1eb"/>
+
+</LinearLayout>

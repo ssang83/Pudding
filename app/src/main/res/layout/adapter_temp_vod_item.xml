@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="166dp"
+    android:layout_marginTop="15dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewThumbnail"
+        android:layout_width="295dp"
+        android:layout_height="166dp"
+        android:scaleType="centerCrop"
+        tools:background="@drawable/product_img_1"/>
+
+    <View
+        android:id="@+id/dim"
+        android:layout_width="295dp"
+        android:layout_height="166dp"
+        android:background="@drawable/bg_rounding_dim_image"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textSize="12sp"
+        android:textColor="#ffffff"
+        android:lineSpacingExtra="3sp"
+        tools:text="2018.08.24 13:21"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/imageViewThumbnail"
+        android:layout_marginLeft="17dp"
+        android:background="@drawable/close_black_ico"/>
+</RelativeLayout>

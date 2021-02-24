@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="46dp"
+    android:background="#FFFFFFFF"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:lineSpacingExtra="-1dp"
+            android:textColor="#546170"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            tools:text="2019.06.30\n20:33"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/price"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="#546170"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            tools:text="243,000"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/status"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="#546170"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            tools:text="대기중"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/exchangePrice"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:paddingRight="12dp"
+            android:textSize="12sp"
+            android:textColor="#546170"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            tools:text="332,000원"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#80c9c9c9" />
+</LinearLayout>

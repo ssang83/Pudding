@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/spinnerTextView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:ellipsize="marquee"
+    android:fontFamily="@font/notosanskr_regular"
+    style="?android:attr/spinnerItemStyle"
+    android:paddingLeft="8dp"
+    android:hint="선택해주세요"
+    android:textColorHint="#192028"
+    android:paddingRight="8dp"
+    android:singleLine="true"
+    android:textAlignment="inherit"
+    android:textColor="#192028"
+    android:textSize="14sp" />
+
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--android:layout_width="150dp"--><!--android:layout_height="30dp"--><!--android:background="@drawable/gray_lined_round_bg">-->
+
+    <!--<androidx.appcompat.widget.AppCompatTextView--><!--android:id="@+id/spinnerTextView"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--android:layout_toLeftOf="@+id/rightLayer"--><!--android:fontFamily="@font/notosanskr_regular"--><!--android:textSize="14sp"--><!--android:textColor="#192028"--><!--android:layout_centerVertical="true"--><!--android:paddingLeft="8dp"--><!--android:paddingRight="8dp"--><!--android:ellipsize="marquee"--><!--android:singleLine="true"--><!--android:textAlignment="inherit" />-->
+
+    <!--<LinearLayout--><!--android:id="@+id/rightLayer"--><!--android:layout_width="27dp"--><!--android:layout_height="match_parent"--><!--android:orientation="horizontal"--><!--android:layout_alignParentRight="true">-->
+
+    <!--<View--><!--android:layout_width="2dp"--><!--android:layout_height="match_parent"--><!--android:background="#bcc6d2"/>-->
+
+    <!--<RelativeLayout--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent">-->
+
+    <!--<androidx.appcompat.widget.AppCompatImageView--><!--android:layout_width="wrap_content"--><!--android:layout_height="wrap_content"--><!--android:layout_centerInParent="true"--><!--android:background="@drawable/dropdown_arrow_ico"/>-->
+
+    <!--</RelativeLayout>-->
+
+    <!--</LinearLayout>-->
+
+    <!--</RelativeLayout>-->
+
+

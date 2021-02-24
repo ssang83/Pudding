@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <LinearLayout
+        android:id="@+id/tabLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="#FFFFFFFF"
+            android:padding="0dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:contentScrim="#FFFFFFFF"
+            app:elevation="0dp">
+
+            <!-- 서브 탭 -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFFFF"
+                android:overScrollMode="never"
+                app:tabBackground="@android:color/transparent"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="#9f56f2"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorHeight="3dp"
+                app:tabMode="fixed"
+                app:tabPadding="0dp"
+                app:tabSelectedTextColor="#9f56f2"
+                app:tabTextAppearance="@style/MyTabLayoutTextStyle"
+                app:tabTextColor="#202c37" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#FFd8d8d8" />
+
+        <com.enliple.pudding.commons.widget.NonSwipeableViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="#FFFFFFFF"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/optionLayer"
+        android:layout_width="match_parent"
+        android:layout_height="445dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:id="@+id/infoLayer"
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            tools:background="#ffffff">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/thumbnailCardView"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginRight="10dp"
+                app:cardCornerRadius="10dp"
+                android:background="#ffffff"
+                app:cardElevation="0dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY" />
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/shopBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/thumbnailCardView">
+
+                <RelativeLayout
+                    android:id="@+id/shopTree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:background="@drawable/item_shop_background"
+                    android:layout_marginBottom="2dp"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:id="@+id/shopIc"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/item_shop_ic_1"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/shopName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/shopIc"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp"
+                        tools:text="유찬몰" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shopBg"
+                android:layout_toRightOf="@+id/thumbnailCardView"
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskr_regular"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:textColor="#192028"
+                android:textSize="14sp"
+                tools:text="입생로랑 베르니 아 레브르 홀로 그램 틴트 인데 이름이 매우 길면 어떻게 되나여" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/originalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewSubject"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="6dp"
+                android:layout_toRightOf="@+id/thumbnailCardView"
+                android:fontFamily="@font/notosanskr_regular"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="#bcc6d2"
+                android:textSize="12dp"
+                tools:text="2,00,000" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/originalPrice"
+                android:layout_toRightOf="@+id/thumbnailCardView"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="right|bottom"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="#192028"
+                android:textSize="16sp"
+                tools:text="69,000원" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="#e5eaf0" />
+
+        </RelativeLayout>
+
+        <com.enliple.pudding.commons.widget.MaxHeightLinearLayout
+            android:id="@+id/recyclerLayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/infoLayer"
+            android:layout_marginTop="1dp"
+            android:background="#ffffff"
+            app:maxHeightDp="220">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/optionRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none" />
+
+        </com.enliple.pudding.commons.widget.MaxHeightLinearLayout>
+
+        <View
+            android:id="@+id/total_upper_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/priceLayer"
+            android:background="#E5EAF0" />
+
+        <RelativeLayout
+            android:id="@+id/priceLayer"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:layout_above="@+id/total_upper_line1"
+            android:paddingLeft="20dp"
+            android:paddingRight="17dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#8192a5"
+                android:textSize="12sp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:layout_centerVertical="true"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="4dp"
+                android:textColor="#9f56f2"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:layout_centerVertical="true"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/totalPrice"
+                android:textColor="#192028"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text="총 금액"
+                android:includeFontPadding="false"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/total_upper_line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/two_btn_layer"
+            android:background="#E5EAF0" />
+
+        <LinearLayout
+            android:id="@+id/two_btn_layer"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/b_line"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingTop="7dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="7dp"
+            android:layout_alignParentBottom="true"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:id="@+id/buttonCart"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/detail_bot_btn"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:text="@string/msg_product_cart"
+                    android:textColor="#192028"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/buttonDone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/purple_btn"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:text="@string/msg_purchase_title"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

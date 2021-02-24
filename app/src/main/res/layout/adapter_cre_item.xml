@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center_vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewRequestDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/notosanskr_regular"
+        android:textSize="14sp"
+        android:textColor="#192028"
+        tools:text="2019년 03월 23일(18:43)"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical"
+        android:background="@drawable/rect_gray_bg_1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:layout_centerVertical="true"
+                android:textColor="#ff6c6c"
+                android:textSize="12sp"
+                tools:text="결제 완료" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d9e1eb" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/clickLayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewThumbnail"
+                    android:layout_width="82dp"
+                    android:layout_height="82dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="6dp"
+                    tools:background="@drawable/product_img_1"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/layoutForShopName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="18dp"
+                        android:background="@drawable/item_shop_background"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="5dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:id="@+id/imageViewProductType"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/item_shop_ic_1"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewShopName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/imageViewProductType"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:gravity="center_vertical"
+                            android:includeFontPadding="false"
+                            android:textColor="#ffffff"
+                            android:textSize="10sp"
+                            tools:text="유찬몰" />
+
+                    </RelativeLayout>
+
+
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="horizontal">-->
+
+                        <!--<androidx.appcompat.widget.AppCompatImageView-->
+                            <!--android:id="@+id/imageViewProductType"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginRight="5dp"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:background="@drawable/item_shop_ic"/>-->
+
+                        <!--<androidx.appcompat.widget.AppCompatTextView-->
+                            <!--android:id="@+id/textViewShopName"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:fontFamily="@font/notosanskr_regular"-->
+                            <!--android:textSize="12sp"-->
+                            <!--android:textColor="#8192a5"-->
+                            <!--tools:text="CHANEL"/>-->
+                    <!--</LinearLayout>-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="4dp"
+                        android:textSize="14sp"
+                        android:textColor="#192028"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        tools:text="나팔긴소매티제목이길면이렇게길어서나오게해주세요"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewOption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#8192a5"
+                        android:includeFontPadding="false"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        tools:text="ivory/M"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="#1e000000" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#f3f8fd" />
+
+</LinearLayout>

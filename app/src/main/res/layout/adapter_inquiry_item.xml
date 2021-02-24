@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewInquiryStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/register_label" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:gravity="center"
+                        android:lineSpacingExtra="2sp"
+                        android:textColor="#8192a5"
+                        android:textSize="12dp"
+                        app:fontFamily="@font/notosanskr_medium"
+                        tools:text="2018. 07. 24" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewInquiryType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="9dp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:lineSpacingExtra="2sp"
+                    android:textColor="#192028"
+                    android:textSize="12dp"
+                    tools:text="환불/교환/반품" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewInquiry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="39dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:lineSpacingExtra="0sp"
+                    android:maxLines="1"
+                    android:textColor="#192028"
+                    android:textSize="14dp"
+                    tools:text="배송이 늦어져서 주문을 취소했는데 판매자가 dfsadfsdaf" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutSpread"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="30dp">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/buttonSpread"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/btn_inquiry" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="#f3f8fd" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f3f8fd"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layoutInquiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d9e1eb" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/inquiry_ico" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewInquiryDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginRight="16dp"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="8sp"
+                        android:textColor="#192028"
+                        android:textSize="14sp"
+                        tools:text="언제쯤 도착하는 건가요?? 발송 되었나요? 주말에 급하게 입어야 할 일이 생겨서 주문 하는 거라 주말 전에 배송이 힘들다고 하면 구매 취소 하려구요." />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#d9e1eb" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutReply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewReplyDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="right"
+                    android:lineSpacingExtra="2sp"
+                    android:textColor="#8192a5"
+                    android:textSize="12dp"
+                    tools:text="2018. 07. 24" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/answer_ico" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewReply"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginRight="16dp"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="8sp"
+                        android:textColor="#192028"
+                        android:textSize="14sp"
+                        tools:text="안녕하세요. 푸딩 고객센터입니다. 구매하신 상품은 내일 중으로 출고될 예정입니다. 택배사 사정에 따라 변동이 있을 수 있으나 4/14(금)까지는 상품 수령 가능하시리라 생각 됩니다. 감사합니다." />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="15dp"
+                    android:background="#f3f8fd" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

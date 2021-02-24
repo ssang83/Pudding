@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:weightSum="3"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:maxLines="2"
+            android:textColor="#546170"
+            android:textSize="12sp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="-3dp"
+            android:text="2018.08/15\n21:45"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bjName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="12dp"
+            android:maxLines="2"
+            android:paddingRight="12dp"
+            android:textColor="#546170"
+            android:textSize="12sp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="-3dp"
+            android:text="콩콩언냐\n(kksd***)"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cookieNo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="12dp"
+            android:maxLines="2"
+            android:paddingRight="12dp"
+            android:textColor="#546170"
+            android:textSize="12sp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="-3dp"
+            android:text="50개"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d9e1eb" />
+
+</LinearLayout>

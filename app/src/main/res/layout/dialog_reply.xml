@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <RelativeLayout
+        android:id="@+id/chatListLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_above="@+id/divider"
+            android:background="@drawable/reply_top_bg">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:gravity="center_horizontal"
+                    android:textColor="#192028"
+                    android:textSize="16sp"
+                    android:text="댓글" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewReplyCnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/main_color"
+                    android:textSize="16sp"
+                    tools:text="310" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:gravity="center_horizontal"
+                    android:textColor="#192028"
+                    android:textSize="16sp"
+                    android:text="개" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/buttonClose"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="#00000000"
+                android:padding="10dp"
+                android:scaleType="center"
+                android:src="@drawable/close_black_ico" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@id/replyLayer"
+            android:background="#d9e1eb" />
+
+        <RelativeLayout
+            android:id="@+id/replyLayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/input">
+
+            <!-- 채팅 대화내용 -->
+            <ExpandableListView
+                android:id="@+id/expandReplyList"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:background="#ffffff"
+                android:groupIndicator="@android:color/transparent"
+                android:divider ="@null"
+                android:childDivider="@null"
+                android:paddingBottom="3dp" />
+
+            <LinearLayout
+                android:id="@+id/replyEmptyLayer"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/reply_ico" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:lineSpacingExtra="2sp"
+                    android:text="첫 번째로 댓글을 달아보세요!"
+                    android:textColor="#192028"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/replyDisable"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:background="#ffffff">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/reply_disable_ico"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:layout_marginTop="20dp"
+                    android:textSize="16sp"
+                    android:textColor="#192028"
+                    android:lineSpacingExtra="2sp"
+                    android:text="이 사용자가 댓글을 비활성화 했습니다."/>
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminate="true"
+                android:theme="@style/ProgressTheme"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_above="@+id/empty"
+            android:background="#ffffff"
+            android:elevation="10dp">
+
+            <RelativeLayout
+                android:id="@+id/imageLayer"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/reply_profile_border">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    tools:background="@drawable/profile_default_img"/>
+
+            </RelativeLayout>
+
+
+
+            <!-- 채팅 입력  -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/editTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/imageLayer"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="62dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="left|center_vertical"
+                android:hint="댓글을 입력해주세요."
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:maxLength="100"
+                android:paddingLeft="18dp"
+                android:paddingRight="14dp"
+                android:textColor="#192028"
+                android:textColorHint="#bcc6d2"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:clickable="true"
+                android:padding="10dp"
+                android:background="@drawable/send_off_ico" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"/>
+
+        <RelativeLayout
+            android:id="@+id/chatLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:visibility="gone"
+            android:elevation="10dp">
+
+            <RelativeLayout
+                android:id="@+id/replyInput"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_above="@+id/inputReply"
+                android:background="#f9f4ff"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/replyUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:textSize="12sp"
+                        android:textColor="#192028"
+                        tools:text="수현이에요"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:textSize="12sp"
+                        android:textColor="#192028"
+                        android:text="님에게 댓글을 남기는 중.."/>
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/replyCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/close_black_ico"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/inputReply"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_above="@id/chatGapView"
+                android:background="#ffffff">
+
+                <RelativeLayout
+                    android:id="@+id/imageLayerInput"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/reply_profile_border">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewProfile1"
+                        android:layout_width="37dp"
+                        android:layout_height="37dp"
+                        android:layout_centerInParent="true"
+                        android:scaleType="centerCrop"
+                        tools:background="@drawable/profile_default_img"/>
+
+                </RelativeLayout>
+
+
+
+                <!-- 댓글 입력  -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextChat"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="62dp"
+                    android:layout_toRightOf="@+id/imageLayerInput"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="left|center_vertical"
+                    android:hint="댓글을 입력해주세요."
+                    android:imeOptions="actionSend"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:maxLength="100"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="14dp"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:textColor="#192028"
+                    android:textColorHint="#bcc6d2"
+                    android:textSize="16sp" />
+
+                <!-- 채팅 전송 -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/buttonSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:clickable="true"
+                    android:padding="10dp"
+                    android:background="@drawable/btn_reply_send" />
+            </RelativeLayout>
+
+            <!-- 키보드 활성화 될 경우 채팅 대화 내용을 위로 올리기 위한 layer -->
+            <View
+                android:id="@+id/chatGapView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_alignParentBottom="true"
+                android:background="#00000000" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/popupLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/popup"
+            android:layout_width="80dp"
+            android:layout_height="98dp"
+            android:background="@drawable/bg_reply_more"
+            android:elevation="5dp"
+            android:orientation="vertical"
+            android:paddingTop="16dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/editBtn"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:letterSpacing="-0.01"
+                android:text="@string/msg_reply_modify"
+                android:textColor="#192028"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/deleteBtn"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:letterSpacing="-0.01"
+                android:text="@string/msg_reply_delete"
+                android:textColor="#192028"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

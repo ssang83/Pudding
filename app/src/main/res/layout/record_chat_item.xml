@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="2dp">
+
+    <RelativeLayout
+        android:id="@+id/jellyLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/chetStr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/image"
+            android:includeFontPadding="false"
+            android:layout_marginTop="-3dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:shadowColor="#FF333333"
+            android:shadowDx="0.0"
+            android:shadowDy="1.0"
+            android:textColor="#FFFFFFFF"
+            android:textSize="12sp"
+            tools:text="묶음 배송도 가능하면 좋겠어요" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/normalLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:background="@drawable/listener_bg">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/chetStrText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/image"
+            android:includeFontPadding="false"
+            android:layout_marginLeft="8dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:shadowColor="#FF333333"
+            android:shadowDx="0.0"
+            android:shadowDy="1.0"
+            android:textColor="#FFFFFFFF"
+            android:textSize="12sp"
+            tools:text="묶음 배송도 가능하면 좋겠어요" />
+    </RelativeLayout>
+</RelativeLayout>

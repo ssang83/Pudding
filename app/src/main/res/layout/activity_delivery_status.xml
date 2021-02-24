@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_ico"/>
+
+        </RelativeLayout>
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="#192028"
+            android:text="@string/msg_my_delivery_header"
+            android:textSize="20dip"
+            android:fontFamily="@font/notosanskr_medium" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/l_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layoutTitle"
+        android:background="#1e000000"/>
+
+    <RelativeLayout
+        android:layout_below="@+id/l_line"
+        android:id="@+id/tabLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFFFF">
+
+        <!-- 배송조회 카테고리 -->
+        <LinearLayout
+            android:id="@+id/layoutDeliverySummary"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal"
+            android:paddingLeft="23dp"
+            android:paddingRight="23dp"
+            android:gravity="center_vertical">
+
+            <!-- 결제완료 -->
+            <LinearLayout
+                android:id="@+id/layoutPaymentSuccess"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewPaymentSuccessCnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dip"
+                    android:textColor="@color/delivery_status_red"
+                    android:gravity="center"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="0"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/msg_my_shopping_payment_successfully"
+                    android:textSize="12dip"
+                    android:textColor="@color/delivery_status_red"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/next_ico"/>
+
+            <!-- 상품준비중 -->
+            <LinearLayout
+                android:id="@+id/layoutProductPending"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewProductPendingCnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dip"
+                    android:textColor="@color/delivery_status_red"
+                    android:gravity="center"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="0"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/msg_my_shopping_product_pending"
+                    android:textSize="12dip"
+                    android:textColor="@color/delivery_status_red"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/next_ico"/>
+
+            <!-- 배송중 -->
+            <LinearLayout
+                android:id="@+id/layoutProductDelivering"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewProductDeliveringCnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dip"
+                    android:textColor="@color/delivery_status_red"
+                    android:gravity="center"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="0"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/msg_my_shopping_product_delivering"
+                    android:textSize="12dip"
+                    android:textColor="@color/delivery_status_red"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/next_ico"/>
+
+            <!-- 배송완료 -->
+            <LinearLayout
+                android:id="@+id/layoutProductDelivered"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewProductDeliveredCnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dip"
+                    android:textColor="@color/delivery_status_red"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:text="0"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/msg_my_shopping_product_delivered"
+                    android:textSize="12dip"
+                    android:textColor="@color/delivery_status_red"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="7dp"
+            android:layout_below="@+id/layoutDeliverySummary"
+            android:background="#ffffff"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/divider"
+            android:background="#c9c9c9"/>
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="6dp"-->
+            <!--android:layout_below="@+id/divider"-->
+            <!--android:background="#f3f8fd"/>-->
+    </RelativeLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerStatus"
+        android:layout_below="@+id/tabLayer"
+        android:layout_above="@+id/layoutforDeliveryNoti"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="visible"
+        tools:visibility="visible"/>
+</RelativeLayout>

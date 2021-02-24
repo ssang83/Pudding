@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fullLayer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/thumbnail"
+                        android:layout_width="157dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        tools:background="@drawable/product_img_1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/trip_onair_label"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:visibility="gone"/>
+
+                    <View
+                        android:layout_width="157dp"
+                        android:layout_height="43dp"
+                        android:background="@drawable/bg_schedule_down_dim"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="4dp"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:background="@drawable/home_user_image_bg">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/profile"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_centerInParent="true"
+                                android:scaleType="centerCrop"
+                                tools:background="@drawable/profile_default_img"/>
+                        </RelativeLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/casterName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:textSize="12sp"
+                            android:textColor="#ffffff"
+                            tools:text="lovely_kim"/>
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/alarmCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:includeFontPadding="false"
+                            android:textColor="#ff6c6c"
+                            android:textSize="12sp"
+                            tools:text="1,024명"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/alarmText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginLeft="5dp"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:includeFontPadding="false"
+                            android:text="알림예약!"
+                            android:textColor="#192028"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/alarmSwitch"
+                        android:layout_width="53dp"
+                        android:layout_height="37dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/btn_caster_notice"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <HorizontalScrollView
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="10dp"
+                        android:fadingEdge="none"
+                        android:overScrollMode="never"
+                        android:scrollbars="none"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/scheduleProduct"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal" />
+
+                    </HorizontalScrollView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/product"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="10dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="#202c37"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/productPrice"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="아리엘 립스틱 아리엘 립스틱 아리엘 립스틱 아리엘 립스틱 아리엘 립스틱" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/productPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:includeFontPadding="false"
+                    android:textColor="#ff6c6c"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toRightOf="@id/product"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="22,900원" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="#202c37"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/product"
+                    tools:text="새학기 가방 추천~ 휠라가방 리뷰!!! 새학기 가방 추천~ 휠라가방 리뷰!!!" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#f3f8fd"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/clock_ico"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:textColor="#8192a5"
+                        android:textSize="14sp"
+                        tools:text="2019.05.31 13:00" />
+
+                    <LinearLayout
+                        android:id="@+id/broadcastStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="1dp"
+                            android:layout_height="14dp"
+                            android:layout_gravity="center"
+                            android:background="#8192a5"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginLeft="7dp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:textSize="12sp"
+                            android:textColor="#ff6c6c"
+                            android:text="방송중"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

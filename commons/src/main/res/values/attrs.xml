@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DynamicHeightImageView">
+        <attr name="heightRatio" format="float"  />
+    </declare-styleable>
+
+    <declare-styleable name="DynamicHeightConstraintLayout">
+        <attr name="constraintHeightRatio" format="float"  />
+    </declare-styleable>
+
+    <declare-styleable name="DynamicHeightRelativeLayout">
+        <attr name="relativeHeightRatio" format="float"  />
+    </declare-styleable>
+
+    <declare-styleable name="DynamicHeightLinearLayout">
+        <attr name="linearHeightRatio" format="float"  />
+    </declare-styleable>
+
+    <declare-styleable name="MaxHeightLinearLayout">
+        <attr name="maxHeightDp" format="integer" />
+    </declare-styleable>
+</resources>

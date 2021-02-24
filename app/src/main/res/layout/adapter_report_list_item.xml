@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewReportType"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="13dp"
+        android:gravity="center"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        android:lineSpacingExtra="-7sp"
+        android:text="처리\n완료"
+        android:background="@drawable/bg_report"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="11dp"
+        android:layout_toRightOf="@+id/textViewReportType"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="14dp"
+            android:textColor="#192028"
+            tools:text="신고 대상자 : res1234"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewReason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="14dp"
+            android:textColor="#192028"
+            tools:text="신고 사유 : 방송 중 심각한 욕설"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="12dp"
+            android:textColor="#8192a5"
+            tools:text="2018. 08. 02"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/textViewReportType"
+        android:layout_marginTop="20dp"
+        android:background="#d9e1eb"/>
+
+    <LinearLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider"
+        android:orientation="vertical"
+        android:background="#f3f8fd"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewReportComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="14dp"
+            android:paddingRight="17dp"
+            android:paddingLeft="17dp"
+            android:layout_marginBottom="11dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="14dp"
+            android:textColor="#546170"
+            android:lineSpacingExtra="8sp"
+            tools:text="방송 중 과도하게 신체 노출, 음란성 멘트로 방송을 시청하는데 불쾌감을 주었음"/>
+
+        <LinearLayout
+            android:id="@+id/layoutReply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:background="#d9e1eb"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewReportReply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="17dp"
+                android:paddingLeft="17dp"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:textSize="14sp"
+                android:textColor="#546170"
+                android:lineSpacingExtra="8sp"
+                tools:text="이 계정은 방송 가이드라인을 위반하므로 푸딩에서 삭제되었습니다. 회원님의 소중한 의견은 푸딩 방송 커뮤니티를 안전하게 유지하는 데 큰 도움이 됩니다. 신고해주셔서 감사합니다."/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewReplyDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="12dp"
+                android:paddingRight="17dp"
+                android:paddingLeft="17dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:textSize="12dp"
+                android:textColor="#8192a5"
+                tools:text="2018. 08. 02"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#d9e1eb"/>
+    </LinearLayout>
+
+</RelativeLayout>

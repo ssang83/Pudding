@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="player_product_dialog_height">369dp</dimen>
+	<dimen name="chat_option_dialog_height">154dp</dimen>
+	<dimen name="chat_user_list_layout_width">192dp</dimen>
+    <dimen name="cookie_send_dialog_height">371dp</dimen>
+</resources>

@@ -1,0 +1,45 @@
+<resources>
+    <string name="msg_yes">예</string>
+    <string name="msg_no">아니오</string>
+    <string name="utils_month">월</string>
+    <string name="utils_month_of_week">주차</string>
+    <string name="msg_reply_time_now">방금 전</string>
+    <string name="msg_reply_time_seconds">%d초 전</string>
+    <string name="msg_reply_time_minute">%d분 전</string>
+    <string name="msg_reply_time_hours">%d시간 전</string>
+    <string name="msg_reply_time_days">%d일 전</string>
+    <string name="msg_reply_time_weeks">%d주 전</string>
+    <string name="msg_price_format">%1$s원</string>
+	
+	<!-- 채팅-->
+    <string name="msg_chat_user_join_format">%s님이 입장하였습니다.</string>
+    <string name="msg_chat_user_leave_format">%s 님이 나갔습니다.</string>
+    <string name="msg_chat_option_popup_chat_denied">채팅차단</string>
+    <string name="msg_chat_option_popup_all_denied">메세지 및 채팅차단</string>
+    <string name="msg_chat_option_kick">강제퇴장</string>
+	
+	<!-- 라이브 방송 관련-->
+	<string name="msg_live_broadcast_finished">CREW가 방송을 종료했습니다.</string>
+    <string name="msg_live_broadcast_force_finished">방송이 강제 종료되었습니다.</string>
+    <string name="msg_live_broadcast_finish_message">시청해주셔서 감사합니다.\n다음 방송 시간에 다시 만나요~!</string>
+    <string name="msg_live_broadcast_force_finish_message">해당 방송은 정책을 위반하여\n운영자에 의해 강제 종료되었습니다.</string>
+    <string name="msg_live_broadcast_close">닫기</string>
+    <string name="msg_broadcast_chat_user_list">현재 시청자 리스트</string>
+    <string name="msg_my_cookie_count_title">내가 보유한 젤리 : </string>
+    <string name="msg_my_cookie_count_unit">개</string>
+    <string name="msg_buy_cookie">젤리 구매</string>
+    <string name="msg_cookie_unit_10">10개</string>
+    <string name="msg_cookie_unit_50">50개</string>
+    <string name="msg_cookie_unit_100">100개</string>
+    <string name="msg_cookie_unit_300">300개</string>
+    <string name="msg_cookie_unit_500">500개</string>
+    <string name="msg_cookie_unit_1000">1000개</string>
+    <string name="msg_cookie_unit_manual_title">직접입력</string>
+    <string name="msg_cookie_send">보내기</string>
+    <string name="msg_cookie_transfer_toast_sender_format">%1$s(%2$s)</string>
+    <string name="msg_cookie_transfer_toast_count_format">젤리 %1$s개 선물</string>
+    <string name="msg_cookie_transfer_waiting">잠시만 기다려주세요...</string>
+    <string name="msg_cookie_transfer_failed">젤리를 전송하지 못하였습니다!</string>
+    <string name="msg_cookie_transfer_successfully">젤리를 선물하였습니다!</string>
+    <string name="msg_cookie_remained_format">잔여젤리 : $1%d</string>
+</resources>

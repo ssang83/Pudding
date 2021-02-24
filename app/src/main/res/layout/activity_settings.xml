@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/back_ico" />
+
+        </RelativeLayout>
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/msg_my_settings"
+            android:textColor="#192028"
+            android:textSize="20dip" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#1e000000" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 차단 목록 -->
+            <RelativeLayout
+                android:id="@+id/layoutDeniedList"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_settings_denied_list"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <!-- 신고 내역 -->
+            <RelativeLayout
+                android:id="@+id/layoutReportDetails"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_settings_report_details"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <!-- 제제 내역 -->
+            <RelativeLayout
+                android:id="@+id/layoutFormulationDetails"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_settings_formulation_details"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="#e5eaf0" />
+
+            <!-- 방송시청/비디오 설정 -->
+            <RelativeLayout
+                android:id="@+id/layoutVideoSetting"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="방송시청/비디오 설정"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <!-- 앱 기본 설정 -->
+            <RelativeLayout
+                android:id="@+id/layoutAppSetting"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="앱 기본 설정"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <!-- 알림 설정 -->
+            <RelativeLayout
+                android:id="@+id/settingAlarm"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="알림 설정"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <!-- 권한 설정 -->
+            <RelativeLayout
+                android:id="@+id/layoutPermissionSettings"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_settings_permissions"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <!-- 캐시 삭제 -->
+            <RelativeLayout
+                android:id="@+id/layoutClearCache"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_settings_clear_cache"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="#e5eaf0" />
+
+            <!-- 서비스 이용약관 -->
+            <RelativeLayout
+                android:id="@+id/layoutTermOfUseDetail"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_settings_term_of_use"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <!-- 개인정보 처리방침 -->
+            <RelativeLayout
+                android:id="@+id/layoutPrivacyPolicy"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_settings_privacy_policy"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <!-- 버전정보 -->
+            <RelativeLayout
+                android:id="@+id/layoutVersionInfo"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_settings_version_info"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="50dp"
+                    android:gravity="right|center_vertical"
+                    android:orientation="vertical">
+
+                    <!-- 현재 버전 -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewVersion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="Ver. "
+                        android:textColor="#2A2A2A"
+                        android:textSize="12dip" />
+
+                    <!-- 버전 안내문구 -->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewVersionNoticeStr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="@string/msg_settings_currently_latest_version"
+                        android:textColor="@color/main_color"
+                        android:textSize="12dip" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <!-- 회원 탈퇴 -->
+            <RelativeLayout
+                android:id="@+id/layoutWithDrawal"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_settings_withdraw"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="#e5eaf0" />
+
+            <!-- 로그아웃 -->
+            <RelativeLayout
+                android:id="@+id/layoutLogout"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:background="#FFFFFFFF">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_settings_logout"
+                    android:textColor="#192028"
+                    android:textSize="16dip" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="11dp"
+                    android:background="#00000000"
+                    android:src="@drawable/ic_forward" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#d8d8d8" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="#e5eaf0" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:id="@+id/layoutContentsRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#00ffffff"
+        android:minHeight="200dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffffff"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:background="#00ffffff"
+                android:gravity="bottom|center_horizontal"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text=""
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <ScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-4dp"
+                android:background="#00ffffff"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:id="@+id/imageLayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/textViewMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffffff"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/popup_bg02"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkBoxNotShowToday"
+                    android:layout_width="23dp"
+                    android:layout_height="49dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@null"
+                    android:button="@drawable/checkbox_white"
+                    android:gravity="center_vertical" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="49dp"
+                    android:layout_marginLeft="7dp"
+                    android:background="#00ffffff"
+                    android:includeFontPadding="false"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center_vertical"
+                    android:text="오늘 하루 안보기"
+                    android:textColor="#bcc6d2"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonClose"
+        android:layout_width="49dp"
+        android:layout_height="49dp"
+        android:layout_alignRight="@id/layoutContentsRoot"
+        android:layout_alignBottom="@id/layoutContentsRoot"
+        android:background="@null"
+        android:src="@drawable/close_black_ico" />
+
+</RelativeLayout>

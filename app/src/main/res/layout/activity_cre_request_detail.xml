@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#ffffff">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back"/>
+
+        </RelativeLayout>
+        <!--<android.support.v7.widget.AppCompatImageButton-->
+            <!--android:id="@+id/buttonBack"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@drawable/back_black_ico"-->
+            <!--android:background="#00000000"-->
+            <!--android:scaleType="centerInside" />-->
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColor="#192028"
+            android:text="@string/msg_cre_cancel_request"
+            android:textSize="20sp"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1e000000"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutTitle"
+        android:layout_above="@+id/botBtn">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewProductTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="#192028"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:gravity="left|bottom"
+                android:paddingLeft="15dp"
+                tools:text="@string/msg_cre_cancel_product_info" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#e5eaf0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="17dp"
+                android:paddingBottom="16dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:orientation="vertical"
+                android:background="#FFFFFFFF">
+
+                <!-- 상품명 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:gravity="left|center_vertical"
+                        android:textSize="12sp"
+                        android:textColor="#8192a5"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="@string/msg_cre_request_product"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewRequestProduct"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:gravity="left|center_vertical"
+                        android:textSize="12sp"
+                        android:textColor="#192028"
+                        android:fontFamily="@font/notosanskr_medium"
+                        tools:text="김망고"/>
+                </LinearLayout>
+
+                <!-- 구매옵션 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:gravity="left|center_vertical"
+                        android:textSize="12sp"
+                        android:textColor="#8192a5"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="@string/msg_cre_request_product_option"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewOption"
+                        tools:text="ivory"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textColor="#192028"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- 취소금액 -->
+                <LinearLayout
+                    android:id="@+id/layoutForCancelPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:gravity="left|center_vertical"
+                        android:textSize="12sp"
+                        android:textColor="#8192a5"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="상품금액"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:gravity="left|center_vertical"
+                        android:textSize="12sp"
+                        android:textColor="@color/main_color"
+                        android:fontFamily="@font/notosanskr_medium"
+                        tools:text="25,900원"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#c9c9c9" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="#f3f8fd" />
+
+            <!-- 상세정보 타이틀 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDetailInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#192028"
+                android:textSize="14sp"
+                android:layout_marginTop="15dp"
+                android:gravity="left|bottom"
+                android:paddingLeft="15dp"
+                android:fontFamily="@font/notosanskr_regular"
+                tools:text="@string/msg_cre_cancel_detail_info" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#e5eaf0" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:background="#FFFFFF"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewReason"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="19dp"
+                    android:gravity="center_vertical"
+                    android:textSize="12sp"
+                    android:textColor="#8192a5"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_cre_cancel_reason"/>
+
+                <!--<Spinner-->
+                    <!--android:id="@+id/spinnerRequestReason"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="11dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_toRightOf="@+id/textViewReason" />-->
+
+                <RelativeLayout
+                    android:id="@+id/spinnerLayer"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toRightOf="@+id/textViewReason"
+                    android:background="@drawable/light_gray_lined_bg">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/spinnerText"
+                        android:layout_width="123dp"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="9dp"
+                        android:paddingRight="9dp"
+                        android:hint="선택하세요"
+                        android:gravity="center_vertical"
+                        android:textColorHint="#192028"
+                        android:textColor="#192028"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:textSize="14sp"/>
+                    
+                    <!--<Spinner-->
+                        <!--android:id="@+id/spinnerRequestReason"-->
+                        <!--android:layout_width="123dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:background="@null" />-->
+
+                    <LinearLayout
+                        android:id="@+id/rightLayer"
+                        android:layout_width="27dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_alignParentRight="true">
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="#bcc6d2"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/dropdown_arrow_ico"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <!-- 사유 -->
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextReasonDetail"
+                    android:layout_width="274dp"
+                    android:layout_height="68dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_below="@+id/spinnerLayer"
+                    android:layout_toRightOf="@+id/textViewReason"
+                    android:background="@drawable/bg_point_history_more"
+                    android:textSize="14dip"
+                    android:lineSpacingExtra="6sp"
+                    android:gravity="top"
+                    android:inputType="text"
+                    android:textColorHint="#bcc6d2"
+                    android:hint="@string/msg_cre_exchange_reason_detail_hint"
+                    android:textColor="#bcc6d2"
+                    android:maxLength="50"
+                    android:paddingTop="7dp"
+                    android:paddingLeft="9dp"
+                    android:paddingRight="9dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:visibility="visible"
+                    android:imeOptions="actionDone" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewReasonCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:layout_below="@+id/editTextReasonDetail"
+                    android:gravity="right|center"
+                    android:text="0/50"
+                    android:textColor="#8192a5"
+                    android:textSize="12sp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewReasonCount">
+
+                    <!-- 취소요청 -->
+                    <LinearLayout
+                        android:id="@+id/layoutForCancel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="17dp"
+                        android:paddingBottom="16dp"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <!-- 환불예정금액 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="#FFFFFFFF">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.3"
+                                android:gravity="left|center_vertical"
+                                android:textSize="12sp"
+                                android:textColor="#8192a5"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:text="@string/msg_cre_refund_price"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textViewCancelPrice"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.7"
+                                android:gravity="left|center_vertical"
+                                android:textSize="14dip"
+                                android:textColor="#9f56f2"
+                                android:fontFamily="@font/notosanskr_bold"
+                                tools:text="25,900원"/>
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/explain"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:textSize="12sp"
+                            android:includeFontPadding="false"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="#546170"
+                            android:text="• 쿠폰할인으로 인해 구매한 상품 금액과 다르게 환불될 수 있습니다."/>
+
+                    </LinearLayout>
+
+                    <!-- 환불요청 -->
+                    <LinearLayout
+                        android:id="@+id/layoutForRefund"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="17dp"
+                        android:paddingBottom="16dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <!-- 환불예정금액 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:background="#FFFFFFFF">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.3"
+                                android:gravity="left|center_vertical"
+                                android:textSize="14dip"
+                                android:textColor="#8192a5"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:text="@string/msg_cre_refund_price"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textViewRefundPrice"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.7"
+                                android:gravity="left|center_vertical"
+                                android:textSize="14dip"
+                                android:textColor="#9f56f2"
+                                android:fontFamily="@font/notosanskr_bold"
+                                tools:text="25,900원"/>
+                        </LinearLayout>
+
+                        <!--<androidx.appcompat.widget.AppCompatTextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/explain"-->
+                            <!--android:fontFamily="@font/notosanskr_medium"-->
+                            <!--android:textSize="12sp"-->
+                            <!--android:includeFontPadding="false"-->
+                            <!--android:layout_marginTop="10dp"-->
+                            <!--android:layout_marginBottom="10dp"-->
+                            <!--android:textColor="#546170"-->
+                            <!--android:text="• 쿠폰할인으로 인해 구매한 상품 금액과 다르게 환불될 수 있습니다."/>-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="17dp"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12dip"
+                                android:textColor="#9f56f2"
+                                android:fontFamily="@font/notosanskr_bold"
+                                android:text="@string/msg_cre_cancel_refund_warning"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="7dp"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="3dp"
+                                    android:layout_height="3dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:background="@drawable/bg_dot"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12dip"
+                                    android:textColor="#546170"
+                                    android:fontFamily="@font/notosanskr_medium"
+                                    android:text="@string/msg_cre_cancel_refund_warning_comment1"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="7dp"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="3dp"
+                                    android:layout_height="3dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginRight="5dp"
+                                    android:background="@drawable/bg_dot"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12dip"
+                                    android:textColor="#546170"
+                                    android:fontFamily="@font/notosanskr_medium"
+                                    android:text="@string/msg_cre_cancel_refund_warning_comment2"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- 교환요청 -->
+                    <LinearLayout
+                        android:id="@+id/layoutForExchange"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="9dp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.2"
+                                android:gravity="left|center_vertical"
+                                android:textSize="12sp"
+                                android:textColor="#8192a5"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:text="배송비\n결제방법"/>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.8"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewDeliveryFee1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12sp"
+                                    android:textColor="#192028"
+                                    android:fontFamily="@font/notosanskr_medium"
+                                    android:text="단순변심일 경우, 왕복 배송비 5,000원"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewDeliveryFee2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12sp"
+                                    android:textColor="#192028"
+                                    android:fontFamily="@font/notosanskr_medium"
+                                    android:text="판매자 책임일 경우, 왕복 배송비 판매자 부담"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+            </RelativeLayout>
+
+            <!-- 교환방법 타이틀 -->
+            <LinearLayout
+                android:id="@+id/layoutForMethod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#c9c9c9" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:background="#f3f8fd" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewMethod"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#192028"
+                    android:textSize="14dip"
+                    android:paddingBottom="6dp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:gravity="left|bottom"
+                    android:paddingLeft="15dp"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/msg_cre_refund_request_method" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#e5eaf0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="23dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_dot"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewRequestMethod"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/msg_cre_exchange_method_guide"
+                        android:textSize="12dip"
+                        android:textColor="#546170"
+                        android:fontFamily="@font/notosanskr_regular"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#c9c9c9" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="#f3f8fd" />
+
+            <!-- 주의사항 -->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewWarning"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#192028"
+                android:textSize="14dip"
+                android:fontFamily="@font/notosanskr_regular"
+                android:gravity="left|bottom"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="14dp"
+                tools:text="@string/msg_cre_exchange_warnaing" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#c9c9c9" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- 교환 시 주의사항 -->
+                <LinearLayout
+                    android:id="@+id/layoutForExchangeWarning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="7dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/bg_dot"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/msg_cre_exchange_warnaing_comment1"
+                            android:textSize="12dip"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textColor="#546170"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/bg_dot"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/msg_cre_exchange_warnaing_comment2"
+                            android:textSize="12dip"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textColor="#546170"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/bg_dot"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/msg_cre_exchange_warnaing_comment3"
+                            android:textSize="12dip"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textColor="#546170"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/bg_dot"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/msg_cre_exchange_warnaing_comment4"
+                            android:textSize="12dip"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textColor="#546170"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 취소 시 주의사항 -->
+                <LinearLayout
+                    android:id="@+id/layoutForCancelWarning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="7dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/bg_dot"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/msg_cre_cancel_warnaing_comment1"
+                            android:textSize="12dip"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textColor="#546170"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/bg_dot"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/msg_cre_cancel_warnaing_comment2"
+                            android:textSize="12dip"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textColor="#546170"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 환불 시 주의사항 -->
+                <LinearLayout
+                    android:id="@+id/layoutForRefundWarning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="7dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/bg_dot"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/msg_cre_refund_warnaing_comment1"
+                            android:textSize="12dip"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textColor="#546170"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="3dp"
+                            android:layout_height="3dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/bg_dot"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/msg_cre_refund_warnaing_comment2"
+                            android:textSize="12dip"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textColor="#546170"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/botBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#bcc6d2" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/cancel"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="20dip"
+                android:textColor="#bcc6d2"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:text="@string/msg_cre_cancel"/>
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonRequest"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:textSize="20dip"
+            android:textColor="#FFFFFFFF"
+            android:background="#9f56f2"
+            tools:text="@string/msg_cre_exchange_request_do"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:theme="@style/ProgressTheme"/>
+
+</RelativeLayout>

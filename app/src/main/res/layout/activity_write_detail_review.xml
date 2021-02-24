@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#ffffff">
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/msg_title_review"
+            android:textColor="#192028"
+            android:textSize="20dip" />
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back"/>
+
+        </RelativeLayout>
+        <!--<android.support.v7.widget.AppCompatImageButton-->
+            <!--android:id="@+id/buttonBack"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@drawable/back_black_ico"-->
+            <!--android:background="#00000000"-->
+            <!--android:scaleType="centerInside" />-->
+
+        <!-- 내 메세지 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonMessage"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#00000000"
+            android:src="@drawable/my_message_ico"
+            android:scaleType="centerInside"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/buttonCart"/>
+
+        <!-- Message Badge-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMessageBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignRight="@+id/buttonMessage"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/oval_2"
+            android:gravity="center"
+            android:textColor="#FFFFFFFF"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="10dip"
+            android:text="1"/>
+
+        <!-- 장바구니 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonCart"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#00000000"
+            android:src="@drawable/cart_ico"
+            android:scaleType="centerInside"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+        <!-- Cart Badge-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCartBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignRight="@+id/buttonCart"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/oval_2"
+            android:gravity="center"
+            android:textColor="#FFFFFFFF"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="10dip"
+            android:text="1"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1e000000" />
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_above="@+id/botLine"
+        android:layout_below="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:layout_centerVertical="true"
+                    android:textColor="#192028"
+                    tools:text="2019년 03년 23일"
+                    android:includeFontPadding="false"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textColor="#8192a5"
+                        android:text="주문번호"
+                        android:layout_marginRight="5dp"
+                        android:includeFontPadding="false"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/orderNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:textColor="#8192a5"
+                        android:text="123455678"
+                        android:includeFontPadding="false"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/gray_rect">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="41dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/deliveryStatus1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:layout_centerVertical="true"
+                        android:textSize="12sp"
+                        android:textColor="#9f56f2"
+                        android:text="배송완료"
+                        android:layout_marginRight="3dp"
+                        android:includeFontPadding="false"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/deliveryStatus2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/deliveryStatus1"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="12sp"
+                        android:textColor="#8192a5"
+                        android:text="(롯데택배 5132123456)"
+                        android:includeFontPadding="false"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDeliveryCheck"
+                        android:layout_width="64dp"
+                        android:layout_height="24dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/blue_line_bg"
+                        android:text="@string/msg_my_shopping_delivery_status"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textColor="#5774f4"
+                        android:gravity="center"
+                        android:includeFontPadding="false"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d9e1eb" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/image"
+                        android:layout_width="82dp"
+                        android:layout_height="82dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="11dp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/item_shop_ic"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/shopName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:textSize="12sp"
+                                android:fontFamily="@font/notosanskr_regular"
+                                android:textColor="#8192a5"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                tools:text="CHANEL"/>
+
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:textSize="14sp"
+                            android:textColor="#192028"
+                            android:text="따뚜아쥬 꾸뛰르 메탈릭 완벽 커버 쿠션"
+                            android:includeFontPadding="false"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/option"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:textSize="12sp"
+                            android:textColor="#8192a5"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:text="21호 / 1개"
+                            android:includeFontPadding="false"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:layout_marginTop="1dp"
+                            android:textSize="12sp"
+                            android:textColor="#192028"
+                            android:text="32,000원"
+                            android:includeFontPadding="false"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+<!--
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:background="#ffffff"
+                android:paddingLeft="15dp">
+
+                <com.joooonho.SelectableRoundedImageView
+                    android:id="@+id/image"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginTop="14dp"
+                    app:sriv_left_bottom_corner_radius="5dp"
+                    app:sriv_left_top_corner_radius="5dp"
+                    app:sriv_right_bottom_corner_radius="5dp"
+                    app:sriv_right_top_corner_radius="5dp" />
+
+                <RelativeLayout
+                    android:id="@+id/buttonDeliverySearch"
+                    android:layout_width="79dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:paddingRight="15dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="64dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_delivery_check"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/msg_my_shopping_delivery_status"
+                        android:textColor="#ffffff"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/buttonDeliverySearch"
+                    android:layout_toRightOf="@+id/image"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/deliveryStatus1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="3dp"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:includeFontPadding="false"
+                            android:text="배송완료"
+                            android:textColor="#ff6c6c"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/deliveryStatus2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:includeFontPadding="false"
+                            android:text="(롯데택배 5132123456)"
+                            android:textColor="#8192a5"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:includeFontPadding="false"
+                        android:text="따뚜아쥬 꾸뛰르 메탈릭 완벽 커버 쿠션"
+                        android:textColor="#192028"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/option"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-3dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:includeFontPadding="false"
+                        android:text="21호 / 1개"
+                        android:textColor="#192028"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:includeFontPadding="false"
+                        android:text="32,000원"
+                        android:textColor="#192028"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c9c9c9"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dp"
+                android:background="#f3f8fd"/>
+            
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:paddingBottom="15dp"
+                android:paddingTop="7dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_marginBottom="13dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/msg_star_review_title_1"
+                    android:textColor="#8192a5"
+                    android:textSize="14sp" />
+
+                <RelativeLayout
+                    android:id="@+id/second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:layout_below="@+id/first">
+
+                    <RatingBar
+                        android:id="@+id/rating"
+                        style="@style/AppThemeRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:numStars="5"
+                        android:rating="5"
+                        android:stepSize="1"
+                        android:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ratingNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="4dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:includeFontPadding="false"
+                        android:text="5"
+                        android:textColor="#5774f4"
+                        android:textSize="24sp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_below="@+id/second"
+                    android:layout_marginTop="20dp"
+                    android:background="#d9e1eb" />
+
+                <RelativeLayout
+                    android:id="@+id/editLayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_below="@+id/line">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/strContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:gravity="top"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:hint="@string/msg_hint_detail_review"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="#192028"
+                        android:textColorHint="#bcc6d2"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/editReview"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:visibility="gone"
+                        android:maxLength="500"
+                        android:gravity="top"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_review_edit"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:hint="@string/msg_hint_detail_review"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="#192028"
+                        android:textColorHint="#bcc6d2"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+                
+
+
+                <!--<android.support.v7.widget.AppCompatEditText-->
+                    <!--android:id="@+id/editReview"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:layout_marginLeft="15dp"-->
+                    <!--android:layout_marginRight="15dp"-->
+                    <!--android:layout_below="@+id/line"-->
+                    <!--android:maxLength="500"-->
+                    <!--android:scrollbarStyle="insideInset"-->
+                    <!--android:scrollbars="vertical"-->
+                    <!--android:overScrollMode="always"-->
+                    <!--android:gravity="top"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:background="@null"-->
+                    <!--android:fontFamily="@font/notosanskr_medium"-->
+                    <!--android:hint="@string/msg_hint_detail_review"-->
+                    <!--android:paddingTop="5dp"-->
+                    <!--android:paddingBottom="5dp"-->
+                    <!--android:paddingLeft="12dp"-->
+                    <!--android:paddingRight="12dp"-->
+                    <!--android:layout_marginBottom="4dp"-->
+                    <!--android:textColor="#192028"-->
+                    <!--android:textColorHint="#bcc6d2"-->
+                    <!--android:textSize="14sp" />-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler"
+                    android:layout_below="@+id/editLayer"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <View
+        android:id="@+id/botLine"
+        android:layout_above="@+id/btnLayer"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#bcc6d2" />
+
+    <LinearLayout
+        android:id="@+id/btnLayer"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="3dp"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/buttonCancel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_review_edit"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="@string/msg_cancel"
+                android:textColor="#bcc6d2"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/buttonDelete"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                android:background="@drawable/bg_review_edit"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:text="@string/msg_reply_delete"
+                android:textColor="#bcc6d2"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/buttonRegistration"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="1"
+            android:background="@drawable/disable_registration_bg"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:text="@string/msg_regi"
+            android:textColor="#bcc6d2"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!--<android.support.v7.widget.AppCompatEditText-->
+        <!--android:id="@+id/editReview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:visibility="visible"-->
+        <!--android:maxLength="500"-->
+        <!--android:gravity="top"-->
+        <!--android:background="#ffffff"-->
+        <!--android:fontFamily="@font/notosanskr_medium"-->
+        <!--android:hint="@string/msg_hint_detail_review"-->
+        <!--android:paddingTop="5dp"-->
+        <!--android:paddingBottom="5dp"-->
+        <!--android:paddingLeft="12dp"-->
+        <!--android:paddingRight="12dp"-->
+        <!--android:textColor="#192028"-->
+        <!--android:textColorHint="#bcc6d2"-->
+        <!--android:textSize="14sp" />-->
+
+    <View
+        android:id="@+id/emptyTouch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+</RelativeLayout>

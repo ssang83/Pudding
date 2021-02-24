@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/dayLayout"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bg_schedule_day">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="3dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dayDigit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:textColor="#464646"
+                android:textSize="14sp"
+                tools:text="25" />
+
+            <View
+                android:id="@+id/myFollowing"
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="3dp"
+                tools:background="@drawable/bg_schedule_whte"/>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="3dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:includeFontPadding="false"
+            android:textColor="#464646"
+            android:textSize="12sp"
+            tools:text="오늘" />
+    </RelativeLayout>
+</LinearLayout>

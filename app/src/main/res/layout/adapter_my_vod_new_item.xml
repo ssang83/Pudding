@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/root"
+    android:paddingTop="5dp"
+    android:paddingRight="14dp"
+    android:paddingLeft="1dp"
+    android:background="#f3f8fc">
+
+    <RelativeLayout
+        android:id="@+id/buttonSelect"
+        android:layout_width="51dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewSelect"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/check_off"/>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/my_vod_item"
+        layout="@layout/adapter_live_channel_item"
+        android:layout_toRightOf="@+id/buttonSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/botEmpty"
+        android:layout_below="@+id/my_vod_item"
+        android:visibility="gone"/>
+
+</RelativeLayout>

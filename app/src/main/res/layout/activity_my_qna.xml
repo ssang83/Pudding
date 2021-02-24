@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#f3f8fd">
+
+    <!-- 타이틀바 -->
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#ffffff">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back"/>
+
+        </RelativeLayout>
+        <!--<android.support.v7.widget.AppCompatImageButton-->
+            <!--android:id="@+id/buttonBack"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:background="#00000000"-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:src="@drawable/back_black_ico" />-->
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/msg_my_qa_list"
+            android:textColor="#192028"
+            android:textSize="20dip" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#1e000000" />
+
+        <!-- 내 메세지 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonMessage"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#00000000"
+            android:src="@drawable/my_message_ico"
+            android:scaleType="centerInside"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/buttonCart"/>
+
+        <!-- Message Badge-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMessageBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignRight="@+id/buttonMessage"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/oval_2"
+            android:gravity="center"
+            android:textColor="#FFFFFFFF"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="10dip"
+            android:text="1"/>
+
+        <!-- 장바구니 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonCart"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#00000000"
+            android:src="@drawable/cart_ico"
+            android:scaleType="centerInside"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+        <!-- Cart Badge-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCartBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignRight="@+id/buttonCart"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/oval_2"
+            android:gravity="center"
+            android:textColor="#FFFFFFFF"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="10dip"
+            android:text="1"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerVeiwInquiry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            app:layoutManager="com.enliple.pudding.commons.widget.recyclerview.WrappedLinearLayoutManager"/>
+
+        <LinearLayout
+            android:id="@+id/layoutEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/customer_inquiry_img"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textColor="#546170"
+                android:fontFamily="@font/notosanskr_medium"
+                android:lineSpacingExtra="0sp"
+                android:text="@string/msg_my_inquiry_empty" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

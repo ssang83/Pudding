@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <!-- 준비 1단계 레이아웃 -->
+    <include
+        layout="@layout/fragment_temp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
+
+    <!-- 카운트 다운용 텍스트 -->
+    <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/textViewCountDown"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:fontFamily="@font/roboto_medium"-->
+        <!--android:gravity="center"-->
+        <!--android:shadowColor="#99333333"-->
+        <!--android:textColor="#FFFFFFFF"-->
+        <!--android:textSize="220sp"-->
+        <!--android:visibility="gone"-->
+        <!--tools:text="5" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

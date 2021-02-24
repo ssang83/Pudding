@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cc000000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/close"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="6dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="시청예약"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/fab1"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/noti_list"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="6dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="@string/msg_reserve_broadcast_list"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/fab2"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/reservation_list"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="6dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="@string/msg_reserve_broadcast_title"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/fab3"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/reservation"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/close"
+        android:layout_width="68dp"
+        android:layout_height="74dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="right"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/fab_close" />
+</RelativeLayout>

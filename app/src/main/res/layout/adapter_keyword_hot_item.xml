@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:paddingLeft="20dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textSize="14sp"
+        android:textColor="#9f56f2"
+        android:lineSpacingExtra="38sp"
+        android:gravity="center_horizontal"
+        tools:text="1."/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/keyword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/rank"
+        android:fontFamily="@font/notosanskr_regular"
+        android:textSize="14sp"
+        android:textColor="#192028"
+        tools:text="임블리"/>
+
+    <RelativeLayout
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true">
+
+        <LinearLayout
+            android:id="@+id/change_layer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/ranking_change"
+                android:layout_width="12dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/rank_fixed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ranking_change_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:textColor="#8192a5"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/fixed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/rank_fixed" />
+    </RelativeLayout>
+
+</RelativeLayout>

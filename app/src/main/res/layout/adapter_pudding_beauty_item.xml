@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="145dp"
+    android:layout_marginBottom="14dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:background="@drawable/grid_item_bg">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="104dp"
+        android:layout_height="match_parent"
+        android:layout_margin="1dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/product_img_1_copy_6" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        tools:background="@drawable/round_video_label" />
+
+    <LinearLayout
+        android:id="@+id/layoutProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/thumbnail">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/casterImage"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_schedule_profile_border"
+            android:scaleType="fitCenter"
+            android:src="@drawable/profile_default_img" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/casterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="#546170"
+            android:textSize="12sp"
+            tools:text="lovely_kim" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/casterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:paddingRight="13dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:gravity="left"
+        android:includeFontPadding="false"
+        android:maxLines="2"
+        android:ellipsize="end"
+        tools:text="과즙 팡팡!! 겨울부터 봄까지 쭉~ 코랄 메이크업 과즙 팡팡!! 겨울부터 봄까지 쭉~ 코랄 메이크업"
+        android:textColor="#192028"
+        android:textSize="14sp"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_below="@+id/label" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/hashTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:paddingRight="13dp"
+        android:fontFamily="@font/notosanskr_regular"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="#립스틱 #가을립스틱 #맥립스틱#립스틱 #가을립스틱 #맥립스틱#립스틱 #가을립스틱 #맥립스틱"
+        android:textColor="#ff6c6c"
+        android:textSize="12sp"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_above="@+id/layoutProfile"/>
+</RelativeLayout>

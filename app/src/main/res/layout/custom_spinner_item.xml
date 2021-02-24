@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp"
+    android:background="#ffffff">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textSize="16sp"
+        android:textColor="#222222"
+        android:fontFamily="@font/notosanskr_medium"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="단순 변심"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/check"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/radiobutton"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

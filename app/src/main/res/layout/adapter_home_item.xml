@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                tools:background="@drawable/product_img_1"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                tools:background="@drawable/trip_onair_label"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/casterImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="9dp"
+                android:layout_alignParentRight="true"
+                tools:background="@drawable/profile_default_img"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/productTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/notosanskr_regular"
+                    tools:text="아리엘 립스틸 BGATS"
+                    android:textSize="14sp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    tools:text="22,900워~"
+                    android:textColor="#ff6c6c"
+                    android:textSize="16sp"/>
+            </LinearLayout>ㄴ
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="여기에 타이틀 한줄로 처리해 주세요 베스트 5위까지 알겠나요??"
+                android:textColor="#192028"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="#d9e1eb"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hashTag"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskr_medium"
+                tools:text="#해시태그 #세개까지 #3545db"
+                android:textColor="#59c7d5"
+                android:textSize="14sp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/viewCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/likeCount"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/viewer_g_ico"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textColor="#192028"
+                    tools:text="559"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/likeCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="5dp"
+                    android:layout_alignParentRight="true"
+                    android:drawableLeft="@drawable/like_off_ico"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textColor="#192028"
+                    tools:text="559"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="340dp"
+    android:layout_gravity="center"
+    android:elevation="15dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:background="#f3f8fd"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:text="@string/msg_live_broadcast_finished"
+            android:textColor="#9f56f2"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e3e3e3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="234dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="87dp"
+                android:layout_height="87dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/casterProfile"
+                    android:layout_width="82dp"
+                    android:layout_height="82dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/border_profile"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/end_plus_ico"/>
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/nickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="16sp"
+                android:textColor="#192028"
+                tools:text="Ea Ailee" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewGuide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:lineSpacingExtra="-2dp"
+                android:text="@string/msg_live_broadcast_finish_message"
+                android:textColor="#546170"
+                android:textSize="14dip" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bcc6d2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:background="#ffffff"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:text="@string/msg_live_broadcast_close"
+            android:textColor="#8192a5"
+            android:textSize="18dip" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,206 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.enliple.pudding"
+        minSdkVersion 21
+        targetSdkVersion 28
+        buildToolsVersion '28.0.3'
+
+        // 2019.08.22 에 142, 1.4.2로 올림
+        versionCode 150
+        versionName "1.5.0"
+
+        //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        renderscriptSupportModeEnabled true
+
+        setProperty("archivesBaseName", "pudding_${versionName}_VC${versionCode}_${new Date().format('yyyyMMdd_HHmm')}")
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "pudding_${variant.name}_${variant.versionName}_VC${variant.versionCode}_${new Date().format('yyyyMMdd_HHmm')}.apk"
+        }
+
+//        if (!variant.getBuildType().debuggable) {
+//            variant.assemble.doLast {
+//                copy {
+        //from variant.mappingFile
+        //into "${rootDir}/app/release"
+//                }
+//            }
+//        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../enlipleKey.jks")
+            keyAlias "enliple"
+            storePassword "enliple2018"
+            keyPassword "enliple2018"
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+//            ext.enableCrashlytics = false
+            ext.alwaysUpdateBuildId = false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            signingConfig signingConfigs.release
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+        jumboMode = true
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    flavorDimensions "pudding"
+    productFlavors {
+        dev {
+            buildConfigField("boolean", 'IS_DEV', "true")
+        }
+
+        full {
+            buildConfigField("boolean", 'IS_DEV', "false")
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    //testImplementation 'junit:junit:4.12'
+    //noinspection GradleCompatible
+    //androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    //androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation project(':commons')
+
+    // Kakao
+    implementation group: 'com.kakao.sdk', name: 'usermgmt', version: project.KAKAO_SDK_VERSION
+    implementation group: 'com.kakao.sdk', name: 'kakaolink', version: project.KAKAO_SDK_VERSION
+    implementation group: 'com.kakao.sdk', name: 'kakaotalk', version: project.KAKAO_SDK_VERSION
+    implementation group: 'com.kakao.sdk', name: 'kakaonavi', version: project.KAKAO_SDK_VERSION
+    implementation group: 'com.kakao.sdk', name: 'kakaostory', version: project.KAKAO_SDK_VERSION
+    implementation group: 'com.kakao.sdk', name: 'push', version: project.KAKAO_SDK_VERSION
+
+    // Facebook
+    implementation 'com.facebook.android:facebook-share:[4,5)'
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    implementation 'com.facebook.stetho:stetho-urlconnection:1.5.0'
+
+    // butterknife
+    //implementation 'com.jakewharton:butterknife:8.8.1'
+    //annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // ExoPlayer
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.10.3'
+    implementation 'com.google.android.exoplayer:exoplayer-hls:2.10.3'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.10.3'
+    implementation 'com.google.android.exoplayer:extension-rtmp:2.10.3'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.10.3'
+
+    //firebase
+    implementation 'com.google.android.gms:play-services-gcm:16.1.0'
+    implementation 'com.google.firebase:firebase-core:+'
+    implementation 'com.google.firebase:firebase-messaging:+'
+    implementation "com.google.firebase:firebase-dynamic-links:+" // dynamic links
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.8'
+    //implementation 'com.google.firebase:firebase-auth:16.0.4'
+
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.google.android.gms:play-services-plus:16.0.0'
+
+    //for gif animation ( glide 보다 성능이 좋다 )
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.+'
+
+    // rtmp library
+    implementation 'com.ksyun.media:libksylive-java:3.0.4'
+    implementation 'com.ksyun.media:libksylive-arm64:3.0.4'
+    implementation 'com.ksyun.media:libksylive-armv7a:3.0.4'
+    implementation 'com.ksyun.media:libksylive-x86:3.0.4'
+
+    //facebook
+    implementation 'com.facebook.fresco:fresco:1.4.0'
+    implementation 'com.facebook.fresco:animated-gif:1.4.0'
+    implementation 'com.facebook.fresco:animated-webp:1.4.0'
+
+    //메인 배너
+    //implementation 'com.github.devlight:infinitecycleviewpager:1.0.2'
+    implementation 'com.youth.banner:banner:1.4.10'
+
+    // 해시태그 검색 시 없는 경우 태그 뷰
+    implementation 'com.github.greenfrvr:hashtag-view:1.3.1'
+
+    // 비디오 rotate
+    implementation 'rongi.rotate-layout:rotate-layout:3.0.0'
+
+    /////////// 여기까지 체크 완료 2019.02.13
+
+    ///////////////////////////////////////////////////////
+    // 아래 라이브러리 제거 가능 한지 체크 바랍니다.............
+
+    // Edit Tag
+    implementation 'com.github.qiugang:EditTag:v1.2.3'
+
+    // dots indicator
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:3.0.3'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.isseiaoki:simplecropview:1.1.7'
+
+    // adbrix
+    implementation 'com.google.android.gms:play-services-ads:18.1.0'
+    implementation 'com.android.installreferrer:installreferrer:1.0'
+    implementation 'com.igaworks.adbrix:abx-common-rm:+'
+    implementation 'com.google.firebase:firebase-auth:18.1.0'
+
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+}
+
+apply plugin: 'com.google.gms.google-services'
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
+repositories {
+    mavenCentral()
+}

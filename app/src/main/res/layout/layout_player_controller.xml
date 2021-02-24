@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="46dp">
+
+    <!-- 재생 / 일시정지 Control -->
+    <RelativeLayout
+        android:id="@+id/layoutPlayControl"
+        android:layout_width="34dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/exo_position"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 재생 버튼 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/exo_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:src="@drawable/play_ico" />
+
+        <!-- 일시정지 버튼 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/exo_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:src="@drawable/stop_ico" />
+
+        <!-- Rewind 버튼 (사용안함) -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/exo_rew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:visibility="gone" />
+
+        <!-- FastForward 버튼 (사용안함) -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/exo_ffwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <!-- 재생 포지션 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/exo_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosanskr_medium"
+        android:shadowColor="#333333"
+        android:shadowDx="1.0"
+        android:shadowDy="1.0"
+        android:textColor="#FFFFFFFF"
+        android:textSize="12dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/layoutPlayControl"
+        app:layout_constraintRight_toLeftOf="@+id/exo_progress"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="00:00" />
+
+    <!-- Video Progress -->
+    <com.google.android.exoplayer2.ui.DefaultTimeBar
+        android:id="@+id/exo_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:bar_height="3dp"
+        app:buffered_color="#bbbbbb"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/exo_position"
+        app:layout_constraintRight_toLeftOf="@+id/exo_duration"
+        app:layout_constraintTop_toTopOf="parent"
+        app:played_color="#9f56f2"
+        app:scrubber_drawable="@drawable/slide_ico"
+        app:unplayed_color="#e2e2e2" />
+
+    <!-- 전체 길이 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/exo_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:shadowColor="#333333"
+        android:shadowDx="1.0"
+        android:shadowDy="1.0"
+        android:textColor="#FFFFFFFF"
+        android:textSize="12dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/exo_progress"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="00:00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

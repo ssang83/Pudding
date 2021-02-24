@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:id="@+id/check_layer"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/checkAll"
+                android:layout_width="41dp"
+                android:layout_height="match_parent" >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/imgAll"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/radio_btn_on"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"/>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#222222"
+                android:textSize="14sp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="@string/category_all"
+                android:layout_gravity="center_vertical" />
+
+            <RelativeLayout
+                android:id="@+id/checkLive"
+                android:layout_width="41dp"
+                android:layout_height="match_parent" >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/imgLive"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/radio_btn_off"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"/>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#222222"
+                android:textSize="14sp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="@string/msg_live_ko"
+                android:layout_gravity="center_vertical" />
+
+            <RelativeLayout
+                android:id="@+id/checkVOD"
+                android:layout_width="41dp"
+                android:layout_height="match_parent" >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/imgVOD"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/radio_btn_off"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"/>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#222222"
+                android:textSize="14sp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:text="@string/msg_vod_ko"
+                android:layout_gravity="center_vertical" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/line1"
+        android:layout_below="@+id/check_layer"
+        android:background="#d9e1eb"/>
+
+    <!--<ScrollView-->
+        <!--android:layout_below="@+id/line1"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:scrollbars="none">-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/line1"
+            android:descendantFocusability="blocksDescendants">
+
+            <LinearLayout
+                android:id="@+id/top_tab"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:background="#f3f8fd"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#8192a5"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_received_date"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#8192a5"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_fan_name"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#8192a5"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_received_cookie_no"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#8192a5"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_cookie_due_date"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d9e1eb"
+                android:layout_below="@+id/top_tab"
+                android:id="@+id/line"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:scrollbars="none"
+                    android:overScrollMode="never"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewEmpty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="16sp"
+                    android:textColor="#192028"
+                    android:text="선물받은 젤리 내역이 없습니다."
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    <!--</ScrollView>-->
+
+</RelativeLayout>

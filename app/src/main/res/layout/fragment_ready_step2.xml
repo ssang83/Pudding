@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutReadyStep1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eeffffff"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <ScrollView
+        android:id="@+id/secondScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonLayer"
+        android:layout_below="@+id/buttonClose"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/titleProductInfo"
+                android:layout_width="match_parent"
+                android:background="#f3f8fd"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_height="50dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:layout_centerVertical="true"
+                    android:includeFontPadding="false"
+                    android:text="@string/msg_saling_info"
+                    android:textColor="#192028"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/msg_necessary_input"
+                    android:textColor="#ff6c6c"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/uu_Line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/titleProductInfo"
+                android:background="#e8f0f6" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewGuide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/uu_Line"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:text="판매할 상품을 선택해주세요.(최대 10개)"
+                android:textColor="#192028"
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerSalingProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewGuide"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                app:layoutManager="com.enliple.pudding.commons.widget.recyclerview.WrappedLinearLayoutManager" />
+
+            <LinearLayout
+                android:id="@+id/addButtonLayer"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_below="@+id/recyclerSalingProduct"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="12dp"
+                android:weightSum="4">
+
+                <!-- 상품 추가 버튼 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/addProduct"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/purple_lined_bg"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:text="상품"
+                    android:textColor="#9f56f2"
+                    android:textSize="14sp" />
+
+                <!-- 링크 추가 버튼 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/addLink"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/purple_lined_bg"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:text="링크"
+                    android:textColor="#9f56f2"
+                    android:textSize="14sp" />
+
+                <!-- 구매내역 추가 버튼 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/addPurchaseList"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/purple_lined_bg"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:text="구매내역"
+                    android:textColor="#9f56f2"
+                    android:textSize="14sp" />
+
+                <!-- 찜 상품 추가 버튼 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/addZzim"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/purple_lined_bg"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:text="찜 상품"
+                    android:textColor="#9f56f2"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addButtonLayer"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="@string/msg_add_product_explnation_1"
+                    android:textColor="#192028"
+                    android:textSize="12dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="@string/msg_add_product_explnation_2"
+                    android:textColor="#192028"
+                    android:textSize="12dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="@string/msg_add_product_explnation_3"
+                    android:textColor="#192028"
+                    android:textSize="12dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="@string/msg_add_product_explnation_4"
+                    android:textColor="#192028"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/buttonLayer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/buttonPrev2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_caster_back"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="뒤로"
+            android:textColor="#bcc6d2"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/buttonNext2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#9f56f2"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="다음"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</RelativeLayout>

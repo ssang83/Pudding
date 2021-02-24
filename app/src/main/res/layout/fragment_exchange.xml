@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutButtons"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/infoLayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="19dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="이름"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#192028"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextName"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/input_form"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="left|center_vertical"
+                    android:hint="@string/msg_find_account_id_name_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="0dp"
+                    android:singleLine="true"
+                    android:textColor="#192028"
+                    android:textColorHint="#bcc6d2"
+                    android:textCursorDrawable="@null"
+                    android:textSize="16dip"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="휴대폰번호"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#192028"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/input_form"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="12dp"
+                    android:maxLength="15"
+                    android:singleLine="true"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberSigned"
+                    android:textSize="16dip"
+                    android:textColor="#546170"
+                    android:textColorHint="#bcc6d2"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textCursorDrawable="@null"
+                    android:hint="@string/msg_find_account_id_cellphone_hint" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="은행명"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#192028"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editBankName"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/input_form"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="left|center_vertical"
+                    android:hint="@string/hint_deposit_bank"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="0dp"
+                    android:singleLine="true"
+                    android:textColor="#192028"
+                    android:textColorHint="#bcc6d2"
+                    android:textCursorDrawable="@null"
+                    android:textSize="16dip"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="계좌번호"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#192028"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@drawable/input_form"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="left|center_vertical"
+                    android:hint="@string/hint_deposit_account"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberSigned"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="0dp"
+                    android:singleLine="true"
+                    android:textColor="#192028"
+                    android:textColorHint="#bcc6d2"
+                    android:textCursorDrawable="@null"
+                    android:textSize="16dip"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/jelly_title"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="젤리갯수"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#192028"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="개"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#192028"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editJellyCnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_toRightOf="@+id/jelly_title"
+                    android:layout_toLeftOf="@+id/cnt"
+                    android:background="@drawable/input_form"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="left|center_vertical"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberSigned"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="0dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="0dp"
+                    android:singleLine="true"
+                    android:textColor="#192028"
+                    android:textColorHint="#bcc6d2"
+                    android:textCursorDrawable="@null"
+                    android:textSize="16dip"/>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/expectLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginLeft="100dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:includeFontPadding="false"
+                        android:gravity="center_vertical"
+                        android:text="환전 예상 금액 :  "
+                        android:textColor="#ff6c6c"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/expectedPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:includeFontPadding="false"
+                        android:gravity="center_vertical"
+                        android:textColor="#ff6c6c"
+                        tools:text="223,250원"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/remainTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:includeFontPadding="false"
+                        android:gravity="center_vertical"
+                        android:textColor="#ff6c6c"
+                        tools:text="환전 후 남은 포인트 :  "/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/remainPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:includeFontPadding="false"
+                        android:gravity="center_vertical"
+                        android:textColor="#ff6c6c"
+                        tools:text="250원"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#80c9c9c9"
+                android:layout_marginTop="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f3f8fd"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/comment1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:text="@string/jelly_exchange_1"
+                    android:includeFontPadding="false"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#8192a5"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/comment2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/jelly_exchange_2"
+                    android:includeFontPadding="false"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#8192a5"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/comment3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/jelly_exchange_3"
+                    android:includeFontPadding="false"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#8192a5"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/comment4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/jelly_exchange_4"
+                    android:includeFontPadding="false"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#8192a5"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/layoutButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/buttonCancel"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_weight="0.5"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#bcc6d2"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:gravity="center"
+                android:lines="1"
+                android:maxLines="1"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="취소"
+                android:textColor="#bcc6d2"
+                android:textSize="20dip" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/buttonExchange"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_weight="0.5"
+            android:background="#d9e1eb"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="환전 신청"
+            android:textColor="#FFFFFFFF"
+            android:textSize="20dip" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:orientation="vertical"
+    android:paddingTop="4dp"
+    android:paddingRight="17dp"
+    android:paddingBottom="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rank"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/notosanskr_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="1"
+            android:textColor="#192028"
+            android:textSize="14sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/quantity"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/notosanskr_bold"
+            android:gravity="right"
+            android:includeFontPadding="false"
+            android:paddingLeft="17dp"
+            android:paddingRight="17dp"
+            android:text="1324234"
+            android:textColor="#192028"
+            android:textSize="14sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/quantity"
+            android:layout_toRightOf="@+id/rank"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:singleLine="true"
+            android:text="망고딸기"
+            android:textColor="#192028"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

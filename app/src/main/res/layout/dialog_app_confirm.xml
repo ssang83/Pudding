@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_bg"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#192028"
+        android:letterSpacing="-0.01"
+        android:fontFamily="@font/notosanskr_medium"
+        android:background="@drawable/bg_popup_title"
+        tools:text="회원가입" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1e000000"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="29dp"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:textSize="16sp"
+        android:textColor="#192028"
+        android:fontFamily="@font/notosanskr_medium"
+        android:layout_gravity="center_horizontal"
+        tools:text="회원가입을 취소하고 이전 화면으로 돌아갑니다."/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="29dp"
+        android:background="#bcc6d2"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/buttonClose"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="#8192a5"
+        android:text="닫기"/>
+</LinearLayout>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#e5eaf0"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="49dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ITEM CATEGORY"
+            android:textSize="16sp"
+            android:textColor="#192028"
+            android:fontFamily="@font/notosanskr_bold"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"/>
+
+        <RelativeLayout
+            android:id="@+id/btnSpecial"
+            android:visibility="gone"
+            android:layout_width="121dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/special_bg_unselected">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/specialStr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:textSize="14dp"
+                    android:text="스페셜아이템"
+                    android:textColor="#bcc6d2"
+                    android:layout_gravity="center_vertical"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/specialIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/check_off"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0.3dp"
+        android:layout_marginBottom="0.3dp"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@+id/line_under_saling"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:scrollbars="none"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:id="@+id/subCategoryLayer"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f3f8fd" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#ffffff">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="#f3f8fd" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sortLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:paddingTop="10dp"
+        android:paddingRight="9dp"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:textSize="16dp"
+                android:textColor="#222222"
+                android:fontFamily="@font/notosanskr_regular"
+                android:text="총"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/item_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="2dp"
+                android:textSize="16dp"
+                android:textColor="#222222"
+                android:fontFamily="@font/notosanskr_bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:textSize="16dp"
+                android:textColor="#222222"
+                android:fontFamily="@font/notosanskr_regular"
+                android:text="개"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnFav"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="인기순"
+                android:textSize="14dp"
+                android:textColor="#ff6c6c"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/notosanskr_medium"
+                android:layout_gravity="center_vertical"
+                android:includeFontPadding="false"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="1dp"
+                android:layout_height="12dp"
+                android:textSize="14dp"
+                android:background="#bcc6d2"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:includeFontPadding="false"/>
+
+            <RelativeLayout
+                android:id="@+id/btnPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="8dp">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/strPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="8dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="가격"
+                    android:textSize="14dp"
+                    android:textColor="#bcc6d2"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:includeFontPadding="false"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iconPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/strPrice"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="1dp"
+                    android:background="@drawable/down_arrow_off_ico"
+                    android:layout_centerVertical="true"/>
+                
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="1dp"
+                android:layout_height="12dp"
+                android:textSize="14dp"
+                android:background="#bcc6d2"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:includeFontPadding="false"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnRecent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="최신순"
+                android:textSize="14dp"
+                android:textColor="#bcc6d2"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:includeFontPadding="false"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

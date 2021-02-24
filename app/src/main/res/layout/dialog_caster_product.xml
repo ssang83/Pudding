@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@drawable/reply_top_bg"
+        android:layout_alignParentBottom="true">
+
+        <RadioGroup
+            android:id="@+id/radioGroupType"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="18dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radioButtonPurchase"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_product_dialog_left"
+                android:button="@null"
+                android:fontFamily="@font/notosanskr_regular"
+                android:gravity="center"
+                android:text="@string/msg_caster_product_tab_purchase"
+                android:textColor="@color/product_button_text"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radioButtonCookie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_product_dialog_right"
+                android:button="@null"
+                android:fontFamily="@font/notosanskr_regular"
+                android:gravity="center"
+                android:text="@string/msg_caster_product_tab_cookie"
+                android:textColor="@color/product_button_text"
+                android:textSize="14sp" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/layoutStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/layoutContainer"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupType">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textColor="#192028"
+                android:textSize="14sp"
+                tools:text="방송중 총 팔로워 : "/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textColor="#5774f4"
+                android:textSize="14sp"
+                tools:text="12,874"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textColor="#192028"
+                android:textSize="14sp"
+                android:text="개"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/layoutContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="15dp"
+            android:background="#00000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutStatus" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

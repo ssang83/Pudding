@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eaf0f8">
+
+    <RelativeLayout
+        android:id="@+id/second_category"
+        android:layout_width="match_parent"
+        android:layout_height="49dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/lIcon"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/ic_tag"
+            android:layout_marginLeft="44dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/secondCategoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/lIcon"
+            android:layout_centerVertical="true"
+            android:text="화장품/향수"
+            android:layout_marginLeft="12dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#192028"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/secondIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="43dp"
+            android:background="@drawable/checkbox_off"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/uLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/second_category"
+        android:background="#e5eaf0" />
+</RelativeLayout>

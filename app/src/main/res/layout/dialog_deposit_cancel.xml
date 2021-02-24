@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="#FFFFFFFF">
+
+    <LinearLayout
+        android:layout_width="272dp"
+        android:layout_height="125dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp">
+
+             <!-- 닫기 버튼 -->
+            <RelativeLayout
+                android:id="@+id/buttonClose"
+                android:layout_alignParentRight="true"
+                android:layout_width="46dp"
+                android:layout_height="46dp" >
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="17dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/ic_popup_close"/>
+
+            </RelativeLayout>
+            <!--<android.support.v7.widget.AppCompatImageButton-->
+                <!--android:id="@+id/buttonClose"-->
+                <!--android:layout_width="16dp"-->
+                <!--android:layout_height="17dp"-->
+                <!--android:layout_marginRight="10dp"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:background="@null"-->
+                <!--android:scaleType="fitCenter"-->
+                <!--android:src="@drawable/ic_popup_close" />-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/msg_order_cancel_title"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#192028"
+                android:textSize="18dip"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="#e3e3e3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="@string/msg_order_cancel_price"
+                android:textSize="14dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textColor="@color/main_color"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewCancelPrice"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="@string/msg_order_cancel_price"
+                android:textSize="14dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textColor="@color/main_color"
+                tools:text="26,400원"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="@string/msg_order_cancel_point_return"
+                android:textSize="14dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textColor="#192028"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPointRefund"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textColor="#192028"
+                tools:text="2,640원"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="18dp"
+            android:textColor="#192028"
+            android:background="#f3f8fd"
+            android:text="@string/msg_cre_no"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="18dp"
+            android:textColor="#FFFFFFFF"
+            android:background="@color/main_color"
+            android:text="@string/msg_cre_confirm"/>
+
+    </LinearLayout>
+</LinearLayout>

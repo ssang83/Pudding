@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/buttonRadio">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewOrderNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#8192a5"
+            android:textSize="12dp"
+            tools:text="2018.01.31 - 주문번호 54390221" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewOrderNumber"
+            android:fontFamily="@font/notosanskr_bold"
+            android:lineSpacingExtra="2sp"
+            android:textColor="#192028"
+            android:textSize="14sp"
+            tools:text="루나 롱래스팅 팁컨실러 1+1" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonRadio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/radiobutton" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/content"
+        android:layout_marginTop="14dp"
+        android:background="#e5eaf0" />
+</RelativeLayout>

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    android:orientation="vertical">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFFFF"
+            android:elevation="0dp"
+            app:elevation="0dp">
+
+            <!-- 프로필 -->
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:padding="0dp"
+                app:contentInsetEnd="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp"
+                app:contentScrim="#FFFFFFFF"
+                app:elevation="0dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="168dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewBG"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#b3000000" />
+
+                        <!-- 뒤로가기 -->
+                        <RelativeLayout
+                            android:id="@+id/buttonBack"
+                            android:layout_width="60dp"
+                            android:layout_height="53dp"
+                            android:layout_marginTop="10dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="15dp"
+                                android:src="@drawable/back_black_ico" />
+                        </RelativeLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/buttonMore"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="18dp"
+                            android:background="#00000000"
+                            android:padding="10dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/profile_more_ico" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/buttonMessage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="28dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_toLeftOf="@+id/buttonMore"
+                            android:background="@drawable/caster_send_ico" />
+
+                        <LinearLayout
+                            android:id="@+id/buttonFollow"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_toLeftOf="@+id/buttonMessage"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imageViewFollow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/follow_ico" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/profileImageLayer"
+                            android:layout_width="66dp"
+                            android:layout_height="66dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/bg_caster_profile">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imageViewProfile"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_centerInParent="true"
+                                android:scaleType="fitCenter" />
+                        </RelativeLayout>
+
+                        <!--닉네임-->
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewNickName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/profileImageLayer"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:textColor="#ffffff"
+                            android:textSize="16dp"
+                            tools:text="슬픈사슴" />
+
+                        <!--팔로워/팔로잉 개수-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textViewNickName"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/layoutFollower"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/notosanskr_medium"
+                                    android:gravity="center_horizontal"
+                                    android:text="@string/msg_caster_follower"
+                                    android:textColor="#bcc6d2"
+                                    android:textSize="10sp" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewFollowerCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="2dp"
+                                    android:fontFamily="@font/notosanskr_bold"
+                                    android:gravity="center_horizontal"
+                                    android:textColor="#ffffff"
+                                    android:textSize="16sp"
+                                    tools:text="2,384" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layoutFollowing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/notosanskr_medium"
+                                    android:gravity="center_horizontal"
+                                    android:text="@string/msg_caster_following"
+                                    android:textColor="#bcc6d2"
+                                    android:textSize="10sp" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewFollowingCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="2dp"
+                                    android:fontFamily="@font/notosanskr_medium"
+                                    android:gravity="center_horizontal"
+                                    android:textColor="#ffffff"
+                                    android:textSize="16sp"
+                                    tools:text="2,384" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layoutLike"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/notosanskr_medium"
+                                    android:gravity="center_horizontal"
+                                    android:text="좋아요"
+                                    android:textColor="#bcc6d2"
+                                    android:textSize="10sp" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/textViewLikeCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="2dp"
+                                    android:fontFamily="@font/notosanskr_medium"
+                                    android:gravity="center_horizontal"
+                                    android:text="2,384"
+                                    android:textColor="#ffffff"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutIntroduce"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:orientation="vertical"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="11dp"
+                        android:paddingRight="38dp"
+                        android:paddingBottom="11dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewIntroduce"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskr_regular"
+                            android:textColor="#26313d"
+                            tools:text="최고의상품을 위해 최선을 다하는 푸딩라이브 크루 써니입니다. 궁금한 것이 있으면 언제든 메세지 보내주세요.\n#메이크업신동 #코랄핑크덕후\n- http://www.pudding.co.kr/yello___marine에서 영상을 확인 할 수 있습니다." />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#FFd8d8d8" />
+                </LinearLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="#FFFFFFFF"
+                android:padding="0dp"
+                app:contentInsetEnd="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp"
+                app:contentScrim="#FFFFFFFF"
+                app:elevation="0dp">
+
+                <!-- 서브 탭 -->
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayoutMy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFFFF"
+                    android:overScrollMode="never"
+                    app:tabBackground="@android:color/transparent"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="#9f56f2"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabIndicatorHeight="3dp"
+                    app:tabMode="fixed"
+                    app:tabPadding="0dp"
+                    app:tabSelectedTextColor="#9f56f2"
+                    app:tabTextAppearance="@style/MyTabLayoutTextStyle"
+                    app:tabTextColor="#202c37" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFd8d8d8" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.enliple.pudding.commons.widget.NonSwipeableViewPager
+            android:id="@+id/viewPagerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFFFF"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!--더보기 버튼 메뉴-->
+    <RelativeLayout
+        android:id="@+id/layoutMore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9d000000"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="153dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="55dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/bg_white_cornered"
+            android:elevation="5dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="14dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:letterSpacing="-0.01"
+                android:text="신고하기"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewBroadcastBlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="14dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:letterSpacing="-0.01"
+                android:text="@string/msg_broadcast_block"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewAlarmSet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="14dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:letterSpacing="-0.01"
+                android:text="@string/msg_alarm_set"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

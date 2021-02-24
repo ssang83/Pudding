@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:showIn="@layout/fragment_signup_information">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFFFF">
+
+        <!-- Header -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_information_title"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#192028"
+            android:textSize="18dip"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_information_subtitle"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#8192a5"
+            android:textSize="14dip"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <!-- 아이디-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_information_account"
+            android:layout_marginTop="19dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#192028"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_information_account_head"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#8192a5"
+            android:textSize="14dip"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextAccount"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/input_form"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:gravity="left|center_vertical"
+            android:hint="@string/msg_information_account_hint"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionDone"
+            android:textCursorDrawable="@null"
+            android:textColor="#192028"
+            android:textColorHint="#bcc6d2"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewAccountError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="#ff6c6c"
+            android:fontFamily="@font/notosanskr_bold"
+            android:text="아이디는 5~12 글자의 영문 및 숫자로 구성 되어야합니다."
+            android:textSize="12dip"
+            tools:visibility="visible"
+            android:visibility="invisible" />
+
+
+        <!-- 비밀번호 설정-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_information_password"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#192028"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/editTextAccount"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_information_password_head"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#8192a5"
+            android:textSize="14dip"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/input_form"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:gravity="left|center_vertical"
+            android:hint="@string/msg_information_password_hint"
+            android:inputType="textPassword"
+            android:imeOptions="actionDone"
+            android:textColor="#192028"
+            android:textColorHint="#bcc6d2"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textCursorDrawable="@null"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPasswordError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="#ff6c6c"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="12dip"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            tools:text="비밀번호 입력형식이 올바르지 않습니다"/>
+
+
+        <!-- 비밀번호 확인 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_information_password_confirm"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#192028"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextPasswordConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/input_form"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:gravity="left|center_vertical"
+            android:hint="@string/msg_information_password_confirm_hint"
+            android:inputType="textPassword"
+            android:imeOptions="actionDone"
+            android:textColor="#192028"
+            android:textColorHint="#bcc6d2"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textCursorDrawable="@null"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPasswordConfirmError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="#ff6c6c"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="12dip"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            tools:text="비밀번호 입력형식이 올바르지 않습니다"/>
+
+        <!-- 휴대폰 번호 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_information_cellphone"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#192028"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_information_cellphone_head"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#8192a5"
+            android:textSize="14dip"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextCellPhone"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/input_form"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:gravity="left|center_vertical"
+            android:maxLength="15"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:hint="@string/msg_information_cellphone_hint"
+            android:inputType="numberSigned"
+            android:imeOptions="actionDone"
+            android:textColor="#192028"
+            android:textColorHint="#bcc6d2"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textCursorDrawable="@null"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCellPhoneError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="#ff6c6c"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="12dip"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            tools:text="휴대폰번호는 숫자로만 구성되어야 합니다."/>
+
+
+        <!-- 이메일 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_information_email"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#192028"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/input_form"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:maxLength="40"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:gravity="left|center_vertical"
+            android:hint="@string/msg_information_email_hint"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionDone"
+            android:textColor="#192028"
+            android:textColorHint="#bcc6d2"
+            android:textSize="16dip"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textCursorDrawable="@null"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewEmailError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="#ff6c6c"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="12dip"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            tools:text="이메일 주소형식이 올바르지 않습니다."/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bcc6d2" />
+    </LinearLayout>
+
+<!-- 이용약관 동의 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFFFF"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="19dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="@string/msg_agreement_title"
+            android:textColor="#192028"
+            android:textSize="18dip" />
+
+        <!-- 전체동의 -->
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkBoxAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="#00000000"
+            android:button="@drawable/checkbox_white"
+            android:paddingLeft="6dp"
+            android:textSize="14dip"
+            android:textColor="#546170"
+            android:text="@string/msg_agreement_all"
+            android:fontFamily="@font/notosanskr_medium"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f3f8fd"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="13dp"
+            android:paddingTop="17dp"
+            android:paddingBottom="19dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="6dp"
+            android:orientation="vertical"
+            tools:minHeight="129dp">
+            
+            <!-- 라이온 이용약관 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkBoxTerms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="6dp"
+                    android:background="#00000000"
+                    android:button="@drawable/checkbox_white"
+                    android:textSize="14dip"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:textColor="#546170"
+                    android:text="@string/msg_agreement_terms" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/checkBoxTerms"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/msg_agreement_mandatory"
+                    android:textColor="#ff6c6c"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="14dip"/>
+
+
+                <LinearLayout
+                    android:id="@+id/layoutTermOfUseDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentRight="true">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/msg_agreement_detail"
+                        android:textColor="#8192a5"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="14dip"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:background="#00000000"
+                        android:src="@drawable/ic_forward"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- 개인정보 수집 및 이용동의 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkBoxPrivacyUse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="#00000000"
+                    android:paddingLeft="6dp"
+                    android:button="@drawable/checkbox_white"
+                    android:textSize="14dip"
+                    android:textColor="#546170"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_agreement_privacy_use" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/checkBoxPrivacyUse"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/msg_agreement_mandatory"
+                    android:textColor="#ff6c6c"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="14dip"/>
+
+
+                <LinearLayout
+                    android:id="@+id/layoutPrivacyUseDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentRight="true">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/msg_agreement_detail"
+                        android:textColor="#8192a5"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="14dip"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:background="#00000000"
+                        android:src="@drawable/ic_forward"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <!-- 개인정보 취급 및 위탁동의 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkBoxPrivacyConsignment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:background="#00000000"
+                    android:paddingLeft="6dp"
+                    android:button="@drawable/checkbox_white"
+                    android:textSize="14dip"
+                    android:textColor="#546170"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_agreement_privacy_consignment" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/checkBoxPrivacyConsignment"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/msg_agreement_mandatory"
+                    android:textColor="#ff6c6c"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="14dip"/>
+
+
+                <LinearLayout
+                    android:id="@+id/layoutPrivacyConsignmentDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentRight="true">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/msg_agreement_detail"
+                        android:textColor="#8192a5"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="14dip"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:background="#00000000"
+                        android:src="@drawable/ic_forward"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

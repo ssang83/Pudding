@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00000000">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="17dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rank"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/msg_cookie_rank"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="14sp"
+            android:textColor="#192028"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@string/msg_send_cookie_no"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/notosanskr_bold"
+            android:layout_alignParentRight="true"
+            android:textSize="14sp"
+            android:textColor="#192028"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/rank"
+            android:layout_toLeftOf="@+id/quantity"
+            android:gravity="center"
+            android:text="@string/msg_cookie_id"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textSize="14sp"
+            android:textColor="#192028"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#bcc6d2"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cookieList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:scrollbars="none"/>
+
+        <LinearLayout
+            android:id="@+id/emptyLayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/seller_jelly_img"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#546170"
+                android:textSize="16sp"
+                android:text="젤리 선물 현황이 없습니다."/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

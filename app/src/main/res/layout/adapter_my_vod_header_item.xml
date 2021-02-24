@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="215dp"
+        android:background="@drawable/bg_my_vod_shadow"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/bg_my_vod">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTotalRevenue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="7dp"
+                android:paddingLeft="10dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:textSize="18sp"
+                android:textColor="#192028"
+                tools:text="1,232,543,600원" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingBottom="7dp"
+                android:layout_below="@+id/textViewTotalRevenue"
+                android:textSize="12sp"
+                android:textColor="#8192a5"
+                android:text="총 수익" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/my_vod_revenue"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_my_vod">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewTotalViewCnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="7dp"
+                    android:paddingLeft="10dp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textSize="18sp"
+                    android:textColor="#192028"
+                    tools:text="346,253" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="7dp"
+                    android:layout_below="@+id/textViewTotalViewCnt"
+                    android:textSize="12sp"
+                    android:textColor="#8192a5"
+                    android:text="총 조회수" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/my_vod_viewer"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_my_vod">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewTotalShareCnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="7dp"
+                    android:paddingLeft="10dp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textSize="18sp"
+                    android:textColor="#192028"
+                    tools:text="346,253" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="7dp"
+                    android:layout_below="@+id/textViewTotalShareCnt"
+                    android:textSize="12sp"
+                    android:textColor="#8192a5"
+                    android:text="총 공유수" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/my_vod_share"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_my_vod">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewTotallikeCnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="7dp"
+                    android:paddingLeft="10dp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textSize="18sp"
+                    android:textColor="#192028"
+                    tools:text="1,245,987" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="7dp"
+                    android:layout_below="@+id/textViewTotallikeCnt"
+                    android:textSize="12sp"
+                    android:textColor="#8192a5"
+                    android:text="총 좋아요수" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/my_vod_like"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_my_vod">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewTotalScrapCnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="7dp"
+                    android:paddingLeft="10dp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textSize="18sp"
+                    android:textColor="#192028"
+                    tools:text="346,253" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="7dp"
+                    android:layout_below="@+id/textViewTotalScrapCnt"
+                    android:textSize="12sp"
+                    android:textColor="#8192a5"
+                    android:text="총 스크랩수" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/my_vod_scrap"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

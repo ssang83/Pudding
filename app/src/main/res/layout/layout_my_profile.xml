@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f3f8fd"
+    tools:showIn="@layout/fragment_my">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewBG"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/profile_default_bg_img"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:id="@+id/layoutProfileImage"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="181dp"
+        android:layout_height="100dp">
+
+        <RelativeLayout
+            android:id="@+id/profileImageLayer"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/profile_photo_bg1">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewProfile"
+                android:layout_width="94dp"
+                android:layout_height="94dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitCenter" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="13dp"
+        android:layout_toRightOf="@+id/layoutProfileImage"
+        android:layout_below="@+id/imageViewBG"
+        android:background="@drawable/bg_cancel"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/layoutCookie"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="푸딩"
+                android:textColor="#192028"
+                android:textSize="12dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewCookieCnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:text="0"
+                    android:textColor="#ff6c6c"
+                    android:textSize="16dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:text="개"
+                    android:textColor="#192028"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="#d9e1eb" />
+
+        <LinearLayout
+            android:id="@+id/layoutPoint"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="포인트"
+                android:textColor="#192028"
+                android:textSize="12dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:text="0"
+                    android:textColor="#ff6c6c"
+                    android:textSize="16dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:text="원"
+                    android:textColor="#192028"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/layoutProfileImage"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="28dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textColor="#192028"
+                android:textSize="16dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/textViewNickName"
+                android:layout_marginLeft="3dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#546170"
+                android:textSize="12sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/buttonModifyProfile"
+                android:layout_width="70dp"
+                android:layout_height="28dp"
+                android:text="내정보관리"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#192028"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/btn_edit_my_info" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="17dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_horizontal"
+                android:text="@string/msg_caster_video"
+                android:textColor="#8192a5"
+                android:textSize="14dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewVideoCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:gravity="center_horizontal"
+                android:textColor="#192028"
+                android:textSize="14dp"/>
+
+            <LinearLayout
+                android:id="@+id/layoutFollower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/msg_caster_follower"
+                    android:textColor="#8192a5"
+                    android:textSize="14dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewFollowerCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:gravity="center_horizontal"
+                    android:textColor="#192028"
+                    android:textSize="14dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutFollowing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center_horizontal"
+                    android:text="@string/msg_caster_following"
+                    android:textColor="#8192a5"
+                    android:textSize="14dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewFollowingCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:gravity="center_horizontal"
+                    android:textColor="#192028"
+                    android:textSize="12dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+<!--
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="181dp"
+        android:layout_marginRight="15dp">
+
+        <RelativeLayout
+            android:id="@+id/layoutProfileImage"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp">
+
+            <RelativeLayout
+                android:id="@+id/profileImageLayer"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_user_profile">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="94dp"
+                    android:layout_height="94dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="54dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginTop="45dp"-->
+            <!--android:layout_toRightOf="@+id/layoutProfileImage"-->
+            <!--android:background="@drawable/bg_cancel"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/layoutCookie"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="0.5"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:fontFamily="@font/notosanskr_medium"-->
+                    <!--android:text="푸딩"-->
+                    <!--android:textColor="#192028"-->
+                    <!--android:textSize="12dp" />-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:id="@+id/textViewCookieCnt"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:fontFamily="@font/notosanskr_bold"-->
+                        <!--android:text="0"-->
+                        <!--android:textColor="#ff6c6c"-->
+                        <!--android:textSize="16dp" />-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:fontFamily="@font/notosanskr_bold"-->
+                        <!--android:text="개"-->
+                        <!--android:textColor="#192028"-->
+                        <!--android:textSize="12dp" />-->
+                <!--</LinearLayout>-->
+            <!--</LinearLayout>-->
+
+            <!--<View-->
+                <!--android:layout_width="1dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:layout_marginBottom="12dp"-->
+                <!--android:background="#d9e1eb" />-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/layoutPoint"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="0.5"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:fontFamily="@font/notosanskr_medium"-->
+                    <!--android:text="포인트"-->
+                    <!--android:textColor="#192028"-->
+                    <!--android:textSize="12dp" />-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:id="@+id/textViewPoint"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:fontFamily="@font/notosanskr_bold"-->
+                        <!--android:text="0"-->
+                        <!--android:textColor="#ff6c6c"-->
+                        <!--android:textSize="16dp" />-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:fontFamily="@font/notosanskr_bold"-->
+                        <!--android:text="원"-->
+                        <!--android:textColor="#192028"-->
+                        <!--android:textSize="12dp" />-->
+                <!--</LinearLayout>-->
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/layoutProfileImage"-->
+            <!--android:layout_marginTop="4dp"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="26dp">-->
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                    <!--android:id="@+id/textViewNickName"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:fontFamily="@font/notosanskr_bold"-->
+                    <!--android:textColor="#192028"-->
+                    <!--android:textSize="16dp"-->
+                    <!--tools:text="슬픈사슴" />-->
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                    <!--android:id="@+id/textViewAccount"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_toRightOf="@+id/textViewNickName"-->
+                    <!--android:layout_marginLeft="3dp"-->
+                    <!--android:fontFamily="@font/notosanskr_medium"-->
+                    <!--android:textColor="#546170"-->
+                    <!--android:textSize="12sp"-->
+                    <!--tools:text="(ads1234)" />-->
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                    <!--android:id="@+id/buttonModifyProfile"-->
+                    <!--android:layout_width="70dp"-->
+                    <!--android:layout_height="26dp"-->
+                    <!--android:text="내 정보관리"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:fontFamily="@font/notosanskr_medium"-->
+                    <!--android:textColor="#192028"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginBottom="4dp"-->
+                    <!--android:background="@drawable/btn_edit_my_info" />-->
+            <!--</RelativeLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="4dp"-->
+                <!--android:layout_marginBottom="17dp"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:fontFamily="@font/notosanskr_medium"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:text="@string/msg_caster_video"-->
+                    <!--android:textColor="#8192a5"-->
+                    <!--android:textSize="14dp" />-->
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                    <!--android:id="@+id/textViewVideoCount"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="2dp"-->
+                    <!--android:fontFamily="@font/notosanskr_bold"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:textColor="#192028"-->
+                    <!--android:textSize="14dp"-->
+                    <!--tools:text="2,384" />-->
+
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/layoutFollower"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="11dp"-->
+                        <!--android:fontFamily="@font/notosanskr_medium"-->
+                        <!--android:gravity="center_horizontal"-->
+                        <!--android:text="@string/msg_caster_follower"-->
+                        <!--android:textColor="#8192a5"-->
+                        <!--android:textSize="14dp" />-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:id="@+id/textViewFollowerCount"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="2dp"-->
+                        <!--android:fontFamily="@font/notosanskr_bold"-->
+                        <!--android:gravity="center_horizontal"-->
+                        <!--android:textColor="#192028"-->
+                        <!--android:textSize="14dp"-->
+                        <!--tools:text="2,384" />-->
+                <!--</LinearLayout>-->
+
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/layoutFollowing"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="11dp"-->
+                        <!--android:fontFamily="@font/notosanskr_medium"-->
+                        <!--android:gravity="center_horizontal"-->
+                        <!--android:text="@string/msg_caster_following"-->
+                        <!--android:textColor="#8192a5"-->
+                        <!--android:textSize="14dp" />-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:id="@+id/textViewFollowingCount"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="2dp"-->
+                        <!--android:fontFamily="@font/notosanskr_bold"-->
+                        <!--android:gravity="center_horizontal"-->
+                        <!--android:textColor="#192028"-->
+                        <!--android:textSize="12dp"-->
+                        <!--tools:text="2,384" />-->
+                <!--</LinearLayout>-->
+            <!--</LinearLayout>-->
+        <!--</LinearLayout>-->
+    <!--</RelativeLayout>-->
+</RelativeLayout>

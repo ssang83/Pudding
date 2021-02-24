@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="49dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ITEM CATEGORY"
+                android:textSize="16sp"
+                android:textColor="#192028"
+                android:fontFamily="@font/notosanskr_bold"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"/>
+
+            <RelativeLayout
+                android:id="@+id/btnSpecial"
+                android:visibility="gone"
+                android:layout_width="121dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/special_bg_unselected">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerInParent="true">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/specialStr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:textSize="14dp"
+                        android:text="스페셜아이템"
+                        android:textColor="#bcc6d2"
+                        android:layout_gravity="center_vertical"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/specialIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/check_off"
+                        android:layout_gravity="center_vertical"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerLiveProduct"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:scrollbars="none"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/goTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:background="@drawable/top_fab"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="15dp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#ffffff"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<RelativeLayout-->
+        <!--android:visibility="gone"-->
+        <!--android:background="#ffffff"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="49dp">-->
+
+        <!--<androidx.appcompat.widget.AppCompatTextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="ITEM CATEGORY"-->
+            <!--android:textSize="16sp"-->
+            <!--android:textColor="#192028"-->
+            <!--android:fontFamily="@font/notosanskr_bold"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="15dp"/>-->
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/btnSpecial"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_width="121dp"-->
+            <!--android:layout_height="32dp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="15dp"-->
+            <!--android:background="@drawable/special_bg_unselected">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_centerInParent="true">-->
+
+                <!--<androidx.appcompat.widget.AppCompatTextView-->
+                    <!--android:id="@+id/specialStr"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginRight="2dp"-->
+                    <!--android:textSize="14dp"-->
+                    <!--android:text="스페셜아이템"-->
+                    <!--android:textColor="#bcc6d2"-->
+                    <!--android:layout_gravity="center_vertical"/>-->
+
+                <!--<androidx.appcompat.widget.AppCompatImageView-->
+                    <!--android:id="@+id/specialIcon"-->
+                    <!--android:layout_width="20dp"-->
+                    <!--android:layout_height="20dp"-->
+                    <!--android:background="@drawable/check_off"-->
+                    <!--android:layout_gravity="center_vertical"/>-->
+            <!--</LinearLayout>-->
+
+        <!--</RelativeLayout>-->
+
+    <!--</RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#ffffff">-->
+
+        <!--<androidx.recyclerview.widget.RecyclerView-->
+            <!--android:id="@+id/recyclerLiveProduct"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:scrollbars="none"/>-->
+
+    <!--</RelativeLayout>-->
+
+<!--</LinearLayout>-->

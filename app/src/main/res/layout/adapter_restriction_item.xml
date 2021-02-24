@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="9dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="13dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textSize="14dp"
+        android:textColor="#192028"
+        tools:text="반복적인 방송 가이드라인 위반(욕설/비방, 음란성)으로 인해 회원님의 계정은 2018년 8월 24일로부터 1주일 간 방송 금지 처리되었습니다."/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textSize="12dp"
+        android:textColor="#8192a5"
+        tools:text="2018. 08. 02"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="9dp"
+        android:background="#d9e1eb"/>
+
+</LinearLayout>

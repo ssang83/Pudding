@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/recorder_bg_new">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true" />
+
+    <com.enliple.pudding.shoppingcaster.stream.CameraHintView
+        android:id="@+id/camera_hint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="100dp"
+        android:visibility="visible" />
+
+    <include
+        android:id="@+id/actionbar"
+        layout="@layout/camera_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/global_actionbar_height"
+        android:layout_gravity="top" />
+
+    <TextView
+        android:id="@+id/url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/actionbar"
+        android:gravity="center"
+        android:textColor="@color/font_color_35"
+        android:textSize="@dimen/font_size_38px"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/debuginfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/url"
+        android:gravity="left"
+        android:textColor="@color/font_color_41"
+        android:textSize="@dimen/font_size_22px" />
+
+    <include
+        layout="@layout/camera_bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

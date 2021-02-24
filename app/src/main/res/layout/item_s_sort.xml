@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <View
+        android:id="@+id/topLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#10000000"/>
+
+    <LinearLayout
+        android:id="@+id/cate_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#f3f8fd"
+        android:paddingLeft="11dp"
+        android:layout_below="@+id/topLine"
+        android:orientation="horizontal">
+        
+        <LinearLayout
+            android:id="@+id/btnAll"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/main_cat_sel">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/strAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="14sp"
+                android:textColor="#9f56f2"
+                android:includeFontPadding="false"
+                android:layout_marginRight="5dp"
+                android:text="전체"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iconAll"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/check_circle_on"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnPudding"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/main_cat_default">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/strPudding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="14sp"
+                android:textColor="#bcc6d2"
+                android:includeFontPadding="false"
+                android:layout_marginRight="5dp"
+                android:text="푸딩결제"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iconPudding"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/item_check_off"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnLink"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/main_cat_default">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/strLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="14sp"
+                android:textColor="#bcc6d2"
+                android:includeFontPadding="false"
+                android:layout_marginRight="5dp"
+                android:text="링크결제"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iconLink"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/item_check_off"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/cate_1">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/strItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:gravity="center_vertical"
+            android:text="ITEM"
+            android:textColor="#192028"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/strItem"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textColor="#8192a5"
+            android:textSize="14sp"
+            tools:text="132" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingRight="7dp">
+
+            <RelativeLayout
+                android:id="@+id/btnFav"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageFav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/product_rank_on_ico" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btnRecent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/btnFav">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageRecent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/product_new_off_ico" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btnPriceUp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/btnRecent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imagePriceUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/up_arrow_off_ico" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btnPriceDown"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/btnPriceUp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imagePriceDown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/down_arrow_off_ico" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#10000000" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

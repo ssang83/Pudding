@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/videoFullLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="activity.ShoppingPlayerActivity">
+
+    <com.github.rongi.rotate_layout.layout.RotateLayout
+        android:id="@+id/rotateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/playerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            app:resize_mode="fixed_height"
+            app:surface_type="texture_view"
+            app:use_controller="false" />
+    </com.github.rongi.rotate_layout.layout.RotateLayout>
+
+    <View
+        android:id="@+id/dark_bg1"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:background="@drawable/player_bot_gradation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <View
+        android:id="@+id/dark_bg"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:visibility="gone"
+        android:background="@drawable/bg_video_card_72"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vodLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:background="@android:color/transparent"
+        android:clickable="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="108dp"
+            android:background="@drawable/bg_video_card_35"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/userInfoLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="23dp"
+                android:background="@drawable/bg_live_round_bar"
+                android:paddingRight="4dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewThumbnail"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/border_cookie_sender"
+                    android:padding="1dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/profile_default_img" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewNickName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_toRightOf="@+id/imageViewThumbnail"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="#ffffff"
+                    android:textSize="10sp"
+                    tools:text="슬" />
+
+                <!-- view Count Text -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/viewCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewNickName"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_toRightOf="@+id/imageViewThumbnail"
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/vod_viewer_ico"
+                    android:drawablePadding="2dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:text="0"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10sp"
+                    tools:text="12820" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/guideLine"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:background="#ffffee"
+                app:layout_constraintBottom_toBottomOf="@id/userInfoLayout"
+                app:layout_constraintRight_toRightOf="@id/userInfoLayout"
+                app:layout_constraintTop_toTopOf="@id/userInfoLayout" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewFollow"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginRight="10dp"
+                android:background="#00000000"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/guideLine"
+                app:layout_constraintLeft_toLeftOf="@id/guideLine"
+                app:layout_constraintRight_toLeftOf="@id/guideLine"
+                app:layout_constraintTop_toTopOf="@id/guideLine" />
+
+            <!-- 음소거버튼 -->
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/buttonMute"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/buttonExit"
+                android:background="#00000000"
+                android:padding="7dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sound_on_btn"
+                app:layout_constraintRight_toLeftOf="@id/buttonExit"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- 종료버튼 -->
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/buttonExit"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginTop="18dp"
+                android:background="#00000000"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/close_white_ico"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginTop="4dp"-->
+            <!--android:background="@drawable/bg_live_round_bar"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:paddingLeft="8dp"-->
+            <!--android:paddingRight="8dp"-->
+            <!--android:visibility="gone"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@id/userInfoLayout">-->
+
+            <!--&lt;!&ndash; scrap Count Text &ndash;&gt;-->
+            <!--<androidx.appcompat.widget.AppCompatTextView-->
+            <!--android:id="@+id/scrapCount"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:drawableLeft="@drawable/vod_scrap_ico"-->
+            <!--android:drawablePadding="4dp"-->
+            <!--android:fontFamily="@font/notosanskr_medium"-->
+            <!--android:gravity="top"-->
+            <!--android:includeFontPadding="false"-->
+            <!--android:maxLines="1"-->
+            <!--android:text="0"-->
+            <!--android:textColor="#FFFFFF"-->
+            <!--android:textSize="12sp"-->
+            <!--tools:text="12223" />-->
+
+            <!--&lt;!&ndash; share Count Text &ndash;&gt;-->
+            <!--<androidx.appcompat.widget.AppCompatTextView-->
+            <!--android:id="@+id/shareCount"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginLeft="14dp"-->
+            <!--android:drawableLeft="@drawable/vod_share_ico"-->
+            <!--android:drawablePadding="4dp"-->
+            <!--android:fontFamily="@font/notosanskr_medium"-->
+            <!--android:gravity="top"-->
+            <!--android:includeFontPadding="false"-->
+            <!--android:maxLines="1"-->
+            <!--android:text="0"-->
+            <!--android:textColor="#FFFFFF"-->
+            <!--android:textSize="12sp"-->
+            <!--tools:text="12223" />-->
+            <!--</LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginLeft="4.4dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/ratioBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ratio_btn"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/rotateBtn"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/rotate_btn"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/resolutionBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/quality_btn"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="9dp"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:visibility="visible"/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutMore"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_cornered"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layoutChatInput"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <LinearLayout
+            android:id="@+id/layoutLive"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewBroadcastReport"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.01"
+                android:paddingLeft="13dp"
+                android:text="@string/msg_broadcast_report"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNickNameModify"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.01"
+                android:paddingLeft="13dp"
+                android:text="@string/msg_nick_name_modify"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewCustomerCenter"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.01"
+                android:paddingLeft="13dp"
+                android:text="@string/msg_customer_center"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutVOD"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewModifyTitle"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.01"
+                android:paddingLeft="13dp"
+                android:text="영상 제목 수정"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPublic"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.01"
+                android:paddingLeft="13dp"
+                android:textColor="#546170"
+                android:textSize="14sp"
+                tools:text="영상 비공개" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewShare"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.01"
+                android:paddingLeft="13dp"
+                android:text="공유 허용"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewComment"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.01"
+                android:paddingLeft="13dp"
+                android:text="댓글 허용"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewVODDel"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.01"
+                android:paddingLeft="13dp"
+                android:text="영상 삭제"
+                android:textColor="#546170"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--<androidx.appcompat.widget.AppCompatTextView-->
+    <!--android:id="@+id/heartCount"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_marginLeft="14dp"-->
+    <!--android:drawableLeft="@drawable/vod_like_ico"-->
+    <!--android:drawablePadding="4dp"-->
+    <!--android:fontFamily="@font/notosanskr_medium"-->
+    <!--android:gravity="top"-->
+    <!--android:includeFontPadding="false"-->
+    <!--android:maxLines="1"-->
+    <!--android:text="0"-->
+    <!--android:textColor="#FFFFFF"-->
+    <!--android:textSize="12sp"-->
+    <!--android:visibility="gone"-->
+    <!--tools:text="12223" />-->
+
+
+    <LinearLayout
+        android:id="@+id/likeButtonLayer"
+        android:layout_width="43dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/simpleControlView"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/video_like_on_ico"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="3dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- 좋아요 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/buttonLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/notosanskr_bold"
+            android:gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            tools:text="17" />
+
+    </LinearLayout>
+
+    <!-- 좋아요 효과 -->
+    <FrameLayout
+        android:id="@+id/heartView"
+        android:layout_width="120dp"
+        android:layout_height="280dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/likeButtonLayer"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- 시간 progress -->
+    <ProgressBar
+        android:id="@+id/simpleControlView"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:progressDrawable="@drawable/video_progressbar"
+        app:layout_constraintBottom_toTopOf="@id/layoutChatInput"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.enliple.pudding.commons.widget.MaxHeightRecyclerView
+        android:id="@+id/recyclerViewVODChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginRight="55dp"
+        android:cacheColorHint="#00000000"
+        android:fitsSystemWindows="false"
+        android:overScrollMode="never"
+        android:paddingTop="13dp"
+        android:paddingBottom="4dp"
+        android:requiresFadingEdge="vertical"
+        app:layout_constraintBottom_toTopOf="@id/layoutChatInput"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <!-- 하단 메뉴 -->
+    <LinearLayout
+        android:id="@+id/layoutChatInput"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <!-- 상품 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonStar"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="10dp"
+            android:background="#00000000"
+            android:src="@drawable/cookie_btn" />
+
+        <!-- 댓글입력 -->
+        <RelativeLayout
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/replyButton"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerVertical="true"
+                android:background="#00000000"
+                android:src="@drawable/vod_chat_btn" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/replyCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_badge_count"
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskr_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:maxWidth="40dp"
+                android:maxLines="1"
+                android:text="0"
+                android:textColor="#ffffff"
+                android:textSize="9sp"
+                tools:text="0" />
+        </RelativeLayout>
+
+        <!-- 더보기 버튼 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonMore"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="#00000000"
+            android:src="@drawable/vod_more_btn" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <!-- 스크랩 -->
+        <RelativeLayout
+            android:layout_width="53dp"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/buttonScrap"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerVertical="true"
+                android:background="#00000000"
+                android:src="@drawable/btn_scrap" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/scrapCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_badge_count"
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskr_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:maxWidth="40dp"
+                android:maxLines="1"
+                android:text="0"
+                android:textColor="#ffffff"
+                android:textSize="9sp"
+                tools:text="0" />
+        </RelativeLayout>
+
+        <!-- 실시간 랭킹 (팔로워 / 별풍선) -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonRealTimeRank"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="#00000000"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/rank_btn"
+            android:visibility="gone"/>
+
+        <!-- 공유 -->
+        <RelativeLayout
+            android:layout_width="53dp"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/buttonShare"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerVertical="true"
+                android:background="#00000000"
+                android:src="@drawable/share_btn" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/shareCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_badge_count"
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskr_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:maxWidth="40dp"
+                android:maxLines="1"
+                android:text="0"
+                android:textColor="#ffffff"
+                android:textSize="9sp"
+                tools:text="0" />
+        </RelativeLayout>
+
+        <!-- 상품리스트 -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonProducts"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="@drawable/product_round_bg"
+            android:padding="1dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/cookieLayer"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/cookieImg"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cookieImg"
+            android:background="@drawable/bg_cookie_toast_text_dark"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:includeFontPadding="false"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    tools:text="환타(hakaka)" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cookieStr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sender"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-2dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="젤리 1,000개 선물"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/productPopLayout"
+        android:layout_width="228dp"
+        android:layout_height="83dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/product_bg"
+        android:clickable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <!-- 상품리스트 -->
+        <!--<androidx.appcompat.widget.AppCompatImageView-->
+            <!--android:id="@+id/productImage"-->
+            <!--android:layout_width="63dp"-->
+            <!--android:layout_height="63dp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:background="@drawable/product_round_bg"-->
+            <!--android:padding="1dp" />-->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/productImage"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/product_round_white_bg"
+            android:padding="1dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/productImage"
+            android:ellipsize="end"
+            android:fontFamily="@font/notosanskr_regular"
+            android:gravity="left"
+            android:includeFontPadding="false"
+            android:maxLines="2"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            tools:text="입생로랑 루쥬 쀠르 꾸뒤르 레더 에디션 efwf we fwewfwefwe" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productName"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@id/productImage"
+            android:ellipsize="end"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            tools:text="10,3234,600~" />
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clickLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:visibility="gone">
+
+        <!-- video control -->
+        <com.google.android.exoplayer2.ui.PlayerControlView
+            android:id="@+id/controlView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:controller_layout_id="@layout/layout_player_controller"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:theme="@style/ProgressTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

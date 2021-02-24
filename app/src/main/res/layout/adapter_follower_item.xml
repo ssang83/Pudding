@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="58dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="15dp">
+
+    <RelativeLayout
+        android:id="@+id/imageLayer"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_reply_thumbnail">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewThumbnail"
+            android:layout_centerInParent="true"
+            android:layout_width="44dp"
+            android:layout_height="44dp"/>
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/buttonFollowing"
+        android:layout_width="104dp"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_centerVertical="true"
+        android:textSize="14dp"
+        android:text="@string/msg_my_following"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/imageLayer"
+        android:layout_toLeftOf="@+id/buttonFollowing"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="14dp"
+            android:textColor="#192028"
+            tools:text="love123"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewNickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="12dp"
+            android:textColor="#8192a5"
+            tools:text="요미요미"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="54dp"
+        android:background="#d9e1eb"/>
+
+    <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--android:id="@+id/buttonFollowing"-->
+        <!--android:layout_width="104dp"-->
+        <!--android:layout_height="34dp"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginRight="15dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:textSize="14dp"-->
+        <!--android:text="@string/msg_my_following"/>-->
+
+</RelativeLayout>

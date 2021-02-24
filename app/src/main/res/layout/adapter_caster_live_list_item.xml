@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="103dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    tools:background="#000000">
+
+    <RelativeLayout
+        android:id="@+id/productLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.joooonho.SelectableRoundedImageView
+            android:id="@+id/imageViewThumbNail"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:sriv_left_top_corner_radius="5dp"
+            app:sriv_right_top_corner_radius="5dp"
+            app:sriv_left_bottom_corner_radius="5dp"
+            app:sriv_right_bottom_corner_radius="5dp"
+            tools:background="@drawable/bg_direct_message"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/imageViewThumbNail"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="16dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="#ffffff"
+                android:lineSpacingExtra="2sp"
+                tools:text="입생로랑 베르니 아 레브르 홀로 그램 틴트"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewSalePercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="14dp"
+                    android:maxLines="1"
+                    android:textColor="#f80d3b"
+                    android:lineSpacingExtra="6sp"
+                    tools:text="20%"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="18dp"
+                    android:maxLines="1"
+                    android:textColor="#ffffff"
+                    android:lineSpacingExtra="2sp"
+                    tools:text="69,000원"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/imageViewThumbNail"
+            android:layout_marginTop="17dp"
+            android:background="#373d44"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/linkLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.joooonho.SelectableRoundedImageView
+            android:id="@+id/linkImageViewThumbNail"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:sriv_left_top_corner_radius="5dp"
+            app:sriv_right_top_corner_radius="5dp"
+            app:sriv_left_bottom_corner_radius="5dp"
+            app:sriv_right_bottom_corner_radius="5dp"
+            tools:background="@drawable/bg_direct_message"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/linkImageViewThumbNail"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/linkTextViewSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="16dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="#ffffff"
+                android:lineSpacingExtra="2sp"
+                tools:text="입생로랑 베르니 아 레브르 홀로 그램 틴트"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="18dp"
+                android:maxLines="2"
+                android:textColor="#ffffff"
+                android:lineSpacingExtra="2sp"
+                tools:text="http://www.gmarket.com"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/linkImageViewThumbNail"
+            android:layout_marginTop="17dp"
+            android:background="#373d44"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

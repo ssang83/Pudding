@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="22dp"
+    android:paddingRight="15dp"
+    android:layout_height="50dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/keyword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/notosanskr_regular"
+        android:textSize="14sp"
+        android:textColor="#202c37"
+        tools:text="청치마"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/delete"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/notosanskr_regular"
+        android:textSize="12sp"
+        android:textColor="#999999"
+        android:lineSpacingExtra="40sp"
+        tools:text="05. 02"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/search_delete_ico_copy"/>
+
+</RelativeLayout>

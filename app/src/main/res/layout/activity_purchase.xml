@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 타이틀 바 -->
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#ffffff">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:src="@drawable/back_black_ico" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_ico"/>
+
+        </RelativeLayout>
+        <!--<ImageButton-->
+            <!--android:id="@+id/buttonBack"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:background="#00000000"-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:src="@drawable/back_black_ico" />-->
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/msg_purchase_title"
+            android:textColor="#192028"
+            android:textSize="20dip" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:background="#f3f8fd"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:text="@string/msg_buyer_info"
+                        android:textColor="#546170"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="35dp"
+                        android:includeFontPadding="false"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="@string/msg_buyer"
+                        android:textSize="14sp"
+                        android:textColor="#192028"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/buyerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="35dp"
+                        android:includeFontPadding="false"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="14sp"
+                        android:textColor="#546170"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#d9e1eb" />
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="35dp"
+                        android:includeFontPadding="false"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="@string/msg_my_shopping_order_detail_contact"
+                        android:textSize="14sp"
+                        android:textColor="#192028"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/buyerPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="35dp"
+                        android:includeFontPadding="false"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="14sp"
+                        android:textColor="#546170"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/product_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:background="#f3f8fd"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00000000"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:gravity="left|bottom"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingBottom="6dp"
+                        android:paddingLeft="10dp"
+                        android:text="@string/msg_purchase_delivery_info"
+                        android:textColor="#546170"
+                        android:textSize="12dip" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d9e1eb" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioDeliveryRecentyl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/msg_purchase_delivery_recently" />
+
+                        <RadioButton
+                            android:id="@+id/radioDeliveryNew"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/msg_purchase_delivery_new" />
+
+                        <RadioButton
+                            android:id="@+id/radioInputSelf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/msg_purchase_delivery_input" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="7dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.163"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:gravity="center"
+                            android:text="@string/msg_purchase_delivery_user"
+                            android:textColor="#192028"
+                            android:textSize="14dip" />
+
+                        <EditText
+                            android:id="@+id/editTextRecipient"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="9dp"
+                            android:layout_weight="0.837"
+                            android:background="@drawable/background_edit_bg"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:gravity="left|center_vertical"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:maxLines="2"
+                            android:paddingLeft="9dp"
+                            android:paddingRight="9dp"
+                            android:textColor="#FF000000"
+                            android:textSize="14dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="7dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.163"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:gravity="center"
+                            android:text="@string/msg_purchase_delivery_contact"
+                            android:textColor="#192028"
+                            android:textSize="14dip" />
+
+                        <EditText
+                            android:id="@+id/editTextCellPhone"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="9dp"
+                            android:layout_weight="0.837"
+                            android:background="@drawable/background_edit_bg"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:gravity="left|center_vertical"
+                            android:inputType="numberSigned"
+                            android:lines="1"
+                            android:maxLines="2"
+                            android:paddingLeft="9dp"
+                            android:paddingRight="9dp"
+                            android:textColor="#FF000000"
+                            android:textSize="14dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="7dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.163"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:gravity="center"
+                            android:lineSpacingExtra="6sp"
+                            android:text="@string/msg_address"
+                            android:textColor="#192028" />
+
+                        <!-- 우편번호 -->
+                        <TextView
+                            android:id="@+id/textViewPostNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="9dp"
+                            android:layout_weight="0.3"
+                            android:background="@drawable/background_edit_bg"
+                            android:gravity="center"
+                            android:textColor="#FF000000" />
+
+                        <Button
+                            android:id="@+id/buttonSearchAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="9dp"
+                            android:layout_weight="0.23"
+                            android:background="@drawable/purple_lined_bg"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:text="@string/msg_find_address"
+                            android:textColor="#9f56f2"
+                            android:textSize="14dip" />
+
+                        <!-- 우측 여백 -->
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="9dp"
+                            android:layout_weight="0.27"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+
+                    <!-- 지번 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="7dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.163"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:id="@+id/textViewOldAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="9dp"
+                            android:layout_weight="0.837"
+                            android:background="@drawable/background_edit_bg"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:gravity="left|center_vertical"
+                            android:lines="1"
+                            android:maxLines="2"
+                            android:paddingLeft="9dp"
+                            android:paddingRight="9dp"
+                            android:textColor="#FF000000"
+                            android:textSize="14dip" />
+
+                    </LinearLayout>
+
+                    <!-- 상세주소 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="7dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.163"
+                            android:visibility="invisible" />
+
+                        <EditText
+                            android:id="@+id/editTextDetailAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="9dp"
+                            android:layout_weight="0.837"
+                            android:background="@drawable/background_edit_bg"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:gravity="left|center_vertical"
+                            android:textColorHint="#bcc6d2"
+                            android:hint="@string/msg_address_detail"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:paddingLeft="9dp"
+                            android:paddingRight="9dp"
+                            android:scrollbars="none"
+                            android:textColor="#FFAAAAAA"
+                            android:textSize="14dip" />
+
+                    </LinearLayout>
+
+                    <!-- 도로명 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="6dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:layout_width="41dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="11dp"
+                            android:background="@drawable/background_edit_bg"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:gravity="center"
+                            android:text="@string/msg_address_new"
+                            android:textColor="#bcc6d2"
+                            android:textSize="12dip" />
+
+                        <HorizontalScrollView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="9dp"
+                            android:layout_weight="0.85"
+                            android:scrollbars="none">
+
+                            <TextView
+                                android:id="@+id/textViewNewAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:gravity="left|center_vertical"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:paddingRight="9dp"
+                                android:textColor="#bcc6d2"
+                                android:textSize="12dip" />
+                        </HorizontalScrollView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="41dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="7dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.163"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:gravity="center"
+                            android:text="@string/msg_purchase_delivery_memo"
+                            android:textColor="#192028"
+                            android:textSize="14dip" />
+
+                        <EditText
+                            android:id="@+id/editTextMemo"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="9dp"
+                            android:layout_weight="0.837"
+                            android:background="@drawable/background_edit_bg"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:gravity="left|center_vertical"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:maxLines="2"
+                            android:paddingLeft="9dp"
+                            android:paddingRight="9dp"
+                            android:textColor="#FF000000"
+                            android:textSize="14dip" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="7dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/buttonBasicDelivery"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:background="@drawable/checkbox"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:textSize="14dp"
+                            android:textColor="#8192a5"
+                            android:text="기본 배송지로 설정"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:background="#f3f8fd"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00000000"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:gravity="left|bottom"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingBottom="6dp"
+                        android:paddingLeft="10dp"
+                        android:text="@string/msg_purchase_point"
+                        android:textColor="#546170"
+                        android:textSize="12dip" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d9e1eb" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginRight="9dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:text="@string/msg_purchase_point_available"
+                            android:textColor="#192028"
+                            android:textSize="14dip" />
+
+                        <TextView
+                            android:id="@+id/textViewAvailablePoint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:lineSpacingExtra="8sp"
+                            android:textColor="#192028"
+                            android:textSize="14dip"
+                            tools:text="25,900원" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginRight="9dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:text="@string/msg_purchase_point_use"
+                            android:textColor="#192028"
+                            android:textSize="14dip" />
+
+                        <EditText
+                            android:id="@+id/editTextPoint"
+                            android:layout_width="177dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_toLeftOf="@+id/buttonPointUseAll"
+                            android:background="@drawable/background_edit_bg"
+                            android:gravity="center"
+                            android:imeOptions="actionDone"
+                            android:inputType="number" />
+
+                        <Button
+                            android:id="@+id/buttonPointUseAll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/gray_btn"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:text="@string/msg_cre_confirm"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="14dip" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:gravity="right"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="@string/msg_purchase_point_comment"
+                        android:textColor="#8192a5"
+                        android:textSize="12dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:background="#f3f8fd"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00000000"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:gravity="left|bottom"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingBottom="6dp"
+                        android:paddingLeft="10dp"
+                        android:text="@string/msg_purchase_final_payment_price"
+                        android:textColor="#546170"
+                        android:textSize="12dip" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#d9e1eb" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFFFF"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginRight="9dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:text="@string/msg_purchase_product_price"
+                            android:textColor="#192028"
+                            android:textSize="14dip" />
+
+                        <TextView
+                            android:id="@+id/textViewProductPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:lineSpacingExtra="8sp"
+                            android:textColor="#192028"
+                            android:textSize="14dip"
+                            tools:text="25,900원" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginRight="9dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:text="@string/msg_purchase_delivery_price"
+                                android:textColor="#192028"
+                                android:textSize="14dip" />
+
+                            <!--<ImageButton-->
+                            <!--android:id="@+id/buttonDeliveryQ1"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_marginLeft="3dp"-->
+                            <!--android:background="@drawable/ic_qna"/>-->
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textViewTotalDeliveryPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:lineSpacingExtra="6sp"
+                            android:textColor="#192028"
+                            android:textSize="14dip"
+                            tools:text="25,900원" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginRight="9dp"
+                        android:layout_marginTop="9dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="5dp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:lineSpacingExtra="8sp"
+                            android:text="@string/msg_purchase_point"
+                            android:textColor="#192028"
+                            android:textSize="14dip" />
+
+                        <TextView
+                            android:id="@+id/textViewPoint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:lineSpacingExtra="8sp"
+                            android:textColor="#192028"
+                            android:textSize="12dip"
+                            tools:text="0원" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginRight="9dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:text="@string/msg_purchase_payment_total_price"
+                            android:textColor="#9f56f2"
+                            android:textSize="14dip" />
+
+                        <TextView
+                            android:id="@+id/textViewTotalPaymentPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:lineSpacingExtra="8sp"
+                            android:textColor="#9f56f2"
+                            android:textSize="14dip"
+                            tools:text="25,900원" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/noti_save_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="@string/save_point_noti"
+                        android:textColor="#FFCCCCCC"
+                        android:textSize="12dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:background="#FFF5F5F5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#f3f8fd"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:gravity="left|bottom"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:paddingBottom="6dp"
+                        android:paddingLeft="10dp"
+                        android:text="@string/msg_purchase_payment_method"
+                        android:textColor="#FF888888"
+                        android:textSize="12dip" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#FFCCCCCC" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFFFF"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/radioCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="61dp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:text="@string/msg_purchase_payment_card" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#FFCCCCCC" />
+
+                        <RadioButton
+                            android:id="@+id/radioDeposit"
+                            android:layout_width="match_parent"
+                            android:layout_height="61dp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:text="@string/msg_purchase_payment_transfer" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#FFCCCCCC"
+                            android:visibility="gone"/>
+
+                        <RadioButton
+                            android:id="@+id/radioPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="61dp"
+                            android:visibility="gone"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:text="@string/msg_purchase_phone" />
+
+                        <!--<RadioButton-->
+                            <!--android:id="@+id/radioNoBankbook"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="61dp"-->
+                            <!--android:fontFamily="@font/notosanskr_medium"-->
+                            <!--android:text="@string/msg_purchase_payment_deposit" />-->
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/no_bankbook_layer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#FFCCCCCC" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="34dp"
+                            android:background="#FFF5F5F5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#00000000"
+                                android:fontFamily="@font/notosanskr_bold"
+                                android:gravity="left|bottom"
+                                android:lines="1"
+                                android:maxLines="1"
+                                android:paddingBottom="6dp"
+                                android:paddingLeft="10dp"
+                                android:text="@string/refund_info"
+                                android:textColor="#FF888888"
+                                android:textSize="12dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="41dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginLeft="11dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="15dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.163"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:gravity="center_vertical"
+                                android:text="@string/deposit_name"
+                                android:textColor="#FF1B1B1B"
+                                android:textSize="14dip" />
+
+                            <EditText
+                                android:id="@+id/edit_depositName"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="9dp"
+                                android:layout_weight="0.837"
+                                android:background="@drawable/background_silver_round_border"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:gravity="left|center_vertical"
+                                android:hint="@string/hint_deposit_name"
+                                android:inputType="text"
+                                android:lines="1"
+                                android:maxLines="2"
+                                android:paddingLeft="9dp"
+                                android:paddingRight="9dp"
+                                android:textColor="#FF000000"
+                                android:textSize="14dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="41dp"
+                            android:layout_marginBottom="7dp"
+                            android:layout_marginLeft="11dp"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.163"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:gravity="center_vertical"
+                                android:text="@string/deposit_bank"
+                                android:textColor="#FF1B1B1B"
+                                android:textSize="14dip" />
+
+                            <EditText
+                                android:id="@+id/edit_depositBank"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="9dp"
+                                android:layout_weight="0.837"
+                                android:background="@drawable/background_silver_round_border"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:gravity="left|center_vertical"
+                                android:hint="@string/hint_deposit_bank"
+                                android:inputType="text"
+                                android:lines="1"
+                                android:maxLines="2"
+                                android:paddingLeft="9dp"
+                                android:paddingRight="9dp"
+                                android:textColor="#FF000000"
+                                android:textSize="14dip" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="41dp"
+                            android:layout_marginBottom="7dp"
+                            android:layout_marginLeft="11dp"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.163"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:gravity="center_vertical"
+                                android:text="@string/deposit_account"
+                                android:textColor="#FF1B1B1B"
+                                android:textSize="14dip" />
+
+                            <EditText
+                                android:id="@+id/edit_depositAccount"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="9dp"
+                                android:layout_weight="0.837"
+                                android:background="@drawable/background_silver_round_border"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:gravity="left|center_vertical"
+                                android:hint="@string/hint_deposit_account"
+                                android:imeOptions="actionDone"
+                                android:inputType="number"
+                                android:lines="1"
+                                android:maxLines="2"
+                                android:paddingLeft="9dp"
+                                android:paddingRight="9dp"
+                                android:textColor="#FF000000"
+                                android:textSize="14dip" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/buttonDone"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#9f56f2"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="@string/msg_purchase_title"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="18dip" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

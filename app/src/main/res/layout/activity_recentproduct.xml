@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff">
+
+    <!-- 타이틀바 -->
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_ico"/>
+
+        </RelativeLayout>
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="@string/msg_my_shopping_menu_product_history"
+            android:textColor="#192028"
+            android:textSize="20dip" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#1e000000" />
+
+        <!--&lt;!&ndash; 내 메세지 &ndash;&gt;
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/buttonMessage"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:src="@drawable/my_message_ico_copy"
+            android:scaleType="centerInside"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/buttonCart"/>
+
+        &lt;!&ndash; Message Badge&ndash;&gt;
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/textViewMessageBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/buttonMessage"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/oval_2"
+            android:gravity="center"
+            android:textColor="#FFFFFFFF"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="10dip"
+            android:text="1"/>
+
+        &lt;!&ndash; 장바구니 &ndash;&gt;
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/buttonCart"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:src="@drawable/cart_ico"
+            android:scaleType="centerInside"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+        &lt;!&ndash; Cart Badge&ndash;&gt;
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/textViewCartBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/buttonCart"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/oval_2"
+            android:gravity="center"
+            android:textColor="#FFFFFFFF"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="10dip"
+            android:text="1"/>-->
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/toplayer"
+        android:layout_below="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#ffffff">
+
+        <View
+            android:id="@+id/empty"
+            android:layout_width="15dp"
+            android:layout_height="40dp" />
+
+        <RelativeLayout
+            android:id="@+id/btnCheckAll"
+            android:layout_width="41dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:layout_toRightOf="@+id/empty"
+            android:layout_centerVertical="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgAllCheck"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/cart_check_off"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/btnCheckAll"
+            android:orientation="horizontal">
+
+            <!--<androidx.appcompat.widget.AppCompatTextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--tools:text="전체"-->
+            <!--android:textSize="14sp"-->
+            <!--android:textColor="#192028"-->
+            <!--android:layout_marginRight="3dp"-->
+            <!--android:fontFamily="@font/notosanskr_medium"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:includeFontPadding="false"/>-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/strAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전체("
+                    android:textSize="14sp"
+                    android:textColor="#192028"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:layout_gravity="center_vertical"
+                    android:includeFontPadding="false"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSelectedCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#ff6c6c"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:layout_gravity="center_vertical"
+                    android:includeFontPadding="false"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/slash"
+                    android:text=" / "
+                    android:textSize="14sp"
+                    android:textColor="#192028"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:layout_gravity="center_vertical"
+                    android:includeFontPadding="false"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAllCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="#192028"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:layout_gravity="center_vertical"
+                    android:includeFontPadding="false"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=")"
+                    android:textSize="14sp"
+                    android:textColor="#192028"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:layout_gravity="center_vertical"
+                    android:includeFontPadding="false"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <RelativeLayout
+                android:id="@+id/btnEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:visibility="visible"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="62dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/item_background"
+                    android:text="편집"
+                    android:textColor="#192028"
+                    android:gravity="center"
+                    android:fontFamily="@font/notosanskr_medium"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/twoBtnLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_alignParentRight="true">
+
+                <RelativeLayout
+                    android:id="@+id/btnDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:paddingRight="3dp"
+                    android:paddingLeft="15dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="62dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/btn_cookie_dialog_on"
+                        android:text="삭제"
+                        android:textColor="#ffffff"
+                        android:gravity="center"
+                        android:fontFamily="@font/notosanskr_medium"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/btnDelete"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="3dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="62dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/item_background"
+                        android:text="취소"
+                        android:textColor="#192028"
+                        android:gravity="center"
+                        android:fontFamily="@font/notosanskr_medium"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <!--<RelativeLayout-->
+        <!--android:id="@+id/btnDelete"-->
+        <!--android:layout_width="42dp"-->
+        <!--android:layout_height="42dp"-->
+        <!--android:visibility="gone"-->
+        <!--android:paddingRight="15dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_alignParentRight="true" >-->
+
+        <!--<androidx.appcompat.widget.AppCompatImageView-->
+        <!--android:layout_width="18dp"-->
+        <!--android:layout_height="23dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:background="@drawable/cart_delete_ico"/>-->
+
+        <!--</RelativeLayout>-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="0개 선택"
+            android:textSize="14sp"
+            android:textColor="#192028"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:layout_marginTop="-5dp"/>
+
+        <View
+            android:id="@+id/botLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#1e000000" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toplayer"
+        android:scrollbars="none"
+        android:overScrollMode="never"/>
+
+    <LinearLayout
+        android:id="@+id/layoutEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/set_img"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="31dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="최근 본 상품이 없습니다."
+            android:textSize="18sp"
+            android:textColor="#546170"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/topBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/top_fab"
+        android:visibility="gone"/>
+</RelativeLayout>

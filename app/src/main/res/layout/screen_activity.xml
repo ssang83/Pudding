@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:visibility="invisible"
+        app:resize_mode="fixed_height"
+        app:surface_type="texture_view"
+        app:use_controller="true" />
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:format="%s"
+        android:gravity="center"
+        android:textColor="@color/font_color_35"
+        android:textSize="@dimen/font_size_38px" />
+
+    <TextView
+        android:id="@+id/url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chronometer"
+        android:gravity="center"
+        android:textColor="@color/font_color_35"
+        android:textSize="@dimen/font_size_38px"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/debuginfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/url"
+        android:gravity="left"
+        android:textColor="@color/font_color_41"
+        android:textSize="@dimen/font_size_22px" />
+
+    <include
+        layout="@layout/beauty_choose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/watermark"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="#11123456"
+                android:checked="false"
+                android:text="워터마크"
+                android:textColor="@color/font_color_35"
+                android:textSize="@dimen/font_size_28px" />
+
+            <CheckBox
+                android:id="@+id/mute"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="#11123456"
+                android:checked="false"
+                android:text="무음"
+                android:textColor="@color/font_color_35"
+                android:textSize="@dimen/font_size_28px"
+                android:visibility="gone" />
+
+            <CheckBox
+                android:id="@+id/video"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="#11123456"
+                android:checked="false"
+                android:text="비디오"
+                android:textColor="@color/font_color_35"
+                android:textSize="@dimen/font_size_28px" />
+
+            <CheckBox
+                android:id="@+id/screenCameraWindow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="#11123456"
+                android:checked="false"
+                android:text="카메라"
+                android:textColor="@color/font_color_35"
+                android:textSize="@dimen/font_size_28px" />
+
+            <CheckBox
+                android:id="@+id/click_to_switch_beauty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="#11123456"
+                android:checked="false"
+                android:text="beauty switch"
+                android:textColor="@color/font_color_35"
+                android:textSize="@dimen/font_size_28px"
+                android:visibility="gone" />
+
+            <CheckBox
+                android:id="@+id/click_to_select_audio_filter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="#11123456"
+                android:checked="false"
+                android:text="오디오 필터"
+                android:textColor="@color/font_color_35"
+                android:textSize="@dimen/font_size_28px"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="4">
+
+            <TextView
+                android:id="@+id/backoff"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:text="back"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/click_to_shoot"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="#11123456"
+                android:gravity="center"
+                android:text="shooting"
+                android:textColor="@color/font_color_35"
+                android:textSize="@dimen/font_size_28px" />
+
+            <TextView
+                android:id="@+id/click_to_record"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="#11123456"
+                android:gravity="center"
+                android:text="레코딩"
+                android:textColor="@color/font_color_35"
+                android:textSize="@dimen/font_size_28px" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

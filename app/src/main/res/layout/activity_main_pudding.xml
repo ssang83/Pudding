@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#ffffff"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:clickable="true"
+            android:src="@drawable/home_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/textViewSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/imageViewLogo"
+            app:layout_constraintRight_toLeftOf="@id/imageViewLive"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewLive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:src="@drawable/ic_live"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/textViewSearch"
+            app:layout_constraintRight_toLeftOf="@id/imageViewShoppingBag"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewShoppingBag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:background="#00000000"
+            android:src="@drawable/main_cart_ico"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shoppingBagCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/bg_badge_count"
+            android:ellipsize="end"
+            android:fontFamily="@font/notosanskr_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:lines="1"
+            android:maxWidth="40dp"
+            android:maxLines="1"
+            android:text="0"
+            android:textColor="#ffffff"
+            android:textSize="9sp"
+            android:visibility="invisible"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layout_header"
+        android:background="#d9e1eb" />
+
+    <com.enliple.pudding.commons.widget.NonSwipeableViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button_layer"
+        android:layout_below="@+id/divider" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="48dp"
+        android:background="#1e000000" />
+
+    <LinearLayout
+        android:id="@+id/button_layer"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/btn_main_bottom_home" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnFollow"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/btn_main_bottom_follow" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/btn_main_bottom_item" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnSchedule"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:src="@drawable/btn_main_bottom_schedule" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnProfile"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/main_user_image_bg"
+                android:padding="1dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile_default_img" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/badgeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="38dp"
+                android:background="@drawable/bg_badge_count"
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskr_bold"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:maxWidth="40dp"
+                android:maxLines="1"
+                android:text="0"
+                android:textColor="#ffffff"
+                android:textSize="9sp"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/mainBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

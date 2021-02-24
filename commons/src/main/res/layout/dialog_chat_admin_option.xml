@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="@dimen/chat_option_dialog_height"
+    android:layout_gravity="bottom"
+    android:background="#FFFFFFFF"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/buttonDeniedAll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:textColor="#192028"
+        android:textSize="16dip"
+        android:fontFamily="@font/notosanskr_medium"
+        android:gravity="center_vertical"
+        android:text="@string/msg_chat_option_popup_all_denied"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/buttonChatDenied"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:textColor="#192028"
+        android:textSize="16dip"
+        android:fontFamily="@font/notosanskr_medium"
+        android:gravity="center_vertical"
+        android:text="@string/msg_chat_option_popup_chat_denied"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/buttonBan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:textColor="#192028"
+        android:textSize="16dip"
+        android:fontFamily="@font/notosanskr_medium"
+        android:gravity="center_vertical"
+        android:text="@string/msg_chat_option_kick"/>
+
+</LinearLayout>

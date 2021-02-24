@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="#FF000000">
+
+    <!-- 로드되는 thumbnail 이 표시되는 ImageView -->
+    <com.enliple.pudding.commons.widget.DynamicHeightImageView
+        android:id="@+id/mImgThumbNail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:heightRatio="1.0" />
+
+    <com.enliple.pudding.commons.widget.DynamicHeightImageView
+        android:id="@+id/mBrokenImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:scaleType="centerInside"
+        android:src="@android:drawable/ic_dialog_alert"
+        android:visibility="gone"
+        app:heightRatio="1.0" />
+
+    <com.enliple.pudding.commons.widget.DynamicHeightImageView
+        android:id="@+id/videoPlayImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:padding="0dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/exo_icon_play"
+        android:visibility="gone"
+        app:heightRatio="1.0" />
+
+    <!-- 현재 편집 상태인 ImageView 표시 -->
+    <com.enliple.pudding.commons.widget.DynamicHeightImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:background="#77000000"
+        android:padding="0dp"
+        android:visibility="invisible"
+        app:heightRatio="1.0" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/mCheckBoxSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginLeft="9dp"
+        android:background="@drawable/photo_check"
+        android:button="@null"
+        android:clickable="false"
+        android:focusableInTouchMode="false" />
+
+    <com.enliple.pudding.commons.widget.DynamicHeightImageView
+        android:id="@+id/angle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/angle_bg"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        app:heightRatio="1.0" />
+
+</RelativeLayout>

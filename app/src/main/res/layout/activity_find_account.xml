@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#e5eaf0">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sub_title_layout_height"
+        android:background="#ffffff">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="20sp"
+            android:textColor="#192028"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            tools:text="아이디 찾기"/>
+
+        <RelativeLayout
+            android:id="@+id/buttonClose"
+            android:layout_centerVertical="true"
+            android:layout_width="46dp"
+            android:layout_height="46dp" >
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="17dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/close_black_ico"/>
+
+        </RelativeLayout>
+
+        <!--<android.support.v7.widget.AppCompatImageButton-->
+            <!--android:id="@+id/buttonClose"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:background="#00000000"-->
+            <!--android:src="@drawable/close_white_ico"-->
+            <!--android:layout_marginRight="15dp"/>-->
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1e000000" />
+
+    <!-- 아이디 찾기 결과 표시 레이아웃 -->
+    <include
+        layout="@layout/layout_find_account_id_result"
+        android:id="@+id/layoutFindIdResult"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <!-- Fragment 내용 본문 -->
+    <FrameLayout
+        android:id="@+id/layoutContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</LinearLayout>

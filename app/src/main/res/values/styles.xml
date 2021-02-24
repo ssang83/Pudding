@@ -1,0 +1,294 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Customize your theme here. -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:statusBarColor">#ffffff</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="SplashScreenTheme" parent="AppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/colorAccent</item>
+    </style>
+
+    <style name ="LoginTheme" parent="SplashScreenTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- progress -->
+    <style name="ProgressTheme" parent="@style/Theme.AppCompat">
+        <item name="colorAccent">@color/main_color</item>
+    </style>
+
+    <!-- Transparent -->
+
+    <!-- FullScreen Theme -->
+
+    <!-- Image Shared Move Transition Theme -->
+
+    <!-- 회원탈퇴버튼 -->
+    <style name="WithDrawalButton" parent="@android:style/Widget.Button">
+        <item name="android:textSize">16dip</item>
+        <item name="android:textColor">@color/withdrawal_text</item>
+    </style>
+
+    <style name="FindAddressDialog" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>"
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TabLayoutTextStyle">
+        <item name="android:fontFamily">@font/notosanskr_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="MyTabLayoutTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="MyCalcTabLayoutTextStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- Transparent -->
+    <style name="Cast.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowEnterTransition">@null</item>
+        <item name="android:windowExitTransition">@null</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="PlayerProductListDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="ReplyDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="AppThemeRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:minHeight">29dp</item>
+        <item name="android:minWidth">30dp</item>
+        <item name="android:progressDrawable">@drawable/big_rating_bar</item>
+    </style>
+
+    <style name="MyReviewRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:minHeight">15dp</item>
+        <item name="android:minWidth">16dp</item>
+        <item name="android:progressDrawable">@drawable/small_rating_bar</item>
+    </style>
+
+
+    <!-- 방송효과 팝업 -->
+    <style name="CasterBottomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!-- 방송상품 팝업 -->
+    <style name="CasterProductDialog" present="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="RiseAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_stand</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>
+    </style>
+
+    <style name="Theme" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/DefaultAnimation</item>
+    </style>
+
+    <style name="Theme.RiseAnimation" parent="@style/Theme">
+        <item name="android:windowAnimationStyle">@style/RiseAnimation</item>
+    </style>
+
+    <style name="DefaultAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>
+    </style>
+
+    <style name="DefaultNumberPickerTheme" parent="AppTheme">
+        <item name="colorControlNormal">#ffffff</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="noAnimTheme" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <!--<style name="DatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">-->
+    <!--<item name="colorAccent">#ff6c6c</item>-->
+    <!--</style>-->
+
+
+    <style name="DatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">#5774f4</item> <!-- 상단 -->
+        <item name="android:textColorPrimaryInverse">#ffffff</item> <!-- 상단 title color -->
+        <item name="colorControlActivated">#5774f4</item> <!-- 선택날짜 원 색상 -->
+        <item name="android:textColor">#5774f4</item> <!-- 하단 취소 확인 글자 색상 -->
+        <!-- 상단 달 선택 버튼 -->
+        <!--<item name="android:selectableItemBackgroundBorderless">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorControlHighlight">#d50000</item>-->
+    </style>
+
+    <!-- time picker style -->
+    <attr name="mdtp_theme_dark" format="boolean">false</attr>
+    <bool name="mdtp_title_all_caps">true</bool>
+
+    <style name="mdtp_time_label">
+        <item name="android:textSize">@dimen/mdtp_time_label_size</item>
+        <item name="android:textColor">#192028</item>
+    </style>
+
+    <style name="mdtp_time_label_small" parent="mdtp_time_label">
+        <item name="android:textSize">@dimen/mdtp_time_label_subscript_size</item>
+        <item name="android:layout_marginBottom">@dimen/mdtp_time_label_shift</item>
+    </style>
+
+    <style name="mdtp_ampm_label">
+        <item name="android:textSize">@dimen/mdtp_ampm_label_size</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/mdtp_ampm_text_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="mdtp_day_of_week_label_condensed" />
+
+    <style name="mdtp_ActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/mdtp_material_button_height</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="mdtp_ActionButton.Text" tools:ignore="NewApi">
+        <item name="android:textSize">@dimen/mdtp_material_button_textsize</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:background">@drawable/mdtp_material_button_background</item>
+        <item name="android:minWidth">@dimen/mdtp_material_button_minwidth</item>
+        <item name="android:paddingLeft">@dimen/mdtp_material_button_textpadding_horizontal</item>
+        <item name="android:paddingRight">@dimen/mdtp_material_button_textpadding_horizontal</item>
+        <item name="android:textColor">#ff6c6c</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="mdtp_ActionButton.Text.Cancel" tools:ignore="NewApi">
+        <item name="android:textSize">@dimen/mdtp_material_button_textsize</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:background">@drawable/mdtp_material_button_background</item>
+        <item name="android:minWidth">@dimen/mdtp_material_button_minwidth</item>
+        <item name="android:paddingLeft">@dimen/mdtp_material_button_textpadding_horizontal</item>
+        <item name="android:paddingRight">@dimen/mdtp_material_button_textpadding_horizontal</item>
+        <item name="android:textColor">#546170</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <!-- end time picker style -->
+
+    <!-- FullScreen Theme -->
+    <style name="AppThemeFullScreen" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:background">@drawable/splash</item>
+    </style>
+
+    <style name="VideoReplyDialog" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:popupAnimationStyle">@null</item>
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="PauseDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up_dialog</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_down</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/reply_top_bg</item>
+    </style>
+
+    <style name="NotiDialogTheme" parent="@android:style/Theme.Dialog">
+        <!-- Fill the screen -->
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+
+        <!-- No backgrounds, titles or window float -->
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+
+        <!-- Just to prove it's working -->
+        <item name="android:background">#4a000000</item>
+    </style>
+
+    <style name="FullScreenDialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <!-- Additionally if you want animations when dialog opening -->
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+</resources>

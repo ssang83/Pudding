@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="20dp"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_bg"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <!-- 종료 타이틀 -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#222222"
+        android:letterSpacing="-0.01"
+        android:padding="10dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:text="@string/msg_purchase_confirm_popup_title"
+        android:background="@drawable/bg_popup_title"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e3e3e3"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:textSize="14sp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textColor="#192028"
+        android:lineSpacingExtra="2dp"
+        android:text="@string/msg_purchase_confirm_popup_content"
+        android:gravity="center"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="23dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonNo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:layout_marginRight="4dp"
+            android:textColor="#aaaaaa"
+            android:background="@drawable/bg_review_edit"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="@string/msg_purchase_confirm_cancel"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonYes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/btn_caster_finish_yes"
+            android:textSize="16sp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="@string/msg_purchase_confirm"/>
+
+    </LinearLayout>
+</LinearLayout>

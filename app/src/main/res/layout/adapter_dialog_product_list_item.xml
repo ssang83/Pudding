@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="137dp"
+    android:paddingLeft="15dp"
+    android:paddingTop="15dp"
+    android:paddingRight="15dp"
+    tools:background="#ffffff">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/thumbnailCardView"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginRight="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/shopBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/thumbnailCardView">
+
+        <RelativeLayout
+            android:id="@+id/shopTree"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:background="@drawable/item_shop_background"
+            android:layout_marginBottom="2dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="5dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:id="@+id/shopIc"
+                android:layout_centerVertical="true"
+                android:background="@drawable/item_shop_ic_1"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/shopName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/shopIc"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                tools:text="유찬몰" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/link"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:background="@drawable/item_link_bg"
+            android:layout_marginBottom="2dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="5dp"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/productGubun"
+                android:layout_centerVertical="true"
+                android:background="@drawable/item_link_ic"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/linkName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/productGubun"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:textColor="#ffffff"
+                android:textSize="10sp"
+                tools:text="유찬몰" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/shopBg"
+        android:layout_toRightOf="@+id/thumbnailCardView"
+        android:ellipsize="end"
+        android:fontFamily="@font/notosanskr_regular"
+        android:includeFontPadding="false"
+        android:maxLines="2"
+        android:textColor="#192028"
+        android:textSize="14sp"
+        tools:text="입생로랑 베르니 아 레브르 홀로 그램 틴트 인데 이름이 매우 길면 어떻게 되나여" />
+
+    <!--<androidx.appcompat.widget.AppCompatTextView-->
+    <!--android:id="@+id/textViewSalePercent"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@id/textViewSubject"-->
+    <!--android:layout_marginTop="7dp"-->
+    <!--android:layout_marginRight="6dp"-->
+    <!--android:layout_marginLeft="10dp"-->
+    <!--android:layout_toRightOf="@+id/thumbnailCardView"-->
+    <!--android:fontFamily="@font/notosanskr_bold"-->
+    <!--android:includeFontPadding="false"-->
+    <!--android:maxLines="1"-->
+    <!--android:textColor="#ff6c6c"-->
+    <!--android:textSize="14dp"-->
+    <!--android:visibility="gone"-->
+    <!--tools:text="20%" />-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/originalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewSubject"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="6dp"
+        android:layout_toRightOf="@+id/thumbnailCardView"
+        android:fontFamily="@font/notosanskr_regular"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textColor="#bcc6d2"
+        android:textSize="12dp"
+        tools:text="2,00,000" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/originalPrice"
+        android:layout_toRightOf="@+id/thumbnailCardView"
+        android:fontFamily="@font/notosanskr_medium"
+        android:gravity="right|bottom"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textColor="#192028"
+        android:textSize="16sp"
+        tools:text="69,000원" />
+
+    <RelativeLayout
+        android:id="@+id/btnLike"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:layout_alignBottom="@id/thumbnailCardView"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/like_circle_on">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/likeImage"
+                android:layout_width="18dp"
+                android:layout_height="17dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/my_jjim_on_ico" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/numLike"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/likeImage"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_marginTop="-2dp"
+                android:paddingLeft="-1dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:textColor="#ff6c6c"
+                android:textSize="10sp"
+                tools:text="0" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btnCart"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:layout_alignBottom="@id/thumbnailCardView"
+        android:layout_toLeftOf="@+id/btnLike"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/like_circle_off">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="27dp"
+            android:layout_height="22dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/product_cart_off_ico" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#e5eaf0" />
+
+</RelativeLayout>

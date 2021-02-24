@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="69dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="18sp"
+            android:textColor="#192028"
+            android:gravity="center_horizontal"
+            tools:text="asdf1234님의 비밀번호가 성공적으로 변경되었습니다."/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="14sp"
+            android:textColor="#546170"
+            android:gravity="center_horizontal"
+            android:text="새로운 비밀번호로 로그인하여 주시기 바랍니다."/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="77dp"
+            android:layout_gravity="center"
+            android:background="@drawable/illust_2"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_alignParentBottom="true"
+        android:textColor="#ffffff"
+        android:background="@color/main_color"
+        android:textSize="20dip"
+        android:text="로그인"
+        android:fontFamily="@font/notosanskr_medium" />
+
+</RelativeLayout>

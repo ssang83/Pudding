@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/coordinatorRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rsb="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            android:text="@string/engineering_mode_title"
+            android:textColor="#FFFFFFFF"
+            android:gravity="center"
+            android:textSize="18dip"
+            android:fontFamily="@font/notosanskr_bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="11dip"
+                    android:textColor="#FF663322"
+                    android:gravity="center_horizontal"
+                    android:text="@string/engineering_mode_message"/>
+
+                <!-- 서버선택 -->
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="15dip"
+                    android:textColor="#FF000000"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/engineering_mode_server_select"/>
+
+                <RadioGroup
+                    android:id="@+id/radioGroupServer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButtonServer1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/engineering_server_release"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="13dip"
+                        tools:checked="true"/>
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButtonServer2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="13dip"
+                        android:text="@string/engineering_server_test" />
+
+                </RadioGroup>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#FF3C3C3C"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="15dip"
+                    android:textColor="#FF000000"
+                    android:text="@string/engineering_mode_ab_testing"/>
+
+                <RadioGroup
+                    android:id="@+id/radioGroupExp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButtonExp1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/engineering_exp_normal"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="13dip"
+                        tools:checked="true"/>
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButtonExp2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="13dip"
+                        android:text="@string/engineering_exp_a" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/radioButtonExp3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="13dip"
+                        android:text="@string/engineering_exp_b" />
+
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonDevelopScreen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="13dip"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#FF000000"
+                    android:textAllCaps="false"
+                    android:text="개발화면 테스트"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#FF3C3C3C"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonTerm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="13dip"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#FF000000"
+                    android:textAllCaps="false"
+                    android:text="이용약관"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonPrivacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="13dip"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#FF000000"
+                    android:textAllCaps="false"
+                    android:text="개인정보보호정책"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonWithDrawal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="13dip"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#FF000000"
+                    android:textAllCaps="false"
+                    android:text="회원탈퇴"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonMidibusTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="13dip"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#FF000000"
+                    android:textAllCaps="false"
+                    android:text="@string/enginerring_mode_video_upload"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonUTokenTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="13dip"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#FF000000"
+                    android:textAllCaps="false"
+                    android:text="@string/engineering_mode_utoken_test"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonPTokenTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="13dip"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#FF000000"
+                    android:textAllCaps="false"
+                    android:text="@string/engineering_mode_ptoken_test"/>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#FF3C3C3C"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- 로그아웃 처리 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="13dip"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#FF000000"
+                    android:text="@string/engineering_mode_logout"/>
+
+                <!-- 캐시데이터 삭제 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonClearCache"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="13dip"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#FF000000"
+                    android:text="@string/engineering_mode_remove_cache"/>
+
+                <!-- 앱 최초 설치상태 (전체 데이터 삭제)-->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonNewInstalling"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="13dip"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#FF000000"
+                    android:text="@string/engineering_mode_all_remove"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#FF3C3C3C"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- FireBase 푸시 기능 테스트(HTTP) -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonTestGooglePush"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="13dip"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#FF000000"
+                    android:text="@string/engineering_mode_test_fcm"/>
+
+                <!-- 디바이스 정보 -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonDeviceInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="13dip"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textColor="#FF000000"
+                    android:text="@string/engineering_mode_device_info"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonExit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="#FFFFFFFF"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:text="@string/engineering_mode_exit"
+            android:textSize="18dip"
+            android:fontFamily="@font/notosanskr_regular"/>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

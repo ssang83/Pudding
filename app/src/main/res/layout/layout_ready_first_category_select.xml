@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutFirstCategorySelect"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/buttonFirstCategoryBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/close_black_ico" />
+    </RelativeLayout>
+
+    <!-- 카테고리 선택 Title-->
+    <LinearLayout
+        android:id="@+id/layoutFirstCategoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonFirstCategoryBack">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/category_1_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:text="@string/msg_casting_ready_category_first"
+            android:textColor="#192028"
+            android:textSize="16dip" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/category_2_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:text="@string/msg_casting_ready_category_first_1"
+            android:textColor="#192028"
+            android:textSize="12dip" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewFirstCategory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginBottom="21dp"
+        android:background="#00000000"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layoutManager="com.enliple.pudding.commons.widget.recyclerview.WrappedLinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/buttonFirstCategoryConfirm"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutFirstCategoryTitle"
+        tools:listItem="@layout/adapter_caster_category_item" />
+
+
+    <!-- 방송하기 버튼 -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonFirstCategoryConfirm"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#ff6c6c"
+        android:fontFamily="@font/notosanskr_medium"
+        android:gravity="center"
+        android:text="선택완료"
+        android:textColor="#FFFFFFFF"
+        android:textSize="20dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

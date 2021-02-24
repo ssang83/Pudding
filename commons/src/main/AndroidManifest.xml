@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.enliple.pudding.commons">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application>
+        <activity
+            android:name="com.enliple.pudding.commons.app.RemoveRecentFinishActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/FinishActivity.Transparent" />
+    </application>
+</manifest>

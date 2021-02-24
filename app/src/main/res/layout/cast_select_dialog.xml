@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeffffff">
+
+    <RelativeLayout
+        android:id="@+id/buttonClose"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentRight="true">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/close_black_ico" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="7dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/buttonVod"
+                android:layout_width="94dp"
+                android:layout_height="94dp"
+                android:layout_gravity="center_horizontal|right"
+                android:background="@drawable/green_circle_line">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/vod_ico"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="11dp"
+                        android:src="@drawable/start_vod_ico" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/vod_ico"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="VOD"
+                        android:textColor="#1db795"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|right"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:lineSpacingExtra="5dp"
+                android:text="동영상 촬영\n또는\n동영상 업로드"
+                android:textColor="#192028"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/buttonLive"
+                android:layout_width="94dp"
+                android:layout_height="94dp"
+                android:layout_gravity="center_horizontal|left"
+                android:background="@drawable/red_circle_line">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/live_ico"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="11dp"
+                        android:src="@drawable/start_live_ico" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/live_ico"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:text="라이브"
+                        android:textColor="#ff6c6c"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|left"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:lineSpacingExtra="5dp"
+                android:text="실시간 방송\n\n"
+                android:textColor="#192028"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

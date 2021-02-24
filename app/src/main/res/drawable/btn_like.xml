@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- selected -->
+    <item android:drawable="@drawable/like_l_enable_btn" android:state_selected="true" />
+
+    <item android:drawable="@drawable/like_l_off_btn" android:state_enabled="false" />
+
+    <!-- default -->
+    <item android:drawable="@drawable/like_l_on_btn" />
+
+</selector>

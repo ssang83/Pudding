@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/spinnerText"
+    android:textSize="14sp"
+    android:fontFamily="@font/notosanskr_regular"
+    android:layout_gravity="center_vertical"
+    android:gravity="center_vertical"
+    android:paddingLeft="9dp"
+    android:paddingRight="9dp"
+    android:textColor="#192028"
+    android:layout_width="123dp"
+    android:layout_height="35dp" >
+
+</TextView>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:paddingLeft="9dp"-->
+    <!--android:paddingRight="9dp"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="27dp">-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/spinnerText"-->
+        <!--android:textSize="14sp"-->
+        <!--android:fontFamily="@font/notosanskr_regular"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:textColor="#192028"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent" />-->
+
+<!--</LinearLayout>-->

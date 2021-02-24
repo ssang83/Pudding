@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="67dp"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/image_layer"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="15dp"
+        android:layout_centerVertical="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewThumbnail"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            android:background="@drawable/border_profile"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/image_layer"
+        android:layout_toLeftOf="@+id/buttonFollowing">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:layout_marginBottom="1dp"
+                android:textSize="14sp"
+                android:textColor="#546170"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="요미요미"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewFollowerCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:layout_marginRight="4dp"
+                    android:textSize="12sp"
+                    android:textColor="#192028"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:text="57.3K"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:layout_marginRight="9dp"
+                    android:textSize="12sp"
+                    android:textColor="#546170"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="팔로워"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewLikeCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:layout_marginRight="4dp"
+                    android:textSize="12sp"
+                    android:textColor="#192028"
+                    android:fontFamily="@font/notosanskr_bold"
+
+                    android:text="422.3K"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:textSize="12sp"
+                    android:textColor="#546170"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="좋아요"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/buttonFollowing"
+        android:layout_width="74dp"
+        android:layout_height="34dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:background="@drawable/btn_search_user"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textSize="14dp"
+        android:textColor="@color/btn_search_user_follow"
+        android:text="@string/msg_my_following"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d9e1eb"
+        android:layout_marginLeft="70dp"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

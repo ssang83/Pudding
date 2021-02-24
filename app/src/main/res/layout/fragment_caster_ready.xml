@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    tools:background="#666666">
+
+    <!-- 상단 음영 해더 영역 -->
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#4C000000"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="7dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewThumbnail"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="12dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewSubject"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="left|top"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="16dip"
+                    tools:text="마지막 세일! 마지막 특가!" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#FFFFFFFF" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="left|bottom"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="12dip"
+                    tools:text="잡화/뷰티 &gt; 신발, 수입명품" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 대표 상품 레이아웃 -->
+    <!--    <LinearLayout
+            android:id="@+id/layoutAddedProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_added_product_layout"
+            android:layout_marginTop="17dp"
+            android:layout_marginLeft="13dp"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="4dp"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/imageViewAddedProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_added_product"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/ic_launcher"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_added_product_right"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:src="@drawable/spread_ico"/>
+
+            </LinearLayout>
+        </LinearLayout>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_video_card_35"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="40dp"
+            android:background="#00000000"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/close_white_ico" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/vod_complete_off_btn"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/dark_bg"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:background="@drawable/bg_video_card_72"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <!-- Live 방송시작 버튼-->
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonLive"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00000000"
+        android:src="@drawable/live_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- 카메라 회전 -->
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonRotateCamera"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="35dp"
+        android:background="#00000000"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/camera_rotate_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/buttonLive" />
+
+    <RelativeLayout
+        android:id="@+id/layoutChronometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/layoutVodButtons"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/red_circle" />
+
+        <!-- 방송 시간 경과 표시를 위한 Chronometer 시계-->
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="6dp"
+            android:format="%s"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+    <!-- VOD 방송 버튼 화면 영역 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutVodButtons"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <!-- 카메라 회전 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonRotateVODCamera"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="30dp"
+            android:layout_toLeftOf="@id/buttonVOD"
+            android:background="#00000000"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/camera_rotate_btn"
+            app:layout_constraintBottom_toBottomOf="@id/buttonVOD"
+            app:layout_constraintRight_toLeftOf="@id/buttonVOD"
+            app:layout_constraintTop_toTopOf="@id/buttonVOD" />
+
+        <!-- VOD Record 버튼 -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonVOD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/btn_vod_record"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_weight="1"
+        android:minHeight="100dp"
+        android:padding="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/layoutVodButtons">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:indeterminate="true"
+            android:max="100"
+            android:progress="0"
+            android:theme="@style/ProgressTheme" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#FF000000"
+            android:textSize="14dip"
+            tools:text="0 %" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/countDownLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#dd000000"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCountDown"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:shadowColor="#99333333"
+            android:text="5"
+            android:textColor="#ffffff"
+            android:textSize="220sp" />
+
+    </RelativeLayout>
+
+
+    <!--<android.support.v7.widget.AppCompatTextView-->
+    <!--android:id="@+id/textViewCountDown"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:fontFamily="@font/roboto_medium"-->
+    <!--android:gravity="center"-->
+    <!--android:shadowColor="#99333333"-->
+    <!--android:textColor="#FFFFFFFF"-->
+    <!--android:textSize="220sp"-->
+    <!--android:visibility="gone"-->
+    <!--tools:text="5" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

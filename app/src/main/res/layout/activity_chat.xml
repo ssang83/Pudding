@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 타이틀 바 -->
+        <RelativeLayout
+            android:id="@+id/layoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <RelativeLayout
+                android:id="@+id/buttonClose"
+                android:layout_width="60dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/back_ico" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewThumbnail"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewNickName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#192028"
+                    android:textSize="20dip"
+                    tools:text="슬픈사슴" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/layoutTitle"
+            android:background="#1e000000" />
+
+        <LinearLayout
+            android:id="@+id/layoutFollow"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_below="@+id/divider2"
+            android:background="#f3f8fd"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/viewFollow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/chat_follow_ico" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:lineSpacingExtra="4sp"
+                    android:text="@string/msg_my_follow"
+                    android:textColor="#7e7e7e"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#d8d8d8" />
+
+            <LinearLayout
+                android:id="@+id/viewFollowLater"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/chat_follow_ico" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:lineSpacingExtra="4sp"
+                    android:text="@string/msg_my_follow_later"
+                    android:textColor="#7e7e7e"
+                    android:textSize="14dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/layoutFollow"
+            android:background="#19000000" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewChat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/layoutChatInput"
+            android:layout_below="@+id/divider"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layoutManager="com.enliple.pudding.commons.widget.recyclerview.WrappedLinearLayoutManager" />
+
+
+        <!-- 채팅 입력창 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutChatInput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:elevation="10dp"
+            android:layout_above="@+id/emptyView"
+            android:background="#ffffff"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextChat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="58dp"
+                android:background="#00000000"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="left|center_vertical"
+                android:hint="메시지 입력.."
+                android:imeOptions="actionDone"
+                android:maxLength="50"
+                android:maxLines="2"
+                android:padding="12dp"
+                android:textColor="#333333"
+                android:textColorHint="#FFCCCCCC"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/buttonSendMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:padding="10dp"
+                android:background="@drawable/btn_reply_send"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/emptyView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#00000000" />
+
+        <View
+            android:id="@+id/emptyTouch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"/>
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

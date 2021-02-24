@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- selected -->
+    <item android:drawable="@drawable/search_like_ico" android:state_selected="true" />
+
+    <!--&lt;!&ndash; pressed &ndash;&gt;-->
+    <!--<item android:drawable="@drawable/caster_like_l_on_btn" android:state_pressed="true" />-->
+
+    <!--&lt;!&ndash; focused &ndash;&gt;-->
+    <!--<item android:drawable="@drawable/caster_like_l_on_btn" android:state_focused="true" />-->
+
+    <!-- default -->
+    <item android:drawable="@drawable/favorite_ico" />
+
+</selector>

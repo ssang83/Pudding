@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/loginBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_login"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="5">
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:text="kakao"
+                android:id="@+id/kakao"/>
+
+            <com.kakao.usermgmt.LoginButton
+                android:id="@+id/login_kakao_real"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:text="facebook"
+                android:id="@+id/facebook"/>
+
+            <!--<com.facebook.login.widget.LoginButton-->
+                <!--android:id="@+id/facebook_login"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:visibility="visible" />-->
+        </RelativeLayout>
+
+
+
+
+
+        <com.google.android.gms.common.SignInButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="google"
+            android:id="@+id/google"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="insta"
+            android:id="@+id/insta"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:text="naver"
+            android:id="@+id/naver"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/centerBase"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/centerBase"
+        android:id="@+id/empty"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/password_layer"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="39dp"
+        android:layout_marginRight="39dp"
+        android:layout_marginTop="12dp"
+        android:layout_height="48dp"
+        android:background="@drawable/login_edit_bg"
+        android:layout_below="@+id/id_layer"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/lock"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:maxLength="15"
+            android:textColorHint="#ffffff"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textCursorDrawable="@null"
+            android:fontFamily="@font/notosanskr_regular"
+            android:hint="@string/msg_login_hint_password" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/id_layer"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="39dp"
+        android:layout_marginRight="39dp"
+        android:layout_marginTop="59dp"
+        android:layout_height="48dp"
+        android:background="@drawable/login_edit_bg"
+        android:layout_above="@+id/empty"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/login_icon"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:imeOptions="actionNext"
+            android:nextFocusDown="@+id/editTextPassword"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:lines="1"
+            android:maxLines="1"
+            android:textColorHint="#ffffff"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textCursorDrawable="@null"
+            android:fontFamily="@font/notosanskr_regular"
+            android:hint="@string/msg_login_hint_account" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/id_layer"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/logo_2"/>
+
+    <!-- 로그인 버튼 -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginRight="39dp"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/password_layer"
+        android:background="@drawable/login_button_bg"
+        android:layout_marginBottom="15dp"
+        android:text="@string/msg_login"
+        android:textColor="#8171e9"
+        android:fontFamily="@font/notosanskr_bold"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:id="@+id/check_layer"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="9dp"
+        android:layout_marginLeft="39dp">
+
+        <!-- 자동로그인 -->
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkBoxAutoLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:button="@drawable/login_checkbox"
+            android:gravity="left|center_vertical"
+            android:layout_marginRight="60dp"
+            android:textSize="14sp"
+            android:text="@string/msg_login_auto"
+            android:paddingLeft="9dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textColor="#ffffff"
+            tools:checked="true"/>
+
+        <!-- 아이디 저장 -->
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkBoxSaveId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:button="@drawable/login_checkbox"
+            android:gravity="left|center_vertical"
+            android:textSize="14sp"
+            android:text="@string/msg_login_save"
+            android:paddingLeft="9dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textColor="#ffffff"
+            tools:checked="false"/>
+
+    </LinearLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginBottom="22dp"
+        android:layout_marginLeft="24dp"
+        android:layout_alignParentBottom="true">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewJoin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_marginRight="23dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_centerVertical="true"
+            android:text="@string/msg_login_sign_up"
+            android:textColor="#fcff17"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="15sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="21dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewFindAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:text="@string/msg_login_find_account"
+                android:textColor="#ffffffff"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanskr_regular" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="13dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="14sp"
+                android:text="|"
+                android:textColor="#ffffffff"
+                android:fontFamily="@font/notosanskr_medium" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewFindPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:text="@string/msg_login_find_password"
+                android:textColor="#ffffffff"
+                android:fontFamily="@font/notosanskr_regular"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/emptyTouch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+</RelativeLayout>

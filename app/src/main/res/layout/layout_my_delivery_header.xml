@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutDeliveryHeader"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:showIn="@layout/fragment_pudding_shopping">
+
+    <!-- 주문관련 카운팅 라인-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/btnPayCompleted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPayCompleteCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="0"
+                android:textColor="#bcc6d2"
+                android:textSize="20dip" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewPayCompleteCount"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_my_delivery_step2"
+                android:textColor="#bcc6d2"
+                android:textSize="12dip" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/next_ico" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnDeliveryPending"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDeliveryPendingCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="0"
+                android:textColor="#bcc6d2"
+                android:textSize="20dip" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewDeliveryPendingCount"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_my_delivery_step3"
+                android:textColor="#bcc6d2"
+                android:textSize="12dip" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/next_ico" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnDelivering"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDeliveringCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="0"
+                android:textColor="#bcc6d2"
+                android:textSize="20dip" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewDeliveringCount"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_my_delivery_step4"
+                android:textColor="#bcc6d2"
+                android:textSize="12dip" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/next_ico" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btnDeliveryComplete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDeliveryCompleteCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#192028"
+                android:textSize="20dip" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewDeliveryCompleteCount"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_my_delivery_step5"
+                android:textColor="#bcc6d2"
+                android:textSize="12dip" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

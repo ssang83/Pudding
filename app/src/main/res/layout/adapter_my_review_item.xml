@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:paddingLeft="15dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewThumbnail"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/bg_direct_message"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imageViewThumbnail"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="14sp"
+                android:textColor="#FF192028"
+                tools:text="따뚜아쥬 꾸뛰르 메탈릭 완벽 커버 쿠션" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textSize="12sp"
+                android:textColor="#8192a5"
+                tools:text="올굿 베이직 물티슈 캡형 100매 x 10팩" />
+
+            <RatingBar
+                android:id="@+id/ratingBarReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MyReviewRatingBar"
+                android:stepSize="1"
+                android:rating="5"
+                android:numStars="5"
+                android:isIndicator="true"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/notosanskr_regular"
+        android:textSize="14sp"
+        android:textColor="#FF192028"
+        tools:text="사진보다 훨씬 예쁘고 핏도 좋아요~ 고민하다 구매했는데, 사길 엄청 잘한 것 같아요!!"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/review_like_ico"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textSize="14dp"
+                    android:textColor="#FF192028"
+                    android:text="추천"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewLikeCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="14dp"
+                    android:textColor="#ff6c6c"
+                    tools:text="9"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/review_unlike_ico"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:textSize="14dp"
+                    android:textColor="#FF192028"
+                    android:text="비추천"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewUnLikeCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:fontFamily="@font/notosanskr_bold"
+                    android:textSize="14dp"
+                    android:textColor="#8192a5"
+                    tools:text="0"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="11dp"
+        android:background="#80c9c9c9"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#f3f8fd"/>
+</LinearLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="275dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="29dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewThumbnail"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:src="@mipmap/logo_symbol_img" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/follow_cancel_ico" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/notosanskr_bold"
+        android:textSize="16dp"
+        android:textColor="#192028"
+        android:letterSpacing="-0.01"
+        tools:text="Ea Ailee"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="13dp"
+        android:fontFamily="@font/notosanskr_medium"
+        android:textSize="16dp"
+        android:textColor="#192028"
+        android:letterSpacing="-0.01"
+        android:text="@string/msg_my_follow_cancel_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="23dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="18dip"
+            android:textColor="#bcc6d2"
+            android:background="@drawable/bg_point_history_more"
+            android:text="@string/msg_my_follow_cancel"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="18dip"
+            android:textColor="#FFFFFFFF"
+            android:background="@drawable/btn_find_account_tab_left_on"
+            android:text="@string/msg_my_follow_confirm"/>
+    </LinearLayout>
+</LinearLayout>

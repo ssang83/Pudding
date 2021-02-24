@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f8fd">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/daysRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:scrollbars="none"
+            android:background="#ffffff"/>
+
+        <View
+            android:id="@+id/boarder"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/daysRecyclerView"
+            android:background="#e5eaf0" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPagerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/boarder"
+            android:visibility="gone">
+
+        </androidx.viewpager.widget.ViewPager>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/fab"
+            android:layout_width="68dp"
+            android:layout_height="74dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/fab" />
+    </RelativeLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

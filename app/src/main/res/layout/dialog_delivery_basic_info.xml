@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="158dp"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_bg"
+    android:orientation="vertical">
+
+    <!-- 타이틀 바 -->
+    <RelativeLayout
+        android:layout_width="272dp"
+        android:layout_height="46dp">
+
+        <!-- Depth Title -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/notosanskr_bold"
+            android:text="@string/msg_my_shopping_order_detail_delivery"
+            android:textColor="#192028"
+            android:textSize="18dip" />
+
+        <!-- 닫기 버튼 -->
+        <RelativeLayout
+            android:id="@+id/buttonClose"
+            android:layout_alignParentRight="true"
+            android:layout_width="46dp"
+            android:layout_height="46dp" >
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="17dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_popup_close"/>
+
+        </RelativeLayout>
+        <!--<android.support.v7.widget.AppCompatImageButton-->
+            <!--android:id="@+id/buttonClose"-->
+            <!--android:layout_width="16dp"-->
+            <!--android:layout_height="17dp"-->
+            <!--android:layout_marginRight="12dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:background="@null"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:src="@drawable/ic_popup_close" />-->
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FFCCCCCC" />
+
+    <!-- 수령인 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="#FFFFFFFF">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:gravity="left|center_vertical"
+            android:textSize="14dip"
+            android:textColor="#546170"
+            android:lines="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/notosanskr_bold"
+            android:text="@string/msg_my_shopping_order_detail_receiver"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewRecipient"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:gravity="left|center_vertical"
+            android:textSize="14dip"
+            android:textColor="#192028"
+            android:lines="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/notosanskr_bold"
+            tools:text="김망고"/>
+    </LinearLayout>
+
+    <!-- 택배사 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="#FFFFFFFF">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:gravity="left|center_vertical"
+            android:textSize="14dip"
+            android:textColor="#546170"
+            android:lines="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/notosanskr_bold"
+            android:text="@string/msg_delivery_basic_info_company"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCompany"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:gravity="left|center_vertical"
+            android:textSize="14dip"
+            android:textColor="#192028"
+            android:lines="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/notosanskr_bold"
+            tools:text="CJ대한통운(1588-1255)"/>
+    </LinearLayout>
+
+    <!-- 운송장번호 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="#FFFFFFFF">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:gravity="left|center_vertical"
+            android:textSize="14dip"
+            android:textColor="#546170"
+            android:lines="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/notosanskr_bold"
+            android:text="@string/msg_delivery_basic_info_invoice_number"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewInvoiceNumber"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:gravity="left|center_vertical"
+            android:textSize="14dip"
+            android:textColor="#ff6c6c"
+            android:lines="1"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/notosanskr_bold"
+            tools:text="2212351254"/>
+    </LinearLayout>
+
+</LinearLayout>

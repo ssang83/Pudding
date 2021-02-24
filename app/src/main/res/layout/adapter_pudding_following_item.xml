@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginRight="15dp">
+
+    <com.enliple.pudding.commons.widget.DynamicHeightImageView
+        android:id="@+id/imageViewThumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="169dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_following_down_dim" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:background="@drawable/bg_following_dim" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:background="@drawable/trip_onair_label" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                tools:text="새학기 가방 추천~ 휠라가방 리뷰!!!" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewViewerCnt"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_marginTop="4dp"
+                android:drawableLeft="@drawable/search_vod_viewer_ico"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:gravity="top"
+                android:includeFontPadding="false"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                tools:text="12820" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewLikeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:drawableLeft="@drawable/search_like_off_ico"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                tools:text="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_regular"
+            android:maxLines="1"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            tools:text="#립스틱 #가을립스틱 #맥립스틱" />
+
+        <RelativeLayout
+            android:id="@+id/layoutProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="3dp">
+
+            <RelativeLayout
+                android:id="@+id/profileImageLayer"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ranking_round_line_bg">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/profileImageLayer"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="6sp"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                tools:text="aghf____123" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="15dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewThumbnail"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_centerVertical="true"
+        tools:background="@mipmap/ic_launcher" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/newBadge"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/new_badge_copy"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/buttonMore"
+        android:layout_width="40dp"
+        android:layout_height="46dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/imgMore"
+            android:layout_width="16dp"
+            android:layout_height="4dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/message_more_ico" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/buttonMore"
+        android:layout_toRightOf="@+id/imageViewThumbnail"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewNickName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textColor="#192028"
+            android:textSize="14dp"
+            tools:text="22bin" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/notosanskr_medium"
+            android:maxLines="1"
+            android:textColor="#546170"
+            android:textSize="12dp"
+            tools:text="네네 감사합니다." />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="end"
+            android:textColor="#bcc6d2"
+            android:textSize="12dp"
+            tools:text="2018.07.12 13:25" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="60dp"
+        android:layout_below="@+id/layoutContent"
+        android:background="#d9e1eb" />
+
+</RelativeLayout>

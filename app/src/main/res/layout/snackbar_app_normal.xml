@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="#FF4B4B4B"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_gravity="bottom">
+
+    <ImageView
+        android:id="@+id/imageViewThumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="40dp"
+        android:maxHeight="40dp"
+        android:background="#FF4B4B4B"
+        android:layout_centerVertical="true"
+        tools:src="@mipmap/ic_launcher"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/textViewConfirm"
+        android:layout_toRightOf="@+id/imageViewThumbnail"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="#FFFFFFFF"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/notosanskr_regular"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:textSize="11dip"
+        android:textStyle="bold"
+        tools:text="스낵바로 사용될 레이아웃 입니다. 최대 3줄까지 허용되며 글씨 크기는 고정됩니다. 이렇게 말이죠 ^^"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/textViewCancel"
+        android:layout_marginRight="20dp"
+        android:layout_centerVertical="true"
+        android:textColor="#FFFFFFFF"
+        android:textSize="11dip"
+        android:fontFamily="@font/notosanskr_regular"
+        tools:text="확인"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:textColor="#FFFFFFFF"
+        android:textSize="11dip"
+        android:fontFamily="@font/notosanskr_regular"
+        tools:text="취소"/>
+
+</RelativeLayout>

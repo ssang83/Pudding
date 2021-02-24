@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingBottom="20dp"
+    android:background="@drawable/popup_bg"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#192028"
+            android:letterSpacing="-0.01"
+            android:fontFamily="@font/notosanskr_medium"
+            android:background="@drawable/bg_popup_title"
+            tools:text="회원가입" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#1e000000"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="29dp"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:textSize="16sp"
+        android:textColor="#192028"
+        android:fontFamily="@font/notosanskr_medium"
+        android:layout_gravity="center_horizontal"
+        tools:text="회원가입을 취소하고 이전 화면으로 돌아갑니다."/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonCancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/double_button_cancel"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="18sp"
+            android:textColor="#bcc6d2"
+            android:text="취소"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonConfirm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:background="@drawable/double_button_confirm"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:text="확인"/>
+    </LinearLayout>
+</LinearLayout>

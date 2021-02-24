@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/root"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/buttonProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="@drawable/cart_checkbox" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/buttonProduct"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="15dp">
+
+        <com.joooonho.SelectableRoundedImageView
+            android:id="@+id/imageViewThumbnail"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_gravity="top"
+            tools:background="@drawable/product_img_1"
+            app:sriv_left_bottom_corner_radius="5dp"
+            app:sriv_left_top_corner_radius="5dp"
+            app:sriv_right_bottom_corner_radius="5dp"
+            app:sriv_right_top_corner_radius="5dp"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="12dp">
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskr_bold"
+                android:lineSpacingExtra="6sp"
+                android:lines="1"
+                android:maxLines="1"
+                android:textColor="#FF192028"
+                android:textSize="14sp"
+                tools:text="나팔긴소매티" />
+
+            <TextView
+                android:id="@+id/textViewOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskr_medium"
+                android:lines="1"
+                android:maxLines="1"
+                android:textColor="#8192a5"
+                android:textSize="12sp"
+                tools:text="ivory" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="17dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentRight="true">
+
+                    <TextView
+                        android:id="@+id/strSoldOut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/layoutDel"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:lineSpacingExtra="6sp"
+                        android:textColor="#ff6c6c"
+                        android:textSize="16sp"
+                        android:text="품절"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/textViewPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/layoutDel"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:lineSpacingExtra="6sp"
+                        android:textColor="#FF102028"
+                        android:textSize="14sp"
+                        tools:text="25,900원" />
+
+                    <RelativeLayout
+                        android:id="@+id/layoutDel"
+                        android:layout_width="32dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/bg_cart_delete">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/delete_ico"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutOption"
+                    android:layout_width="82dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_customer_center_search"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/optionType"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="15dp"
+                        android:text="1"
+                        android:textColor="#192028"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="37dp"
+                        android:background="#bcc6d2" />
+
+                    <Spinner
+                        android:id="@+id/optionSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="5dp"
+                        android:background="@android:color/transparent"
+                        android:duplicateParentState="true" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="16dp"
+                        android:src="@drawable/btn_drop_down_up" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layoutProduct"
+        android:layout_marginLeft="44dp"
+        android:layout_marginRight="15dp"
+        android:background="#1e000000" />
+</RelativeLayout>

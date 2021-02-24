@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#00ffffff"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:fontFamily="@font/notosanskr_bold"
+        android:textColor="@color/tab_caster_text"
+        android:textSize="16dip"
+        tools:text="비디오"/>
+</RelativeLayout>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_root"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:background="@drawable/popup_bg"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:paddingBottom="20dp">
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewLinkProduct"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_link_product"
+            android:padding="1dp"
+            android:scaleType="fitXY" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonLinkProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/link_photo_modify_ico" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="상점명"
+            android:textColor="#192028"
+            android:textSize="16dp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextShopName"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="9dp"
+            android:background="@drawable/bg_customer_center_search"
+            android:fontFamily="@font/notosanskr_medium"
+            android:hint="상점명을 입력해주세요"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingLeft="9dp"
+            android:textColor="#192028"
+            android:textColorHint="#bcc6d2"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="상품명"
+            android:textColor="#192028"
+            android:textSize="16dp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextProduct"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="9dp"
+            android:background="@drawable/bg_customer_center_search"
+            android:fontFamily="@font/notosanskr_medium"
+            android:hint="상품명을 입력해주세요"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingLeft="9dp"
+            android:textColor="#192028"
+            android:textColorHint="#bcc6d2"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:text="가격"
+            android:textColor="#192028"
+            android:textSize="16dp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editTextPrice"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="24dp"
+            android:background="@drawable/bg_customer_center_search"
+            android:fontFamily="@font/notosanskr_medium"
+            android:hint="가격을 입력해주세요"
+            android:imeOptions="actionDone"
+            android:inputType="numberSigned"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingLeft="9dp"
+            android:textColor="#192028"
+            android:textColorHint="#bcc6d2"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonCancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_caster_finish_no"
+            android:fontFamily="@font/notosanskr_medium"
+            android:layout_marginRight="4dp"
+            android:gravity="center"
+            android:text="@string/msg_cancel"
+            android:textColor="#bcc6d2"
+            android:textSize="18dip" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_caster_finish_yes"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:text="@string/msg_confirm"
+            android:textColor="#FFFFFF"
+            android:textSize="16dip" />
+
+    </LinearLayout>
+</LinearLayout>

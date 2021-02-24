@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_bg"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="290dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="30dp"
+        android:src="@mipmap/logo_symbol_img" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="60dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginBottom="25dp"
+        android:padding="0dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:minLines="4"
+            android:singleLine="false"
+            android:textColor="#ff000000"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="13dip" />
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#ffeeeeee"
+        android:layout_height="1dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:textColor="@color/dialog_alert_button_text"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="15dip" />
+
+        <View
+            android:id="@+id/imageViewDividerLeft"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#00ffffff" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonMiddle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:textColor="@color/dialog_alert_button_text"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="15dip" />
+
+        <View
+            android:id="@+id/imageViewDividerRight"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#00ffffff" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonRight"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:textColor="@color/dialog_alert_button_text"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textSize="15dip" />
+    </LinearLayout>
+</LinearLayout>

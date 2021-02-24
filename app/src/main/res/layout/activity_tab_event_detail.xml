@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f3f8fd">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFFFF"
+            android:elevation="0dp"
+            app:elevation="0dp">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:padding="0dp"
+                app:contentInsetEnd="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp"
+                app:contentScrim="#FFFFFFFF"
+                app:elevation="0dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- 타이틀 바 -->
+                    <RelativeLayout
+                        android:id="@+id/layoutTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp">
+
+                        <!-- 뒤로가기 -->
+                        <ImageButton
+                            android:id="@+id/buttonClose"
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:background="#00000000"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/back_ico" />
+
+                        <!-- 타이틀바 제목 -->
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:gravity="center"
+                            android:lines="1"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            tools:text="미우미우 100만원 이벤트"
+                            android:textColor="#192028"
+                            android:textSize="20dip" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <com.enliple.pudding.commons.widget.DynamicHeightImageView
+                        android:id="@+id/eventBanner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:background="@drawable/event_banner_2"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#FFd8d8d8" />
+                </LinearLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#FFFFFFFF"
+                android:padding="0dp"
+                app:contentInsetEnd="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp"
+                app:contentScrim="#FFFFFFFF"
+                app:elevation="0dp">
+
+                <!-- 서브 탭 -->
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFFFF"
+                    android:overScrollMode="never"
+                    app:tabBackground="@android:color/transparent"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="@color/main_color"
+                    app:tabIndicatorHeight="3dp"
+                    app:tabMode="fixed"
+                    app:tabPadding="0dp"
+                    app:tabSelectedTextColor="@color/main_color"
+                    app:tabTextAppearance="@style/MyTabLayoutTextStyle"
+                    app:tabTextColor="#192028" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1e000000" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.enliple.pudding.commons.widget.NonSwipeableViewPager
+            android:id="@+id/viewPagerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFFFF"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>

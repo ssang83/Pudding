@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "611546471197",
+    "firebase_url": "https://lieon-96633.firebaseio.com",
+    "project_id": "lieon-96633",
+    "storage_bucket": "lieon-96633.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611546471197:android:6368f249e0516999",
+        "android_client_info": {
+          "package_name": "com.enliple.pudding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611546471197-8ogi2gtffa00r5qnm2d382nq7l8ub3ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKP07-fQLyL1ygBEpynZoUnnpsfBVy5Jw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

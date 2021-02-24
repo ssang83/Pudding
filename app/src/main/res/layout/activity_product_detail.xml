@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#ffffff">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:src="@drawable/back_black_ico">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/back_ico" />
+
+        </RelativeLayout>
+        <!--<android.support.v7.widget.AppCompatImageButton-->
+        <!--android:id="@+id/buttonBack"-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:src="@drawable/back_black_ico"-->
+        <!--android:background="#00000000"-->
+        <!--android:scaleType="centerInside" />-->
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="상품상세"
+            android:textColor="#192028"
+            android:textSize="20dip" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/main_title">
+
+            <RelativeLayout
+                android:id="@+id/buttonZzim"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewZzim"
+                    android:layout_width="22dp"
+                    android:layout_height="18.7dp"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn_cart_layer"
+                android:layout_width="39dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:background="#00000000"
+                android:visibility="gone">
+
+                <!-- 장바구니 -->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="#00000000"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/cart_ico" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cart_cnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/oval_2"
+                    android:fontFamily="@font/notosanskr_regular"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="10dip" />
+
+                <!--<android.support.v7.widget.AppCompatImageView-->
+                <!--android:id="@+id/buttonStoreBucket"-->
+                <!--android:layout_width="33dp"-->
+                <!--android:layout_height="27dp"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:background="#00ffffff"-->
+                <!--android:scaleType="fitCenter"-->
+                <!--android:src="@drawable/cart_ico" />-->
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                <!--android:id="@+id/cart_cnt"-->
+                <!--android:layout_width="18dp"-->
+                <!--android:layout_height="18dp"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:fontFamily="@font/notosanskr_medium"-->
+                <!--android:background="@drawable/pink_circle"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:textSize="12sp"-->
+                <!--android:visibility="visible" />-->
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn_share"
+                android:layout_width="39dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="4dp"
+                android:layout_toLeftOf="@+id/btn_cart_layer"
+                android:padding="3dp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/share_ico" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnLayer"
+        android:layout_below="@+id/layoutTitle"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layoutProductInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- 최상단 이미지 영역 -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="360dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/main_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="360dp"
+                        android:scaleType="fitXY" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/top_base"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="100dp" />
+
+                </RelativeLayout>
+                <!-- product summery -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/layoutForTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:includeFontPadding="false"
+                            android:textColor="#2a2a2a"
+                            android:textSize="18sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/imageViewNewIcon"
+                            android:layout_width="32dp"
+                            android:layout_height="16dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/pink_rounded_bg"
+                            android:gravity="center"
+                            android:text="NEW"
+                            android:textColor="#ffffff"
+                            android:textSize="11sp"
+                            android:visibility="gone" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/imageViewBestIcon"
+                            android:layout_width="32dp"
+                            android:layout_height="16dp"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/light_blue_rounded_bg"
+                            android:gravity="center"
+                            android:text="BEST"
+                            android:textColor="#ffffff"
+                            android:textSize="11sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewDiscountPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/layoutForTitle"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="15dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textViewDiscountPrice"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/percentage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginTop="-2dp"
+                            android:layout_marginRight="2dp"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:includeFontPadding="false"
+                            android:textColor="#f36766"
+                            android:textSize="20sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:includeFontPadding="false"
+                            android:textColor="#2a2a2a"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="22dp"
+                    android:background="#e5eaf0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp">
+
+                    <LinearLayout
+                        android:id="@+id/deliveryLayer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="9dp"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:text="@string/msg_purchase_delivery_price"
+                            android:textColor="#8192a5"
+                            android:textSize="14dp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewDeliveryFee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:textColor="#1b1b1b"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewDeliveryGuide"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:text="( 이상 구매 시 무료 배송)"
+                            android:textColor="#8192a5"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/deliveryLayer"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskr_bold"
+                            android:text="@string/msg_shop_tree_available_price"
+                            android:layout_marginRight="9dp"
+                            android:textColor="#8192a5"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewPoint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="9dp"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:textColor="#1b1b1b"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewPointGuide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/notosanskr_medium"
+                            android:text="(1% 적립)"
+                            android:textColor="#8192a5"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="18dp"
+                    android:background="#d9e1eb" />
+
+                <LinearLayout
+                    android:id="@+id/btnGoShop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f3f8fd"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/background_darkgray_round_border">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="10dp">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imageViewLogo"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_centerVertical="true" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/textViewShopName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="7dp"
+                                android:layout_toRightOf="@+id/imageViewLogo"
+                                android:fontFamily="@font/notosanskr_medium"
+                                android:includeFontPadding="false"
+                                android:textColor="#192028"
+                                android:textSize="14sp" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="5dp"
+                            android:layout_height="10dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="12dp"
+                            android:background="@drawable/more_arrow_ico" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/layoutForRealTab"
+                layout="@layout/detail_tab_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/frLayer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <WebView
+                    android:id="@+id/dummy"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></WebView>
+
+                <FrameLayout
+                    android:id="@+id/review_layoutForSubFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"></FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/qa_layoutForSubFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"></FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/celler_layoutForSubFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"></FrameLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/layoutForHiddenTab"
+        layout="@layout/detail_tab_button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutTitle"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/go_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnLayer"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/top_fab"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/optionLayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_above="@+id/btnLayer"
+        android:background="#00ffffff">
+
+        <RelativeLayout
+            android:id="@+id/close_layer"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true">
+
+
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/option_top" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/ic_down_black" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recyclerLayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/close_layer"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp"
+            android:background="#bcc6d2">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#bcc6d2" />
+
+            <View
+                android:layout_width="78dp"
+                android:layout_height="1dp"
+                android:layout_centerHorizontal="true"
+                android:background="#ffffff" />
+
+            <com.enliple.pudding.commons.widget.MaxHeightLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="#ffffff"
+                app:maxHeightDp="250">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/optionRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none" />
+
+            </com.enliple.pudding.commons.widget.MaxHeightLinearLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/total_upper_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/recyclerLayer"
+            android:background="#E5EAF0" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:layout_below="@+id/total_upper_line"
+            android:paddingLeft="20dp"
+            android:paddingRight="17dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#8192a5"
+                android:textSize="12sp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:layout_centerVertical="true"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="4dp"
+                android:textColor="#9f56f2"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
+                android:layout_centerVertical="true"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/totalPrice"
+                android:textColor="#192028"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:text="총 금액"
+                android:includeFontPadding="false"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btnLayer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff">
+
+        <View
+            android:id="@+id/b_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E5EAF0" />
+
+        <LinearLayout
+            android:id="@+id/two_btn_layer"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_below="@+id/b_line"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingTop="7dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="7dp"
+            android:weightSum="3.6">
+
+            <RelativeLayout
+                android:id="@+id/buttonCart"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/detail_bot_btn"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:text="@string/msg_product_cart"
+                    android:textColor="#192028"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/buttonCasting"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/detail_bot_btn"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:text="방송하기"
+                    android:textColor="#192028"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/buttonDone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.6"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/purple_btn"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center"
+                    android:text="@string/msg_purchase_title"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/go_broadcast_btn_layer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/goBroadcast"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#9f56f2"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:text="선택완료"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

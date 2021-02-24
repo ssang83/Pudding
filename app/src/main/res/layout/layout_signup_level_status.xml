@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutStatus"
+    android:layout_width="match_parent"
+    android:layout_height="94dp"
+    android:background="#FFFFFFFF"
+    android:minHeight="94dp"
+    tools:showIn="@layout/fragment_signup_information">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1e000000"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="72dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="33dp"
+            android:background="#d9e1eb"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewStatus2"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="13dp"
+            android:background="#00000000"
+            android:src="@drawable/signup_status2"
+            app:layout_constraintRight_toLeftOf="@+id/divider2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:layout_marginTop="3dp"
+            android:text="@string/msg_signup_step2"
+            android:textColor="#546170"
+            android:textSize="12dip"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="@+id/imageViewStatus2"
+            app:layout_constraintRight_toRightOf="@+id/imageViewStatus2"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewStatus2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewStatus3"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="13dp"
+            android:background="#00000000"
+            android:src="@drawable/signup_status3"
+            app:layout_constraintLeft_toRightOf="@+id/divider2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr_medium"
+            android:layout_marginTop="3dp"
+            android:text="@string/msg_signup_step3"
+            android:textColor="#546170"
+            android:textSize="12dip"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="@+id/imageViewStatus3"
+            app:layout_constraintRight_toRightOf="@+id/imageViewStatus3"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewStatus3" />
+
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#80c9c9c9"
+        android:layout_alignParentBottom="true"/>
+
+    <!--<View-->
+    <!--android:id="@+id/divider2"-->
+    <!--android:layout_width="72dp"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="#d9e1eb"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintRight_toRightOf="parent"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintHeight_percent=".2"-->
+    <!--app:layout_constraintWidth_percent=".5"/>-->
+
+
+    <!--<androidx.appcompat.widget.AppCompatImageView-->
+    <!--android:id="@+id/imageViewStatus1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#00000000"-->
+    <!--android:src="@drawable/signup_status1"-->
+    <!--android:layout_marginLeft="38dp"-->
+    <!--app:layout_constraintVertical_bias="0.25"-->
+    <!--app:layout_constraintVertical_chainStyle="packed"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintRight_toLeftOf="@+id/divider1"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent" />-->
+
+    <!--<androidx.appcompat.widget.AppCompatTextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textSize="12dip"-->
+    <!--android:textColor="#546170"-->
+    <!--android:fontFamily="@font/notosanskr_medium"-->
+    <!--android:layout_marginTop="3dp"-->
+    <!--android:text="@string/msg_signup_step1"-->
+    <!--app:layout_constraintVertical_bias="0"-->
+    <!--app:layout_constraintVertical_chainStyle="packed"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/imageViewStatus1"-->
+    <!--app:layout_constraintLeft_toLeftOf="@+id/imageViewStatus1"-->
+    <!--app:layout_constraintRight_toRightOf="@+id/imageViewStatus1"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+    <!--<View-->
+    <!--android:id="@+id/divider1"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="#d9e1eb"-->
+    <!--android:layout_marginBottom="16dp"-->
+    <!--app:layout_constraintLeft_toRightOf="@+id/imageViewStatus1"-->
+    <!--app:layout_constraintRight_toLeftOf="@+id/imageViewStatus2"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+    <!--<androidx.appcompat.widget.AppCompatImageView-->
+    <!--android:id="@+id/imageViewStatus2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#00000000"-->
+    <!--android:src="@drawable/signup_status2"-->
+    <!--app:layout_constraintVertical_bias="0.25"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintRight_toRightOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent" />-->
+
+    <!--<androidx.appcompat.widget.AppCompatTextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textSize="12dip"-->
+    <!--android:textColor="#546170"-->
+    <!--android:fontFamily="@font/notosanskr_medium"-->
+    <!--android:layout_marginTop="3dp"-->
+    <!--android:text="@string/msg_signup_step2"-->
+    <!--app:layout_constraintVertical_bias="0"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/imageViewStatus2"-->
+    <!--app:layout_constraintLeft_toLeftOf="@+id/imageViewStatus2"-->
+    <!--app:layout_constraintRight_toRightOf="@+id/imageViewStatus2"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+    <!--<View-->
+    <!--android:id="@+id/divider2"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="#d9e1eb"-->
+    <!--android:layout_marginBottom="16dp"-->
+    <!--app:layout_constraintLeft_toRightOf="@+id/imageViewStatus2"-->
+    <!--app:layout_constraintRight_toLeftOf="@+id/imageViewStatus3"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+    <!--<androidx.appcompat.widget.AppCompatImageView-->
+    <!--android:id="@+id/imageViewStatus3"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#00000000"-->
+    <!--android:layout_marginRight="38dp"-->
+    <!--android:src="@drawable/signup_status3"-->
+    <!--app:layout_constraintVertical_bias="0.25"-->
+    <!--app:layout_constraintLeft_toRightOf="@+id/divider2"-->
+    <!--app:layout_constraintRight_toRightOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+    <!--<androidx.appcompat.widget.AppCompatTextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:textSize="12dip"-->
+    <!--android:textColor="#546170"-->
+    <!--android:fontFamily="@font/notosanskr_medium"-->
+    <!--android:layout_marginTop="3dp"-->
+    <!--android:text="@string/msg_signup_step3"-->
+    <!--app:layout_constraintVertical_bias="0"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/imageViewStatus3"-->
+    <!--app:layout_constraintLeft_toLeftOf="@+id/imageViewStatus3"-->
+    <!--app:layout_constraintRight_toRightOf="@+id/imageViewStatus3"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1dp"-->
+    <!--android:background="#bcc6d2"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+</RelativeLayout>

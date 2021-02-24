@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/gray_lined_round_bg">
+
+        <RelativeLayout
+            android:id="@+id/top_layer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="10dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:maxLines="1"
+                android:text="상품명"
+                android:textSize="14sp"
+                android:textColor="#1b1b1b" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/option_str"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/name"
+                android:layout_marginLeft="4dp"
+                android:maxLines="1"
+                android:text="(옵션)"
+                android:textSize="14sp"
+                android:textColor="#ff6c6c" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top_layer"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:id="@+id/counter_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:padding="1px"
+                android:background="#cccccc">
+
+                <RelativeLayout
+                    android:id="@+id/count_down"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="1px"
+                    android:background="#ffffff">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ic_buy_subtract" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="34dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="1px"
+                    android:background="#ffffff">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/quantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="#ffffff"
+                        android:text="1"
+                        android:textSize="12sp"
+                        android:textColor="#1b1b1b" />
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/count_up"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="1px"
+                    android:background="#ffffff">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ic_buy_plus" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/remained"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/counter_box"
+                android:layout_marginLeft="6dp"
+                android:textSize="12sp"
+                android:textColor="#cccccc"
+                android:text="0개 남음"
+                android:layout_centerVertical="true"/>
+
+            <RelativeLayout
+                android:id="@+id/btn_del"
+                android:layout_width="34dp"
+                android:layout_height="24dp"
+                android:paddingRight="10dp"
+                android:layout_alignParentRight="true">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/navi_ic_login_box_close"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/btn_del"
+                android:layout_marginRight="2dp"
+                android:layout_alignParentBottom="true"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="0sp"
+                android:text="0,000"
+                android:textColor="#1b1b1b"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

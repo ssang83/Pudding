@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <!-- 타이틀바 -->
+    <RelativeLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <!-- 뒤로가기 -->
+        <RelativeLayout
+            android:id="@+id/buttonBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_ico"/>
+
+        </RelativeLayout>
+        <!--<android.support.v7.widget.AppCompatImageButton-->
+            <!--android:id="@+id/buttonBack"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:background="#00000000"-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:src="@drawable/back_black_ico" />-->
+
+        <!-- 타이틀바 제목 -->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/notosanskr_medium"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="젤리"
+            android:textColor="#192028"
+            android:textSize="20dip" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layoutTitle"
+        android:background="#1e000000"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divider"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants">
+
+            <LinearLayout
+                android:id="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:text="현재 보유중인 젤리"
+                    android:textColor="#546170"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/totalCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:textSize="30sp"
+                    android:layout_marginBottom="3dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:textColor="#5774f4"
+                    android:layout_gravity="center_horizontal"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_marginRight="5dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:includeFontPadding="false"
+                        android:text="선물한 젤리"
+                        android:textColor="#546170"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/send_cookie_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_marginRight="8dp"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:includeFontPadding="false"
+                        android:textColor="#192028"
+                        android:layout_gravity="center_horizontal"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_marginRight="5dp"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:includeFontPadding="false"
+                        android:text="유효기간이 지난 젤리"
+                        android:textColor="#546170"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/expired_cookie_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_marginRight="8dp"
+                        android:fontFamily="@font/notosanskr_bold"
+                        android:includeFontPadding="false"
+                        android:textColor="#192028"
+                        android:layout_gravity="center_horizontal"/>
+
+                </LinearLayout>
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="12sp"-->
+                <!--android:fontFamily="@font/notosanskr_medium"-->
+                <!--android:includeFontPadding="false"-->
+                <!--android:text="@string/msg_cookie_duedate"-->
+                <!--android:textColor="#bcc6d2"-->
+                <!--android:layout_gravity="center_horizontal"/>-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnBuyCookie"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="140dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_nick_name_check"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:includeFontPadding="false"
+                    android:text="젤리구매"
+                    android:gravity="center"
+                    android:textColor="@color/main_color"
+                    android:layout_gravity="center_horizontal"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:background="#e5eaf0" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tabLayer"
+                android:layout_below="@+id/top"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/tabPurchaseList"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtPurchaseList"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="#8192a5"
+                        android:lineSpacingExtra="-3dp"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:layout_centerInParent="true"
+                        android:text="@string/msg_purchased_cookie_list"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/purchaseListLine"
+                        android:layout_width="100dp"
+                        android:layout_height="3dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/main_color"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tabSendList"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtSendList"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="#8192a5"
+                        android:lineSpacingExtra="-3dp"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:layout_centerInParent="true"
+                        android:text="@string/msg_send_cookie_list"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/sendListLine"
+                        android:layout_width="100dp"
+                        android:layout_height="3dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/main_color"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tabReceivedList"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtReceivedList"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="#8192a5"
+                        android:lineSpacingExtra="-3dp"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:layout_centerInParent="true"
+                        android:text="@string/msg_receive_cookie_list"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/receivedListLine"
+                        android:layout_width="100dp"
+                        android:layout_height="3dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/main_color"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line"
+                android:layout_below="@+id/tabLayer"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#e5eaf0" />
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_below="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></FrameLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="100dp"
+                android:layout_below="@+id/line"
+                android:gravity="center"
+                android:fontFamily="@font/notosanskr_bold"
+                android:textSize="20dp"
+                android:textColor="#192028"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/hiddenTabLayer"
+        android:layout_below="@+id/divider"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="56dp"
+        android:background="#ffffff"
+        android:weightSum="3"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/hiddenTabPurchaseList"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hiddenTxtPurchaseList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#8192a5"
+                android:lineSpacingExtra="-7dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:layout_centerInParent="true"
+                android:text="@string/msg_purchased_cookie_list"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hiddenPurchaseListLine"
+                android:layout_width="100dp"
+                android:layout_height="3dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:background="@color/main_color"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/hiddenTabSendList"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hiddenTxtSendList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#8192a5"
+                android:lineSpacingExtra="-7dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:layout_centerInParent="true"
+                android:text="@string/msg_send_cookie_list"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hiddenSendListLine"
+                android:layout_width="100dp"
+                android:layout_height="3dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:background="@color/main_color"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/hiddenTabReceivedList"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hiddenTxtReceivedList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#8192a5"
+                android:lineSpacingExtra="-7dp"
+                android:fontFamily="@font/notosanskr_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:layout_centerInParent="true"
+                android:text="@string/msg_receive_cookie_list"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hiddenReceivedListLine"
+                android:layout_width="100dp"
+                android:layout_height="3dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:background="@color/main_color"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:background="#e5eaf0">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="14sp"
+            android:textColor="#8192a5"
+            android:lineSpacingExtra="2sp"
+            android:text="환전 신청은 푸딩 웹 페이지에서만 가능합니다."/>
+    </LinearLayout>
+
+</RelativeLayout>

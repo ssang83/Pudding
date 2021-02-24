@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.enliple.pudding.shoppingcaster.widget.MEditText xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@null"
+    android:drawablePadding="2dp"
+    android:hint="해시테그를 입력하세요"
+    android:imeOptions="actionDone"
+    android:maxEms="30"
+    android:minWidth="56dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:singleLine="true"
+    android:textColor="#8192a5"
+    android:textColorHint="#546170"
+    android:textSize="13sp" />

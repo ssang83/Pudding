@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.enliple.pudding.shoppingcaster.screen.FloatingView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/preview_switch_cam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/recorder_rotate_icon" />
+
+        <ImageView
+            android:id="@+id/preview_switch_rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/transform_rotate"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/close_camera"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/switch_camera_open" />
+    </LinearLayout>
+
+</com.enliple.pudding.shoppingcaster.screen.FloatingView>

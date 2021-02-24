@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_height="32dp"
+        android:background="@drawable/special_bg_selected">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textSubcategory"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textColor="#464646"
+            android:text="전체"
+            android:textSize="14sp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:maxLines="1"
+            android:lines="1"/>
+
+    </RelativeLayout>
+    
+
+
+</RelativeLayout>

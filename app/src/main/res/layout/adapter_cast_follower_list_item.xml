@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="46dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="#00000000"
+    tools:background="#CC000000">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewThumbnail"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        tools:src="@drawable/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/textViewTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="left|center_vertical"
+        android:textColor="#FFFFFFFF"
+        android:textSize="14dip"
+        android:layout_marginLeft="6dp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:fontFamily="@font/notosanskr_medium"
+        app:layout_constraintLeft_toRightOf="@+id/imageViewThumbnail"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="망고딸기(asdf****)"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

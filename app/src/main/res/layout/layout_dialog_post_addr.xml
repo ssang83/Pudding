@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="50dp"
+    android:paddingBottom="50dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/background_shipping_fee_dialog"
+        android:paddingLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <RelativeLayout
+            android:id="@+id/buttonClose"
+            android:layout_alignParentRight="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp" >
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="17dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_popup_close"/>
+
+        </RelativeLayout>
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/buttonClose"-->
+            <!--android:layout_width="12dp"-->
+            <!--android:layout_height="12dp"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_marginRight="17dp"-->
+            <!--android:background="#00000000"-->
+            <!--android:src="@drawable/popup_close_ico"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:scaleType="fitCenter"/>-->
+
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_below="@+id/buttonClose"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="7dp"
+            android:padding="5dp"
+            android:scrollbarStyle="outsideOverlay"/>
+
+        <!--<include-->
+            <!--android:id="@+id/viewForProgress"-->
+            <!--layout="@layout/progress_avld"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:visibility="gone"/>-->
+    </RelativeLayout>
+</LinearLayout>

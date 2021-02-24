@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.enliple.pudding.widget.ShoppingFloatingView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="78dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#00ffffff">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="78dp"
+            android:background="@drawable/shadow_floating_bg">
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/playerView"
+                android:layout_width="100dp"
+                android:layout_height="58dp"
+                android:layout_centerVertical="true"
+                android:background="#000000"
+                app:controller_layout_id="@layout/layout_player_controller"
+                app:surface_type="texture_view"
+                app:use_controller="false" />
+
+
+            <RelativeLayout
+                android:id="@+id/contentLayer"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/playerView"
+                android:background="#ffffff">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_toLeftOf="@+id/btnPlay"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/product"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/notosanskr_regular"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:textColor="#192028"
+                        android:textSize="12sp"
+                        tools:text="아리엘 립스틱 BAGTS"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/notosanskr_medium"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:textColor="#192028"
+                        android:textSize="14sp"
+                        tools:text="여기에 타이틀 한줄로 처리해주세요"/>
+
+                    <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<androidx.appcompat.widget.AppCompatTextView-->
+                    <!--android:id="@+id/btnPlay"-->
+                    <!--android:layout_width="30dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_marginRight="12dp"-->
+                    <!--android:background="@drawable/live_play_btn" />-->
+
+                    <!--<androidx.appcompat.widget.AppCompatTextView-->
+                    <!--android:id="@+id/btnPause"-->
+                    <!--android:layout_width="30dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_marginRight="12dp"-->
+                    <!--android:background="@drawable/live_stop_btn" />-->
+
+                    <!--</LinearLayout>-->
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnPlay"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="12dp"
+                    android:layout_toLeftOf="@+id/close_button"
+                    android:layout_centerVertical="true"
+                    android:clickable="true">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgPlay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/pip_pause_ico" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/close_button"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:padding="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:background="@drawable/pip_close_btn" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnVisible"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="90dp"
+            android:background="@drawable/pip_fold_btn" />
+
+    </RelativeLayout>
+
+</com.enliple.pudding.widget.ShoppingFloatingView>
+
+

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutRoot"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="#FFFFFFFF">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="127dp">
+
+        <!-- 닫기 버튼 -->
+        <RelativeLayout
+            android:id="@+id/buttonClose"
+            android:layout_alignParentRight="true"
+            android:layout_width="46dp"
+            android:layout_height="46dp" >
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="17dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_popup_close"/>
+
+        </RelativeLayout>
+        <!--<android.support.v7.widget.AppCompatImageButton-->
+            <!--android:id="@+id/buttonClose"-->
+            <!--android:layout_width="16dp"-->
+            <!--android:layout_height="17dp"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:layout_marginRight="12dp"-->
+            <!--android:layout_gravity="right"-->
+            <!--android:background="@null"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:src="@drawable/ic_popup_close" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="13dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="@string/msg_exchange_request_guide"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#192028"
+                android:textSize="18dip"/>
+
+            <TextView
+                android:id="@+id/textViewGuide1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:text="@string/msg_cre_request_exchange_guide1"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#8192a5"
+                android:textSize="14dip"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:text="@string/msg_cre_request_exchange_guide2"
+                android:fontFamily="@font/notosanskr_medium"
+                android:textColor="#8192a5"
+                android:textSize="14dip"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="18dip"
+            android:textColor="#192028"
+            android:background="#f3f8fd"
+            android:text="@string/msg_cre_no"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/notosanskr_medium"
+            android:textSize="18dip"
+            android:textColor="#FFFFFFFF"
+            android:background="@color/main_color"
+            android:text="@string/msg_cre_confirm"/>
+    </LinearLayout>
+</LinearLayout>

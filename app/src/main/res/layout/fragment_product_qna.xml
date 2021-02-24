@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/fullLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layoutBeforeQnA"
+            android:layout_width="match_parent"
+            android:layout_height="138dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_qna_before"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewQnA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_horizontal"
+                android:text="@string/msg_product_qna"
+                android:textColor="#192028"
+                android:textSize="14dip" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/buttonQnA"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/purple_line_bg"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center"
+                android:text="문의하기"
+                android:textColor="#9f56f2"
+                android:textSize="14dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutQnAInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_qna_before"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewQnA1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_horizontal"
+                android:text="@string/msg_product_qna"
+                android:textColor="#192028"
+                android:textSize="14dip" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="21dp"
+                android:background="@drawable/dash_line"
+                android:layerType="software" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/buttonSecretCheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/checkbox" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="비밀글로 문의하기"
+                    android:textColor="#8192a5"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_qna_before"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewAskingType"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#ffffff"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:text="@string/msg_shop_tree_qna_type"
+                    android:textColor="#bcc6d2"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/askingSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:duplicateParentState="true" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/btn_drop_down_up" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/askingEditText"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bg_qna_before"
+                android:gravity="top"
+                android:hint="@string/msg_shop_tree_qna_input_hint"
+                android:maxLength="500"
+                android:padding="6dp"
+                android:imeOptions="actionDone"
+                android:textColorHint="#bcc6d2"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="17dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/important_ico" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:fontFamily="@font/notosanskr_medium"
+                    android:text="문의 시 유의해주세요"
+                    android:textColor="#ff6c6c"
+                    android:textSize="12dip" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_product_qna_quide1"
+                android:textColor="#8192a5"
+                android:textSize="12dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="13dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="@string/msg_product_qna_quide2"
+                android:textColor="#8192a5"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_qna_before"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="취소하기"
+                android:textColor="#bcc6d2"
+                android:textSize="14dip" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAsking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/purple_line_bg"
+                android:fontFamily="@font/notosanskr_medium"
+                android:text="문의하기"
+                android:textColor="#9f56f2"
+                android:textSize="14dip" />
+        </LinearLayout>
+
+        <include
+            layout="@layout/product_qna_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@+id/layoutContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+
+        <View
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

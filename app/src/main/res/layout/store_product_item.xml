@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="3dp"
+    android:id="@+id/main_root"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/item_background">
+
+        <RelativeLayout
+            android:id="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal">
+
+            <com.joooonho.SelectableRoundedImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="1dp"
+                android:layout_alignParentTop="true"
+                app:sriv_left_top_corner_radius="5dp"
+                app:sriv_right_top_corner_radius="5dp"
+                android:layout_marginBottom="13dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="9dp"
+                android:layout_marginBottom="4dp"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="1dp"
+                android:maxLines="2"
+                android:lines="2"
+                android:ellipsize="end"
+                android:layout_below="@+id/image"
+                android:textSize="14sp"
+                android:textColor="#192028"
+                android:fontFamily="@font/notosanskr_medium"/>
+
+            <LinearLayout
+                android:layout_below="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="11dp"
+                android:paddingLeft="7dp"
+                android:paddingRight="9dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:textColor="#ff6c6c"
+                    android:textSize="14sp"
+                    android:layout_marginRight="2dp"
+                    android:fontFamily="@font/notosanskr_bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:textColor="#192028"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/notosanskr_bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:textColor="#192028"
+                    android:textSize="14sp"
+                    android:text="원"
+                    android:fontFamily="@font/notosanskr_regular" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
